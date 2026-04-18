@@ -1,7 +1,7 @@
 'use strict';
 
 // ===== Constants =====
-const DELOAD_WEEKS = [4, 8, 12];
+const DELOAD_WEEKS = [6, 12];
 const DAY_ABBRS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 const BLOCK_COLORS = {
   'STRENGTH (HEAVY)': '#FF6B35',
