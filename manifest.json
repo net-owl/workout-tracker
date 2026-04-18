@@ -1,0 +1,14 @@
+{
+  "name": "12-Week Upper/Lower",
+  "short_name": "Workout",
+  "description": "12-Week Advanced Upper/Lower Training Program",
+  "start_url": "/workout-tracker/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0A0A",
+  "theme_color": "#FF6B35",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

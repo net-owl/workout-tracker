@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Workout" />
+  <meta name="theme-color" content="#FF6B35" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>12-Week Program</title>
+</head>
+<body>
+
+  <!-- App Header -->
+  <header id="app-header">
+    <div id="header-title">12-Week Program</div>
+    <div id="header-sub"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="app-main">
+
+    <!-- TODAY VIEW -->
+    <section id="view-today" class="view active">
+      <div id="today-no-workout" class="empty-state hidden">
+        <div class="empty-icon">🏖️</div>
+        <div class="empty-title">Rest Day</div>
+        <div class="empty-sub">No workout scheduled. Go recover!</div>
+      </div>
+      <div id="today-workout"></div>
+    </section>
+
+    <!-- SCHEDULE VIEW -->
+    <section id="view-schedule" class="view">
+      <div id="schedule-content"></div>
+    </section>
+
+    <!-- PROGRESS VIEW -->
+    <section id="view-progress" class="view">
+      <div id="progress-content"></div>
+    </section>
+
+    <!-- SETTINGS VIEW -->
+    <section id="view-settings" class="view">
+      <div class="settings-section">
+        <h2 class="settings-heading">Program</h2>
+
+        <div class="settings-row">
+          <label class="settings-label">
+            <span>Start Date</span>
+            <small>The Monday you began Week 1</small>
+          </label>
+          <input type="date" id="setting-start-date" class="settings-input" />
+        </div>
+
+        <div class="settings-row">
+          <label class="settings-label">
+            <span>Rest Timer</span>
+            <small id="rest-timer-label">90 seconds</small>
+          </label>
+          <input type="range" id="setting-rest-timer" min="30" max="300" step="15" value="90" class="settings-slider" />
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h2 class="settings-heading">Data</h2>
+        <button id="btn-reset" class="btn-danger">Reset All Workout Logs</button>
+        <button id="btn-reset-tracker" class="btn-danger-secondary">Reset Tracker Data</button>
+      </div>
+
+      <div class="settings-section">
+        <h2 class="settings-heading">About</h2>
+        <div class="settings-info">
+          <p>12-Week Advanced Upper/Lower Split</p>
+          <p>5 days/week · 2 Blocks of 6 weeks</p>
+          <p>Deload weeks: W4, W8, W12</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav id="bottom-nav">
+    <button class="nav-btn active" data-view="today">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>Today</span>
+    </button>
+    <button class="nav-btn" data-view="schedule">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <span>Schedule</span>
+    </button>
+    <button class="nav-btn" data-view="progress">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+      <span>Progress</span>
+    </button>
+    <button class="nav-btn" data-view="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+
+  <!-- Rest Timer Overlay -->
+  <div id="rest-timer" class="hidden">
+    <div id="rest-timer-card">
+      <div id="rest-timer-label-top">Rest</div>
+      <div id="rest-timer-countdown">1:30</div>
+      <div id="rest-timer-bar-wrap"><div id="rest-timer-bar"></div></div>
+      <div class="rest-timer-actions">
+        <button id="btn-skip-rest" class="btn-secondary">Skip</button>
+        <button id="btn-add-rest" class="btn-ghost">+30s</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Log Modal -->
+  <div id="log-modal" class="hidden">
+    <div id="log-modal-backdrop"></div>
+    <div id="log-modal-card">
+      <div id="log-modal-title"></div>
+      <div id="log-modal-set-label"></div>
+      <div class="log-inputs">
+        <div class="log-input-group">
+          <label>Weight (lbs)</label>
+          <input type="number" id="log-weight" placeholder="0" inputmode="decimal" />
+        </div>
+        <div class="log-input-group">
+          <label>Reps</label>
+          <input type="number" id="log-reps" placeholder="0" inputmode="numeric" />
+        </div>
+      </div>
+      <div class="log-modal-actions">
+        <button id="btn-log-cancel" class="btn-secondary">Cancel</button>
+        <button id="btn-log-save" class="btn-primary">Log Set</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
