@@ -824,27 +824,57 @@ function escAttr(str) {
 
 // ===== Auto-hide chrome on scroll =====
 function initScrollHideChrome() {
-  const THRESHOLD = 12;
-  const MIN_SCROLL = 80;
+  const HIDE_THRESHOLD  = 20;  // px of downward scroll before hiding
+  const SHOW_THRESHOLD  = 4;   // px of upward scroll before showing (snappy reveal)
+  const MIN_SCROLL      = 80;  // never hide within this many px of the top
+  const BOTTOM_BUFFER   = 80;  // never hide within this many px of the bottom
+
+  function isNearBottom(view) {
+    return view.scrollTop + view.clientHeight >= view.scrollHeight - BOTTOM_BUFFER;
+  }
+
   document.querySelectorAll('.view').forEach(view => {
     let lastTop = 0;
     let ticking = false;
+
     view.addEventListener('scroll', () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const top = view.scrollTop;
+        // Clamp to valid range — prevents iOS rubber-band from producing spurious deltas
+        const maxScroll = Math.max(0, view.scrollHeight - view.clientHeight);
+        const top = Math.max(0, Math.min(view.scrollTop, maxScroll));
+
+        // Always show chrome near the top
+        if (top <= MIN_SCROLL) {
+          document.body.classList.remove('chrome-hidden');
+          lastTop = top;
+          ticking = false;
+          return;
+        }
+
         const delta = top - lastTop;
-        if (Math.abs(delta) > THRESHOLD) {
-          if (delta > 0 && top > MIN_SCROLL) {
+
+        if (delta > HIDE_THRESHOLD && !isNearBottom(view)) {
+          if (activeView === 'today' || activeView === 'schedule') {
             document.body.classList.add('chrome-hidden');
-          } else if (delta < 0) {
-            document.body.classList.remove('chrome-hidden');
           }
           lastTop = top;
+        } else if (delta < -SHOW_THRESHOLD) {
+          document.body.classList.remove('chrome-hidden');
+          lastTop = top;
         }
+        // Sub-threshold moves don't update lastTop — hysteresis accumulation
+
         ticking = false;
       });
+    }, { passive: true });
+
+    // Re-show chrome once scroll momentum fully settles (catches iOS rubber-band jitter)
+    view.addEventListener('scrollend', () => {
+      if (isNearBottom(view)) {
+        document.body.classList.remove('chrome-hidden');
+      }
     }, { passive: true });
   });
 }
