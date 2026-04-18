@@ -2991,12 +2991,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -3089,12 +3089,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -3285,12 +3285,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -3383,12 +3383,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -3486,12 +3486,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -3584,12 +3584,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -3780,12 +3780,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -3878,12 +3878,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -3981,12 +3981,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Moderate-heavy. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -4079,12 +4079,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Moderate-heavy. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -4275,12 +4275,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Moderate-heavy. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -4373,12 +4373,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Moderate-heavy. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -4476,12 +4476,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -4574,12 +4574,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -4770,12 +4770,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -4868,12 +4868,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -4971,12 +4971,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Drop set on final set. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -5069,12 +5069,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Drop set on final set. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -5265,12 +5265,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Drop set on final set. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -5363,12 +5363,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Drop set on final set. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -5466,12 +5466,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -5564,12 +5564,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -5760,12 +5760,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep chest work. Control, full ROM.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -5858,12 +5858,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
