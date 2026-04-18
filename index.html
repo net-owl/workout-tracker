@@ -66,6 +66,16 @@
       </div>
 
       <div class="settings-section">
+        <h2 class="settings-heading">Backup &amp; Restore</h2>
+        <button id="btn-export" class="btn-export">Export Data (JSON)</button>
+        <label class="btn-import-label" for="btn-import">
+          Import Data (JSON)
+          <input type="file" id="btn-import" accept=".json" style="display:none" />
+        </label>
+        <div id="import-status"></div>
+      </div>
+
+      <div class="settings-section">
         <h2 class="settings-heading">Data</h2>
         <button id="btn-reset" class="btn-danger">Reset All Workout Logs</button>
         <button id="btn-reset-tracker" class="btn-danger-secondary">Reset Tracker Data</button>
@@ -152,7 +162,7 @@
     </div>
   </div>
 
-  <script src="data.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+  <script src="data.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

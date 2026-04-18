@@ -750,6 +750,35 @@ input { font: inherit; }
   margin-bottom: 8px;
 }
 
+.btn-export {
+  display: block;
+  width: 100%;
+  background: var(--accent-dim);
+  border: 1.5px solid rgba(255,107,53,0.3);
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.btn-import-label {
+  display: block;
+  width: 100%;
+  background: var(--teal-dim);
+  border: 1.5px solid rgba(78,205,196,0.3);
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
 .btn-danger-secondary {
   display: block;
   width: 100%;

@@ -733,6 +733,58 @@ document.getElementById('btn-reset-tracker').addEventListener('click', () => {
   }
 });
 
+// ===== Export / Import =====
+document.getElementById('btn-export').addEventListener('click', () => {
+  const backup = {
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    wk_state: loadState(),
+    wk_logs: loadLogs(),
+    wk_tracker: loadTracker(),
+  };
+  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `workout-backup-${date}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('btn-import').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (!data.version || !data.wk_logs) throw new Error('Invalid backup file');
+      if (!confirm('This will overwrite all current logs and tracker data. Continue?')) return;
+      if (data.wk_state) saveState(data.wk_state);
+      if (data.wk_logs) saveLogs(data.wk_logs);
+      if (data.wk_tracker) saveTracker(data.wk_tracker);
+      // Reload in-memory state
+      state = loadState();
+      logs = loadLogs();
+      tracker = loadTracker();
+      setImportStatus('✓ Data restored successfully', 'success');
+      renderView(activeView);
+    } catch (err) {
+      setImportStatus('✗ Invalid backup file', 'error');
+    }
+    e.target.value = '';
+  };
+  reader.readAsText(file);
+});
+
+function setImportStatus(msg, type) {
+  const el = document.getElementById('import-status');
+  el.textContent = msg;
+  el.style.cssText = `font-size:13px;font-weight:600;padding:8px 0 0;color:${type === 'success' ? 'var(--teal)' : 'var(--danger)'}`;
+  setTimeout(() => { el.textContent = ''; }, 4000);
+}
+
 // ===== Escape helpers =====
 function escHtml(str) {
   if (!str) return '';
