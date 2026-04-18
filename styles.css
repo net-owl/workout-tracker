@@ -82,17 +82,8 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 /* ===== Main Scroll Area ===== */
 #app-main {
   position: fixed;
-  top: calc(var(--header-height) + var(--safe-top));
-  bottom: calc(var(--nav-height) + var(--safe-bottom));
-  left: 0;
-  right: 0;
+  inset: 0;
   overflow: hidden;
-  transition: top 0.25s ease, bottom 0.25s ease;
-}
-
-body.chrome-hidden #app-main {
-  top: 0;
-  bottom: 0;
 }
 
 /* ===== Views ===== */
@@ -102,7 +93,8 @@ body.chrome-hidden #app-main {
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 12px 16px 24px;
+  /* Padding accounts for fixed bars so content is never hidden behind them */
+  padding: calc(var(--header-height) + var(--safe-top) + 12px) 16px calc(var(--nav-height) + var(--safe-bottom) + 24px);
   opacity: 0;
   pointer-events: none;
   transform: translateY(8px);
