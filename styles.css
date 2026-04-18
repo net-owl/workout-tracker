@@ -87,6 +87,12 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   left: 0;
   right: 0;
   overflow: hidden;
+  transition: top 0.25s ease, bottom 0.25s ease;
+}
+
+body.chrome-hidden #app-main {
+  top: 0;
+  bottom: 0;
 }
 
 /* ===== Views ===== */
