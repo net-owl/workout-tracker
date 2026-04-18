@@ -837,7 +837,9 @@ function initScrollHideChrome() {
         const delta = top - lastTop;
         if (Math.abs(delta) > THRESHOLD) {
           if (delta > 0 && top > MIN_SCROLL) {
-            document.body.classList.add('chrome-hidden');
+            if (activeView === 'today' || activeView === 'schedule') {
+              document.body.classList.add('chrome-hidden');
+            }
           } else if (delta < 0) {
             document.body.classList.remove('chrome-hidden');
           }
