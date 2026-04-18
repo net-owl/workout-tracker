@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#FF6B35" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <title>12-Week Program</title>
 </head>
 <body>
@@ -58,8 +58,9 @@
 
         <div class="settings-row">
           <label class="settings-label">
-            <span>Rest Timer</span>
+            <span>Default Rest Timer</span>
             <small id="rest-timer-label">90 seconds</small>
+            <small style="opacity:0.7">Used when an exercise has no rest specified</small>
           </label>
           <input type="range" id="setting-rest-timer" min="30" max="300" step="15" value="90" class="settings-slider" />
         </div>
@@ -162,7 +163,7 @@
     </div>
   </div>
 
-  <script src="data.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <script src="data.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

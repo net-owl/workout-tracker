@@ -69,6 +69,18 @@ let restTimer = { interval: null, remaining: 0, total: 0 };
 let pinnedWorkout = null; // { weekNum, dayIdx }
 
 // ===== Helpers =====
+function parseRestToSeconds(restStr) {
+  if (!restStr) return null;
+  const s = String(restStr).toLowerCase().trim();
+  const minMatch = s.match(/(\d+(?:\.\d+)?)\s*min/);
+  if (minMatch) return Math.round(parseFloat(minMatch[1]) * 60);
+  const secMatch = s.match(/(\d+)\s*s/);
+  if (secMatch) return parseInt(secMatch[1], 10);
+  const bareNum = s.match(/^(\d+)$/);
+  if (bareNum) return parseInt(bareNum[1], 10);
+  return null;
+}
+
 function logKey(weekNum, dayIdx) {
   return `W${weekNum}-${DAY_ABBRS[dayIdx]}`;
 }
@@ -143,11 +155,13 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
 
 function navigateTo(viewName) {
   activeView = viewName;
+  document.body.classList.remove('chrome-hidden');
   document.querySelectorAll('.nav-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.view === viewName);
   });
   document.querySelectorAll('.view').forEach(v => {
     v.classList.toggle('active', v.id === `view-${viewName}`);
+    if (v.id === `view-${viewName}`) v.scrollTop = 0;
   });
   renderView(viewName);
 }
@@ -323,6 +337,7 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
            data-ex="${exIdx}" data-set="${s}"
            data-ex-name="${escAttr(ex.exercise)}"
            data-target-reps="${escAttr(ex.reps || '')}"
+           data-rest="${escAttr(ex.rest || '')}"
            data-week="${weekNum}" data-day="${dayIdx}">
         <div class="set-circle">${isLogged ? '✓' : s + 1}</div>
         <div class="set-info">
@@ -367,8 +382,9 @@ function attachSetListeners(container, weekNum, dayIdx, day) {
       const setIdx = parseInt(row.dataset.set);
       const exName = row.dataset.exName;
       const targetReps = row.dataset.targetReps;
+      const restStr = row.dataset.rest || '';
       const existing = getLog(weekNum, dayIdx)[`${exIdx}-${setIdx}`];
-      openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existing);
+      openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existing, restStr);
     });
   });
 }
@@ -379,8 +395,9 @@ function toggleBlock(headerEl) {
 window.toggleBlock = toggleBlock;
 
 // ===== Log Modal =====
-function openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existing) {
-  logContext = { weekNum, dayIdx, exIdx, setIdx };
+function openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existing, restStr) {
+  logContext = { weekNum, dayIdx, exIdx, setIdx, restStr: restStr || '' };
+  document.body.classList.remove('chrome-hidden');
   document.getElementById('log-modal-title').textContent = exName;
   document.getElementById('log-modal-set-label').textContent =
     `Set ${setIdx + 1}${targetReps ? ' · ' + targetReps + ' reps target' : ''}`;
@@ -403,10 +420,11 @@ document.getElementById('btn-log-save').addEventListener('click', () => {
   const r = document.getElementById('log-reps').value.trim();
   if (!r) { document.getElementById('log-reps').focus(); return; }
 
-  const { weekNum, dayIdx, exIdx, setIdx } = logContext;
+  const { weekNum, dayIdx, exIdx, setIdx, restStr } = logContext;
   setLog(weekNum, dayIdx, `${exIdx}-${setIdx}`, w, r);
+  const restSecs = parseRestToSeconds(restStr);
   closeLogModal();
-  startRestTimer();
+  startRestTimer(restSecs ?? state.restDuration);
   // Re-render the same workout in place rather than calling renderToday (which would show rest day on weekends)
   openScheduleDay(weekNum, dayIdx);
 });
@@ -417,12 +435,15 @@ function closeLogModal() {
 }
 
 // ===== Rest Timer =====
-function startRestTimer() {
-  const dur = state.restDuration || 90;
+function startRestTimer(durationSeconds) {
+  const dur = (Number.isFinite(durationSeconds) && durationSeconds > 0)
+    ? durationSeconds
+    : (state.restDuration || 90);
   clearInterval(restTimer.interval);
   restTimer.remaining = dur;
   restTimer.total = dur;
 
+  document.body.classList.remove('chrome-hidden');
   document.getElementById('rest-timer').classList.remove('hidden');
   updateRestDisplay();
 
@@ -548,6 +569,7 @@ window.openScheduleDay = function(weekNum, dayIdx) {
 
   // Switch to today view without re-rendering it via renderToday
   activeView = 'today';
+  document.body.classList.remove('chrome-hidden');
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.view === 'today'));
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-today'));
 
@@ -800,8 +822,36 @@ function escAttr(str) {
   return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+// ===== Auto-hide chrome on scroll =====
+function initScrollHideChrome() {
+  const THRESHOLD = 12;
+  const MIN_SCROLL = 80;
+  document.querySelectorAll('.view').forEach(view => {
+    let lastTop = 0;
+    let ticking = false;
+    view.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const top = view.scrollTop;
+        const delta = top - lastTop;
+        if (Math.abs(delta) > THRESHOLD) {
+          if (delta > 0 && top > MIN_SCROLL) {
+            document.body.classList.add('chrome-hidden');
+          } else if (delta < 0) {
+            document.body.classList.remove('chrome-hidden');
+          }
+          lastTop = top;
+        }
+        ticking = false;
+      });
+    }, { passive: true });
+  });
+}
+
 // ===== Init =====
 renderToday();
+initScrollHideChrome();
 
 // Register service worker
 if ('serviceWorker' in navigator) {
