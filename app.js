@@ -579,12 +579,113 @@ function buildSessionShareText(weekNum, dayIdx, day) {
   return lines.join('\n');
 }
 
+function renderSessionGraphic(weekNum, dayIdx, day) {
+  const stats = computeWorkoutStats(weekNum, dayIdx, day);
+  const tonnage = stats.tonnage >= 1000
+    ? (stats.tonnage / 1000).toFixed(1) + 'k'
+    : Math.round(stats.tonnage).toLocaleString();
+
+  const W = 1080, H = 1080;
+  const canvas = document.createElement('canvas');
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  const bg = ctx.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, '#0A0A0A');
+  bg.addColorStop(1, '#161616');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  const glow = ctx.createRadialGradient(W / 2, 180, 20, W / 2, 180, 600);
+  glow.addColorStop(0, 'rgba(78,205,196,0.18)');
+  glow.addColorStop(1, 'rgba(78,205,196,0)');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#4ECDC4';
+  ctx.font = '700 34px -apple-system, system-ui, sans-serif';
+  ctx.fillText('SESSION COMPLETE', W / 2, 180);
+
+  ctx.fillStyle = '#F0F0F0';
+  ctx.font = '800 72px -apple-system, system-ui, sans-serif';
+  ctx.fillText(day.label, W / 2, 280);
+
+  ctx.fillStyle = '#999';
+  ctx.font = '600 28px -apple-system, system-ui, sans-serif';
+  ctx.fillText(`Week ${weekNum} · ${day.day}`, W / 2, 330);
+
+  // Stats grid: 2x2
+  const cardW = 420, cardH = 200, gap = 30;
+  const gridX = (W - (cardW * 2 + gap)) / 2;
+  const gridY = 440;
+  const cells = [
+    { value: String(stats.sets), label: 'SETS', color: '#F0F0F0' },
+    { value: String(stats.reps), label: 'REPS', color: '#F0F0F0' },
+    { value: tonnage, label: 'LBS LIFTED', color: '#F0F0F0' },
+    { value: String(stats.prs), label: 'PRS', color: stats.prs > 0 ? '#F7B731' : '#F0F0F0' },
+  ];
+  cells.forEach((c, i) => {
+    const col = i % 2, row = Math.floor(i / 2);
+    const x = gridX + col * (cardW + gap);
+    const y = gridY + row * (cardH + gap);
+    ctx.fillStyle = '#1E1E1E';
+    roundRect(ctx, x, y, cardW, cardH, 24);
+    ctx.fill();
+    ctx.strokeStyle = '#2A2A2A';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.fillStyle = c.color;
+    ctx.font = '800 84px -apple-system, system-ui, sans-serif';
+    ctx.fillText(c.value, x + cardW / 2, y + cardH / 2 + 10);
+    ctx.fillStyle = '#999';
+    ctx.font = '700 22px -apple-system, system-ui, sans-serif';
+    ctx.fillText(c.label, x + cardW / 2, y + cardH - 30);
+  });
+
+  ctx.fillStyle = '#555';
+  ctx.font = '600 24px -apple-system, system-ui, sans-serif';
+  ctx.fillText('💪 Workout Tracker', W / 2, H - 70);
+
+  return canvas;
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function canvasToBlob(canvas) {
+  return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+}
+
 async function shareSession(weekNum, dayIdx) {
   const week = PROGRAM.weeks.find(w => w.week === weekNum);
   const day = week && week.days[dayIdx];
   if (!day) return;
   const text = buildSessionShareText(weekNum, dayIdx, day);
   if (navigator.vibrate) navigator.vibrate(10);
+
+  try {
+    const canvas = renderSessionGraphic(weekNum, dayIdx, day);
+    const blob = await canvasToBlob(canvas);
+    if (blob && navigator.canShare) {
+      const file = new File([blob], 'session-complete.png', { type: 'image/png' });
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], text });
+        return;
+      }
+    }
+  } catch (err) {
+    if (err && err.name === 'AbortError') return;
+  }
+
   try {
     if (navigator.share) {
       await navigator.share({ text });
@@ -593,6 +694,7 @@ async function shareSession(weekNum, dayIdx) {
   } catch (err) {
     if (err && err.name === 'AbortError') return;
   }
+
   // iOS-friendly SMS fallback: sms:&body= works on iOS, sms:?body= on Android
   const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   const sep = ios ? '&' : '?';
