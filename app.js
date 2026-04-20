@@ -552,8 +552,51 @@ function renderWorkoutDay(container, weekNum, dayIdx, day) {
     </button>
   `;
 
+  if (complete) {
+    html += `
+      <button class="share-session-btn" onclick="shareSession(${weekNum}, ${dayIdx})">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        Share to Messages
+      </button>
+    `;
+  }
+
   container.innerHTML = html;
   attachSetListeners(container, weekNum, dayIdx, day);
+}
+
+function buildSessionShareText(weekNum, dayIdx, day) {
+  const stats = computeWorkoutStats(weekNum, dayIdx, day);
+  const tonnage = stats.tonnage >= 1000
+    ? (stats.tonnage / 1000).toFixed(1) + 'k'
+    : Math.round(stats.tonnage).toLocaleString();
+  const lines = [
+    `💪 Crushed ${day.label} — Week ${weekNum}`,
+    `• ${stats.sets} sets · ${stats.reps} reps`,
+    `• ${tonnage} lbs lifted`,
+  ];
+  if (stats.prs > 0) lines.push(`• ${stats.prs} PR${stats.prs > 1 ? 's' : ''} 🎉`);
+  return lines.join('\n');
+}
+
+async function shareSession(weekNum, dayIdx) {
+  const week = PROGRAM.weeks.find(w => w.week === weekNum);
+  const day = week && week.days[dayIdx];
+  if (!day) return;
+  const text = buildSessionShareText(weekNum, dayIdx, day);
+  if (navigator.vibrate) navigator.vibrate(10);
+  try {
+    if (navigator.share) {
+      await navigator.share({ text });
+      return;
+    }
+  } catch (err) {
+    if (err && err.name === 'AbortError') return;
+  }
+  // iOS-friendly SMS fallback: sms:&body= works on iOS, sms:?body= on Android
+  const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const sep = ios ? '&' : '?';
+  window.location.href = `sms:${sep}body=${encodeURIComponent(text)}`;
 }
 
 function getWorkoutBlocks(day) {
