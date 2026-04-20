@@ -120,6 +120,24 @@ function parseRestToSeconds(restStr) {
   return null;
 }
 
+// Sets count for an exercise. When the `sets` field is empty (common for
+// accessory / optional-bonus movements), fall back to the leading "N×…" in `reps`.
+function getEffectiveSets(ex) {
+  if (!ex || ex.isFinisher) return 0;
+  const explicit = parseInt(ex.sets);
+  if (explicit) return explicit;
+  const m = String(ex.reps || '').match(/^\s*(\d+)\s*[×x]/i);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
+// Per-set rep target extracted from the `reps` field. For accessory / bonus
+// entries like "3×10–12" this returns "10–12"; for normal entries it's unchanged.
+function getDisplayTargetReps(ex) {
+  const raw = String(ex?.reps || '');
+  const m = raw.match(/^\s*\d+\s*[×x]\s*(.+)$/i);
+  return (m ? m[1] : raw).trim();
+}
+
 function logKey(weekNum, dayIdx) {
   return `W${weekNum}-${DAY_ABBRS[dayIdx]}`;
 }
@@ -149,8 +167,7 @@ function clearLog(weekNum, dayIdx, setKey) {
 
 function countSets(day) {
   return day.exercises.filter(e => !e.isFinisher).reduce((acc, e) => {
-    const n = parseInt(e.sets) || 0;
-    return acc + n;
+    return acc + getEffectiveSets(e);
   }, 0);
 }
 
@@ -159,7 +176,7 @@ function countLoggedSets(weekNum, dayIdx, day) {
   let count = 0;
   day.exercises.forEach((ex, exIdx) => {
     if (ex.isFinisher) return;
-    const n = parseInt(ex.sets) || 0;
+    const n = getEffectiveSets(ex);
     for (let s = 0; s < n; s++) {
       if (dayLog[`${exIdx}-${s}`]) count++;
     }
@@ -196,7 +213,7 @@ function findLastLog(exName, curWeek, curDay, curExIdx, curSetIdx) {
         const ex = day.exercises[exIdx];
         const effectiveName = getSubName(wk, d, exIdx, ex.exercise);
         if (effectiveName !== exName) continue;
-        const n = parseInt(ex.sets) || 0;
+        const n = getEffectiveSets(ex);
         // Use the heaviest logged set of this exercise from that session
         let best = null;
         for (let s = 0; s < n; s++) {
@@ -239,7 +256,7 @@ function getExercisePRs(exName) {
       day.exercises.forEach((ex, exIdx) => {
         const effectiveName = getSubName(week.week, d, exIdx, ex.exercise);
         if (effectiveName !== exName) return;
-        const n = parseInt(ex.sets) || 0;
+        const n = getEffectiveSets(ex);
         for (let s = 0; s < n; s++) {
           const hit = dayLog[`${exIdx}-${s}`];
           if (!hit || !hit.r) continue;
@@ -453,7 +470,7 @@ function computeWorkoutStats(weekNum, dayIdx, day) {
   let sets = 0, reps = 0, tonnage = 0, prs = 0;
   day.exercises.forEach((ex, exIdx) => {
     if (ex.isFinisher) return;
-    const n = parseInt(ex.sets) || 0;
+    const n = getEffectiveSets(ex);
     for (let s = 0; s < n; s++) {
       const hit = dayLog[`${exIdx}-${s}`];
       if (!hit || !hit.r) continue;
@@ -576,7 +593,7 @@ function ensureOpenBlock(weekNum, dayIdx, blocks) {
 function getBlockProgress(block, dayLog) {
   let done = 0, total = 0;
   block.exercises.forEach(({ ex, exIdx }) => {
-    const n = parseInt(ex.sets) || 0;
+    const n = getEffectiveSets(ex);
     total += n;
     for (let s = 0; s < n; s++) {
       if (dayLog[`${exIdx}-${s}`]) done++;
@@ -656,7 +673,7 @@ function renderBlock(weekNum, dayIdx, block, day) {
   // Count logged sets for this block
   let blockDone = 0, blockTotal = 0;
   block.exercises.forEach(({ ex, exIdx }) => {
-    const n = parseInt(ex.sets) || 0;
+    const n = getEffectiveSets(ex);
     blockTotal += n;
     for (let s = 0; s < n; s++) {
       if (dayLog[`${exIdx}-${s}`]) blockDone++;
@@ -691,7 +708,8 @@ function renderBlock(weekNum, dayIdx, block, day) {
 }
 
 function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog, blockLabel = '') {
-  const n = parseInt(ex.sets) || 0;
+  const n = getEffectiveSets(ex);
+  const perSetReps = getDisplayTargetReps(ex);
   const notesHtml = ex.notes ? `<div class="exercise-notes">${escHtml(ex.notes)}</div>` : '';
   const bonusBadge = ex.isBonus ? '<span class="bonus-badge">Optional Bonus</span>' : '';
 
@@ -713,7 +731,7 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog, blockLabel = '') {
       <div class="set-row ${isLogged ? 'logged' : ''}"
            data-ex="${exIdx}" data-set="${s}"
            data-ex-name="${escAttr(displayName)}"
-           data-target-reps="${escAttr(ex.reps || '')}"
+           data-target-reps="${escAttr(perSetReps)}"
            data-rest="${escAttr(ex.rest || '')}"
            data-week="${weekNum}" data-day="${dayIdx}">
         <div class="set-circle">${isLogged ? '✓' : s + 1}</div>
@@ -721,7 +739,7 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog, blockLabel = '') {
           <div class="set-label">Set ${s + 1}</div>
           ${isLogged
             ? `<div class="set-logged-value">${escHtml(formatLoggedValue(logged))}</div>`
-            : `<div class="set-target">${escHtml(ex.reps || '—')} reps${ex.tempo ? ' · ' + escHtml(ex.tempo) : ''}</div>`
+            : `<div class="set-target">${escHtml(perSetReps || '—')} reps${ex.tempo ? ' · ' + escHtml(ex.tempo) : ''}</div>`
           }
         </div>
         ${prLabel ? `<span class="set-pr-badge">${prLabel}</span>` : (isLogged ? `<span class="set-edit-btn">Edit</span>` : '')}
@@ -1215,11 +1233,12 @@ window.markWorkoutDone = function(weekNum, dayIdx) {
   } else {
     day.exercises.forEach((ex, exIdx) => {
       if (ex.isFinisher) return;
-      const n = parseInt(ex.sets) || 0;
+      const n = getEffectiveSets(ex);
       const dayLog = getLog(weekNum, dayIdx);
+      const targetReps = getDisplayTargetReps(ex);
       for (let s = 0; s < n; s++) {
         const key = `${exIdx}-${s}`;
-        if (!dayLog[key]) setLog(weekNum, dayIdx, key, '', ex.reps || '');
+        if (!dayLog[key]) setLog(weekNum, dayIdx, key, '', targetReps);
       }
     });
   }
@@ -1349,7 +1368,7 @@ function findTopSetForLift(lift, dayIdx, weekNum) {
   if (matchIdx < 0) return null;
 
   // Find heaviest logged set of this exercise this week
-  const n = parseInt(matchEx.sets) || 0;
+  const n = getEffectiveSets(matchEx);
   let best = null;
   for (let s = 0; s < n; s++) {
     const hit = dayLog[`${matchIdx}-${s}`];
