@@ -549,6 +549,26 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   border: 1.5px solid rgba(78,205,196,0.3);
 }
 
+.share-session-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  margin: 0 0 16px;
+  letter-spacing: 0.01em;
+}
+
+.share-session-btn:active { background: rgba(255,255,255,0.04); }
+.share-session-btn svg { color: var(--teal); }
+
 /* ===== Empty State ===== */
 .empty-state {
   display: flex;
