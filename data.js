@@ -208,7 +208,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×8 reps  |  ~70% 1RM — controlled press, explode up. RIR 2-3.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Log meters every round.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional if strong)",
+              "sets": "3",
               "reps": "8 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -218,7 +218,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×8 reps  |  ~65% 3RM — bar speed is the goal. Reset each rep.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Log meters every round.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional if strong)",
+              "sets": "3",
               "reps": "8 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -693,7 +693,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×8 reps  |  ~72% 1RM — add 5 lb vs W1. Same effort feel.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Beat W1 distance.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "8 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -703,7 +703,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Hang Power Clean  ×8 reps  |  ~65% 3RM — same load, cleaner technique vs W1.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Beat W1 distance.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "8 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -1178,7 +1178,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Jerk  ×10 reps  |  ~70% 1RM — higher reps, keep bar speed intent.\n→ Immediately into: Air Bike (Assault/Echo) — 2 min @90-95% MHR. Log calories.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "10 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -1188,7 +1188,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×8 reps  |  ~67% 3RM — add 5 lb vs W1.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Beat W2 distance.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "8 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -1663,7 +1663,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×10 reps  |  ~72% 1RM — same as W3 but cleaner reps. This is the hardest B1 week.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Best row distance of Block 1.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "10 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -1673,7 +1673,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Hang Power Snatch (or snatch-grip high pull if technique is shaky)  ×6 reps  |  ~60% 3RM snatch — lower load than clean due to technical demand.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Best ski distance of Block 1.\n→ Rest 2 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "6 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -2148,7 +2148,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×5 reps  |  ~65% 1RM — PEAK WEEK. Easy. Save CNS for Mon/Tue.\n→ Immediately into: Row Erg — 90s @80-85% MHR. Sub-maximal effort.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -2158,7 +2158,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (light)  ×5 reps  |  ~60% 3RM — light and technical. No grinding.\n→ Immediately into: Ski Erg — 90s @80-85% MHR. Easy.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -2633,7 +2633,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press (Deload)  ×5 reps  |  ~55-60% 1RM — DELOAD. Light bar, perfect reps only.\n→ Immediately into: Row Erg — 90s @65-70% MHR. Conversational pace.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -2643,7 +2643,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (deload load)  ×5 reps  |  ~55% 3RM — DELOAD. Move well, no intensity.\n→ Immediately into: Ski Erg — 90s @65-70% MHR. Easy pace.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -3118,7 +3118,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×6 reps  |  ~77% 1RM — Block 2 strength shift. Beat B1 OHP loads.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Shorter interval, same max effort.\n→ Rest 2-3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "6 reps + cardio",
               "tempo": "20X0",
               "rest": "2-3 min",
@@ -3128,7 +3128,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×6 reps  |  ~72% 3RM — heavier than any B1 week. Strong, crisp reps.\n→ Immediately into: Ski Erg — 90s @90-95% MHR.\n→ Rest 2-3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "6 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2-3 min",
@@ -3603,7 +3603,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×6 reps  |  ~80% 1RM — add 5 lb vs W7.\n→ Immediately into: Air Bike — 90s @90-95% MHR. Log calories as new B2 benchmark.\n→ Rest 2-3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "6 reps + cardio",
               "tempo": "20X0",
               "rest": "2-3 min",
@@ -3613,7 +3613,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Hang Power Clean  ×6 reps  |  ~74% 3RM — add 5 lb vs W7.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Beat W7 distance.\n→ Rest 2-3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "6 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2-3 min",
@@ -4088,7 +4088,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Jerk  ×5 reps  |  ~82-83% 1RM — transmutation. Heavy press under fatigue.\n→ Immediately into: Row Erg — 90s @90-95% MHR.\n→ Rest 3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "3 min",
@@ -4098,7 +4098,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean + Push Press (1 clean, 1 press = 1 rep)  ×5 reps  |  ~70% 3RM clean — complex adds press demand. Manageable load.\n→ Immediately into: Ski Erg — 90s @90-95% MHR.\n→ Rest 3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "3 min",
@@ -4573,7 +4573,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×5 reps  |  ~85% 1RM — heaviest OHP of the program in IWT context.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Best row of B2.\n→ Rest 3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "3 min",
@@ -4583,7 +4583,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×5 reps  |  ~77% 3RM — heaviest clean of the program. Bar speed still the priority.\n→ Immediately into: Ski Erg — 90s @90-95% MHR. Best ski of B2.\n→ Rest 3 min before next round",
-              "sets": "2 (3 optional)",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "3 min",
@@ -5058,7 +5058,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×5 reps  |  ~65% 1RM — PEAK WEEK. Light and technical only.\n→ Immediately into: Row Erg — 90s @80% MHR. Easy.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -5068,7 +5068,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (light)  ×5 reps  |  ~60% 3RM — PEAK WEEK. Quality reps only.\n→ Immediately into: Ski Erg — 90s @80% MHR. Easy.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
@@ -5543,7 +5543,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Jerk (Deload)  ×5 reps  |  ~55% 1RM — DELOAD. Last session of the program.\n→ Immediately into: Row Erg — 90s @65% MHR. Very easy.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
@@ -5553,7 +5553,7 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (very light)  ×5 reps  |  ~50% 3RM — DELOAD. Technique only.\n→ Immediately into: Ski Erg — 90s @65% MHR. Very easy.\n→ Rest 2 min before next round",
-              "sets": "2",
+              "sets": "3",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
