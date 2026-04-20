@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#FF6B35" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=8" />
   <title>12-Week Program</title>
 </head>
 <body>
@@ -18,6 +18,7 @@
   <header id="app-header">
     <div id="header-title">12-Week Program</div>
     <div id="header-sub"></div>
+    <div id="header-streak" class="hidden" title="Workout streak"></div>
   </header>
 
   <!-- Main Content -->
@@ -63,6 +64,28 @@
             <small style="opacity:0.7">Used when an exercise has no rest specified</small>
           </label>
           <input type="range" id="setting-rest-timer" min="30" max="300" step="15" value="90" class="settings-slider" />
+        </div>
+
+        <div class="settings-row">
+          <label class="settings-label">
+            <span>Bar Weight (lbs)</span>
+            <small>For plate calculator</small>
+          </label>
+          <input type="number" id="setting-bar-weight" class="settings-input" min="0" step="5" value="45" />
+        </div>
+
+        <div class="settings-row">
+          <label class="settings-label">
+            <span>Accent Color</span>
+            <small>App theme accent</small>
+          </label>
+          <div id="accent-picker">
+            <button class="accent-swatch" data-accent="#FF6B35" style="background:#FF6B35"></button>
+            <button class="accent-swatch" data-accent="#4ECDC4" style="background:#4ECDC4"></button>
+            <button class="accent-swatch" data-accent="#A78BFA" style="background:#A78BFA"></button>
+            <button class="accent-swatch" data-accent="#34D399" style="background:#34D399"></button>
+            <button class="accent-swatch" data-accent="#F472B6" style="background:#F472B6"></button>
+          </div>
         </div>
       </div>
 
@@ -140,20 +163,50 @@
     </div>
   </div>
 
+  <!-- Exercise History Modal -->
+  <div id="hist-modal" class="hidden">
+    <div id="hist-modal-backdrop"></div>
+    <div id="hist-modal-card">
+      <div id="hist-modal-grabber"></div>
+      <div id="hist-modal-header">
+        <div id="hist-modal-title"></div>
+        <button id="btn-hist-close" aria-label="Close">×</button>
+      </div>
+      <div id="hist-modal-stats"></div>
+      <div id="hist-modal-chart-wrap">
+        <canvas id="hist-modal-chart" height="120"></canvas>
+      </div>
+      <div id="hist-modal-list"></div>
+    </div>
+  </div>
+
   <!-- Log Modal -->
   <div id="log-modal" class="hidden">
     <div id="log-modal-backdrop"></div>
     <div id="log-modal-card">
+      <div id="log-modal-grabber"></div>
       <div id="log-modal-title"></div>
       <div id="log-modal-set-label"></div>
+      <div id="log-modal-hint" class="hidden"></div>
       <div class="log-inputs">
         <div class="log-input-group">
-          <label>Weight (lbs)</label>
-          <input type="number" id="log-weight" placeholder="0" inputmode="decimal" />
+          <label>Weight (lbs) <button id="btn-plate-toggle" type="button" title="Plate calculator">🧮</button></label>
+          <div class="log-input-row">
+            <button class="log-step" data-step="weight" data-delta="-5">−5</button>
+            <button class="log-step" data-step="weight" data-delta="-2.5">−2.5</button>
+            <input type="number" id="log-weight" placeholder="0" inputmode="decimal" />
+            <button class="log-step" data-step="weight" data-delta="2.5">+2.5</button>
+            <button class="log-step" data-step="weight" data-delta="5">+5</button>
+          </div>
+          <div id="plate-popover" class="plate-popover hidden"></div>
         </div>
         <div class="log-input-group">
           <label>Reps</label>
-          <input type="number" id="log-reps" placeholder="0" inputmode="numeric" />
+          <div class="log-input-row">
+            <button class="log-step" data-step="reps" data-delta="-1">−1</button>
+            <input type="number" id="log-reps" placeholder="0" inputmode="numeric" />
+            <button class="log-step" data-step="reps" data-delta="1">+1</button>
+          </div>
         </div>
       </div>
       <div class="log-modal-actions">
@@ -164,6 +217,6 @@
   </div>
 
   <script src="data.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

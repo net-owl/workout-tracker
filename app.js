@@ -54,19 +54,56 @@ function saveTracker(t) {
   localStorage.setItem('wk_tracker', JSON.stringify(t));
 }
 
+function loadSubs() {
+  try { return JSON.parse(localStorage.getItem('wk_subs') || '{}'); }
+  catch { return {}; }
+}
+
+function saveSubs(s) {
+  localStorage.setItem('wk_subs', JSON.stringify(s));
+}
+
 // ===== App State =====
 let state = loadState();
 let logs = loadLogs();
 let tracker = loadTracker();
+let subs = loadSubs();
 
 // Defaults
 if (!state.restDuration) state.restDuration = 90;
+if (!state.barWeight) state.barWeight = 45;
+if (!state.accent) state.accent = '#FF6B35';
+
+// Plates available per side (in lbs, descending)
+const PLATE_INVENTORY = [45, 35, 25, 10, 5, 2.5];
+
+function calcPlates(totalWeight) {
+  const bar = state.barWeight || 45;
+  const perSide = (totalWeight - bar) / 2;
+  if (perSide <= 0) return null;
+  let remaining = perSide;
+  const plates = [];
+  for (const p of PLATE_INVENTORY) {
+    while (remaining + 0.001 >= p) {
+      plates.push(p);
+      remaining -= p;
+    }
+  }
+  return { plates, perSide, remaining };
+}
 
 // Active context for log modal
 let logContext = null;
 let restTimer = { interval: null, remaining: 0, total: 0 };
 // When browsing a specific workout from schedule, store it here
 let pinnedWorkout = null; // { weekNum, dayIdx }
+
+// ===== Inline SVG icons =====
+const ICONS = {
+  flame: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+  rest: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M3 18h18"/></svg>',
+  bicep: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 20a3.5 3.5 0 1 0 0-7H14a4 4 0 0 1-4-4V6a3 3 0 0 0-3-3H4"/><path d="M14 14a3 3 0 1 0-6 0v6"/></svg>',
+};
 
 // ===== Helpers =====
 function parseRestToSeconds(restStr) {
@@ -94,12 +131,14 @@ function setLog(weekNum, dayIdx, setKey, weight, reps) {
   if (!logs[k]) logs[k] = {};
   logs[k][setKey] = { w: weight, r: reps };
   saveLogs(logs);
+  invalidatePRCache();
 }
 
 function clearLog(weekNum, dayIdx, setKey) {
   const k = logKey(weekNum, dayIdx);
   if (logs[k]) delete logs[k][setKey];
   saveLogs(logs);
+  invalidatePRCache();
 }
 
 function countSets(day) {
@@ -125,6 +164,143 @@ function countLoggedSets(weekNum, dayIdx, day) {
 function isDayComplete(weekNum, dayIdx, day) {
   return countLoggedSets(weekNum, dayIdx, day) >= countSets(day);
 }
+
+// Find most recent logged set for a given exercise name, before the given (week,day,exIdx,setIdx) cursor.
+// Used to pre-fill the log modal with last-session numbers.
+function findLastLog(exName, curWeek, curDay, curExIdx, curSetIdx) {
+  if (!exName) return null;
+
+  // 1) Earlier set of the same exercise slot in the current session
+  const curLog = getLog(curWeek, curDay);
+  for (let s = curSetIdx - 1; s >= 0; s--) {
+    const hit = curLog[`${curExIdx}-${s}`];
+    if (hit && hit.r) return { w: hit.w, r: hit.r, ctx: `Set ${s + 1} this session` };
+  }
+
+  // 2) Walk backwards through prior sessions (this week earlier days, then prior weeks)
+  for (let wk = curWeek; wk >= 1; wk--) {
+    const week = PROGRAM.weeks.find(w => w.week === wk);
+    if (!week) continue;
+    const startDay = wk === curWeek ? curDay - 1 : 4;
+    for (let d = startDay; d >= 0; d--) {
+      const day = week.days[d];
+      if (!day) continue;
+      const dayLog = getLog(wk, d);
+      for (let exIdx = 0; exIdx < day.exercises.length; exIdx++) {
+        const ex = day.exercises[exIdx];
+        const effectiveName = getSubName(wk, d, exIdx, ex.exercise);
+        if (effectiveName !== exName) continue;
+        const n = parseInt(ex.sets) || 0;
+        // Use the heaviest logged set of this exercise from that session
+        let best = null;
+        for (let s = 0; s < n; s++) {
+          const hit = dayLog[`${exIdx}-${s}`];
+          if (!hit || !hit.r) continue;
+          const w = parseFloat(hit.w) || 0;
+          if (!best || w > parseFloat(best.w || 0)) best = hit;
+        }
+        if (best) return { w: best.w, r: best.r, ctx: `W${wk} ${DAY_ABBRS[d]}` };
+      }
+    }
+  }
+  return null;
+}
+
+// Haptic feedback wrapper - silent fallback if unsupported
+function vibrate(pattern) {
+  try {
+    if (navigator.vibrate) navigator.vibrate(pattern);
+  } catch (e) {}
+}
+
+// ===== PR Detection =====
+// e1RM via Brzycki, capped at r=36
+function epley1RM(w, r) {
+  if (!w || !r) return 0;
+  const reps = Math.min(parseInt(r), 36);
+  return parseFloat(w) * (36 / (37 - reps));
+}
+
+// Cache of exercise-name → ordered set list with PR flags
+let prCache = {};
+function getExercisePRs(exName) {
+  if (prCache[exName]) return prCache[exName];
+  const sets = [];
+  PROGRAM.weeks.forEach(week => {
+    week.days.forEach((day, d) => {
+      if (!day) return;
+      const dayLog = getLog(week.week, d);
+      day.exercises.forEach((ex, exIdx) => {
+        const effectiveName = getSubName(week.week, d, exIdx, ex.exercise);
+        if (effectiveName !== exName) return;
+        const n = parseInt(ex.sets) || 0;
+        for (let s = 0; s < n; s++) {
+          const hit = dayLog[`${exIdx}-${s}`];
+          if (!hit || !hit.r) continue;
+          const w = parseFloat(hit.w) || 0;
+          const r = parseInt(hit.r) || 0;
+          if (!r) continue;
+          sets.push({ wk: week.week, d, exIdx, setIdx: s, w, r, e1rm: epley1RM(w, r) });
+        }
+      });
+    });
+  });
+  // Walk chronologically (already in order: weeks 1..12, days 0..4, sets 0..n)
+  let bestE1RM = 0, bestWeight = 0;
+  const repsAtWeight = {};
+  sets.forEach(set => {
+    if (set.e1rm > bestE1RM + 0.01) { set.prE1RM = true; bestE1RM = set.e1rm; }
+    if (set.w > bestWeight + 0.01) { set.prWeight = true; bestWeight = set.w; }
+    if (set.w > 0) {
+      const key = String(set.w);
+      if (!repsAtWeight[key] || set.r > repsAtWeight[key]) {
+        if (repsAtWeight[key] !== undefined) set.prReps = true;
+        repsAtWeight[key] = set.r;
+      }
+    }
+  });
+  prCache[exName] = sets;
+  return sets;
+}
+
+function getSetPRLabel(exName, wk, d, exIdx, setIdx) {
+  const sets = getExercisePRs(exName);
+  const hit = sets.find(s => s.wk === wk && s.d === d && s.exIdx === exIdx && s.setIdx === setIdx);
+  if (!hit) return null;
+  if (hit.prE1RM) return 'PR';
+  if (hit.prWeight) return 'Heavy PR';
+  if (hit.prReps) return 'Rep PR';
+  return null;
+}
+
+function invalidatePRCache() { prCache = {}; }
+
+// ===== Exercise substitution =====
+function subKey(weekNum, dayIdx, exIdx) { return `${weekNum}-${dayIdx}-${exIdx}`; }
+
+function getSubName(weekNum, dayIdx, exIdx, originalName) {
+  const k = subKey(weekNum, dayIdx, exIdx);
+  return subs[k] || originalName;
+}
+
+function setSubName(weekNum, dayIdx, exIdx, newName, originalName) {
+  const k = subKey(weekNum, dayIdx, exIdx);
+  if (!newName || newName === originalName) {
+    delete subs[k];
+  } else {
+    subs[k] = newName;
+  }
+  saveSubs(subs);
+  invalidatePRCache();
+}
+
+window.promptSubstitute = function(weekNum, dayIdx, exIdx, originalName) {
+  const cur = getSubName(weekNum, dayIdx, exIdx, originalName);
+  const next = prompt(`Substitute exercise (leave empty to reset):\n\nOriginal: ${originalName}`, cur === originalName ? '' : cur);
+  if (next === null) return;
+  setSubName(weekNum, dayIdx, exIdx, next.trim(), originalName);
+  openScheduleDay(weekNum, dayIdx);
+};
 
 // Calculate current week/day from start date
 function getCurrentWeekDay() {
@@ -171,6 +347,55 @@ function renderView(name) {
   else if (name === 'schedule') renderSchedule();
   else if (name === 'progress') renderProgress();
   else if (name === 'settings') renderSettings();
+  updateStreakDisplay();
+}
+
+// ===== Streak =====
+// Count consecutive workout-days (Mon-Fri only) with logged sets, walking back from current/most recent program day
+function computeStreak() {
+  const cur = getCurrentWeekDay();
+  if (!cur) return 0;
+
+  // Build a flat sequence of all program days (week*5 + dayIdx)
+  let pointer;
+  if (cur.dayIdx === null) {
+    // Today is a weekend - start from Friday of current week
+    pointer = (cur.week - 1) * 5 + 4;
+  } else {
+    pointer = (cur.week - 1) * 5 + cur.dayIdx;
+    // If today's not started yet (no sets logged), start counting from yesterday
+    const todayWeek = Math.floor(pointer / 5) + 1;
+    const todayDay = pointer % 5;
+    const todayDayObj = PROGRAM.weeks.find(w => w.week === todayWeek)?.days[todayDay];
+    if (todayDayObj && countLoggedSets(todayWeek, todayDay, todayDayObj) === 0) pointer--;
+  }
+
+  let streak = 0;
+  while (pointer >= 0) {
+    const wk = Math.floor(pointer / 5) + 1;
+    const d = pointer % 5;
+    const dayObj = PROGRAM.weeks.find(w => w.week === wk)?.days[d];
+    if (!dayObj) break;
+    if (countLoggedSets(wk, d, dayObj) > 0) {
+      streak++;
+      pointer--;
+    } else {
+      break;
+    }
+  }
+  return streak;
+}
+
+function updateStreakDisplay() {
+  const el = document.getElementById('header-streak');
+  if (!el) return;
+  const s = computeStreak();
+  if (s > 0) {
+    el.innerHTML = `${ICONS.flame}<span>${s}</span>`;
+    el.classList.remove('hidden');
+  } else {
+    el.classList.add('hidden');
+  }
 }
 
 // ===== Today View =====
@@ -182,7 +407,7 @@ function renderToday() {
   if (!state.startDate) {
     noWorkout.classList.remove('hidden');
     noWorkout.innerHTML = `
-      <div class="empty-icon">💪</div>
+      <div class="empty-icon">${ICONS.bicep}</div>
       <div class="empty-title">Set Your Start Date</div>
       <div class="empty-sub">Tell us when you started Week 1 to see today's workout.</div>
       <button class="setup-cta" onclick="navigateTo('settings')">Go to Settings</button>
@@ -195,9 +420,9 @@ function renderToday() {
   if (!cur || cur.dayIdx === null) {
     noWorkout.classList.remove('hidden');
     noWorkout.innerHTML = `
-      <div class="empty-icon">🏖️</div>
+      <div class="empty-icon">${ICONS.rest}</div>
       <div class="empty-title">Rest Day</div>
-      <div class="empty-sub">No workout scheduled for today. Recover well!</div>
+      <div class="empty-sub">No workout scheduled today. Try mobility, a walk, or a light cardio session.</div>
     `;
     container.innerHTML = '';
     document.getElementById('header-sub').textContent = `Week ${cur ? cur.week : '—'} · Rest`;
@@ -215,6 +440,27 @@ function renderToday() {
   document.getElementById('header-sub').textContent = `Week ${cur.week} · ${day.day}`;
 
   renderWorkoutDay(container, cur.week, cur.dayIdx, day);
+}
+
+function computeWorkoutStats(weekNum, dayIdx, day) {
+  const dayLog = getLog(weekNum, dayIdx);
+  let sets = 0, reps = 0, tonnage = 0, prs = 0;
+  day.exercises.forEach((ex, exIdx) => {
+    if (ex.isFinisher) return;
+    const n = parseInt(ex.sets) || 0;
+    for (let s = 0; s < n; s++) {
+      const hit = dayLog[`${exIdx}-${s}`];
+      if (!hit || !hit.r) continue;
+      const w = parseFloat(hit.w) || 0;
+      const r = parseInt(hit.r) || 0;
+      sets++;
+      reps += r;
+      tonnage += w * r;
+      const label = getSetPRLabel(ex.exercise, weekNum, dayIdx, exIdx, s);
+      if (label === 'PR') prs++;
+    }
+  });
+  return { sets, reps, tonnage, prs };
 }
 
 function renderWorkoutDay(container, weekNum, dayIdx, day) {
@@ -259,6 +505,37 @@ function renderWorkoutDay(container, weekNum, dayIdx, day) {
     }
   });
 
+  // Workout summary - only when at least 1 set is logged
+  if (done > 0) {
+    const stats = computeWorkoutStats(weekNum, dayIdx, day);
+    const tonnageDisplay = stats.tonnage >= 1000
+      ? (stats.tonnage / 1000).toFixed(1) + 'k'
+      : Math.round(stats.tonnage);
+    html += `
+      <div class="workout-summary">
+        <div class="workout-summary-title">${complete ? 'Session Complete' : 'Session Progress'}</div>
+        <div class="summary-grid">
+          <div class="summary-stat">
+            <div class="summary-stat-value">${stats.sets}</div>
+            <div class="summary-stat-label">Sets</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-value">${stats.reps}</div>
+            <div class="summary-stat-label">Reps</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-value">${tonnageDisplay}</div>
+            <div class="summary-stat-label">Lbs Lifted</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-value" style="color:${stats.prs > 0 ? 'var(--deload)' : 'var(--text)'}">${stats.prs}</div>
+            <div class="summary-stat-label">PRs</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   html += `
     <button class="complete-workout-btn ${complete ? 'done' : ''}" onclick="markWorkoutDone(${weekNum}, ${dayIdx})">
       ${complete ? '✓ Workout Complete' : 'Mark Workout Complete'}
@@ -284,7 +561,8 @@ function renderBlock(weekNum, dayIdx, block, day) {
   });
 
   const isSupersetBlock = block.key.includes('SUPERSET');
-  const collapsed = block.isBonus ? 'collapsed' : '';
+  const blockComplete = blockTotal > 0 && blockDone >= blockTotal;
+  const collapsed = (block.isBonus || blockComplete) ? 'collapsed' : '';
 
   let html = `
     <div class="block-card ${collapsed}" data-block="${block.key}">
@@ -322,6 +600,9 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
   const notesHtml = ex.notes ? `<div class="exercise-notes">${escHtml(ex.notes)}</div>` : '';
   const bonusBadge = ex.isBonus ? '<span class="bonus-badge">Optional Bonus</span>' : '';
 
+  const displayName = getSubName(weekNum, dayIdx, exIdx, ex.exercise);
+  const isSubbed = displayName !== ex.exercise;
+
   let metaHtml = '';
   if (ex.reps) metaHtml += `<span class="meta-chip accent">${escHtml(ex.reps)} reps</span>`;
   if (ex.tempo) metaHtml += `<span class="meta-chip">${escHtml(ex.tempo)}</span>`;
@@ -332,10 +613,11 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
     const key = `${exIdx}-${s}`;
     const logged = dayLog[key];
     const isLogged = !!logged;
+    const prLabel = isLogged ? getSetPRLabel(displayName, weekNum, dayIdx, exIdx, s) : null;
     setsHtml += `
       <div class="set-row ${isLogged ? 'logged' : ''}"
            data-ex="${exIdx}" data-set="${s}"
-           data-ex-name="${escAttr(ex.exercise)}"
+           data-ex-name="${escAttr(displayName)}"
            data-target-reps="${escAttr(ex.reps || '')}"
            data-rest="${escAttr(ex.rest || '')}"
            data-week="${weekNum}" data-day="${dayIdx}">
@@ -347,15 +629,24 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
             : `<div class="set-target">${escHtml(ex.reps || '—')} reps${ex.tempo ? ' · ' + escHtml(ex.tempo) : ''}</div>`
           }
         </div>
-        ${isLogged ? `<span class="set-edit-btn">Edit</span>` : ''}
+        ${prLabel ? `<span class="set-pr-badge">${prLabel}</span>` : (isLogged ? `<span class="set-edit-btn">Edit</span>` : '')}
       </div>
     `;
   }
 
+  const subBadge = isSubbed
+    ? `<span class="sub-badge" title="Original: ${escAttr(ex.exercise)}">SUB</span>`
+    : '';
+  const subBtn = `<button class="sub-btn" onclick="promptSubstitute(${weekNum}, ${dayIdx}, ${exIdx}, ${JSON.stringify(ex.exercise).replace(/"/g, '&quot;')})" title="Substitute exercise" aria-label="Substitute">⇄</button>`;
+
   return `
     <div class="exercise-item">
       ${bonusBadge}
-      <div class="exercise-name">${escHtml(ex.exercise)}</div>
+      <div class="exercise-name-row">
+        <div class="exercise-name" data-ex-name="${escAttr(displayName)}">${escHtml(displayName)} ${subBadge}</div>
+        ${subBtn}
+      </div>
+      ${isSubbed ? `<div class="sub-original">was: ${escHtml(ex.exercise)}</div>` : ''}
       ${metaHtml ? `<div class="exercise-meta">${metaHtml}</div>` : ''}
       ${notesHtml}
       ${n > 0 ? `<div class="set-rows">${setsHtml}</div>` : ''}
@@ -367,7 +658,7 @@ function renderFinisher(ex) {
   return `
     <div class="finisher-card">
       <div class="finisher-header">
-        <span class="finisher-icon">🔥</span>
+        <span class="finisher-icon">${ICONS.flame}</span>
         <span class="finisher-title">Finisher</span>
       </div>
       <div class="finisher-body">${escHtml(ex.exercise)}</div>
@@ -387,6 +678,9 @@ function attachSetListeners(container, weekNum, dayIdx, day) {
       openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existing, restStr);
     });
   });
+  container.querySelectorAll('.exercise-name[data-ex-name]').forEach(el => {
+    el.addEventListener('click', () => openExerciseHistory(el.dataset.exName));
+  });
 }
 
 function toggleBlock(headerEl) {
@@ -394,9 +688,141 @@ function toggleBlock(headerEl) {
 }
 window.toggleBlock = toggleBlock;
 
+// ===== Exercise History Modal =====
+function openExerciseHistory(exName) {
+  if (!exName) return;
+  const modal = document.getElementById('hist-modal');
+  document.getElementById('hist-modal-title').textContent = exName;
+
+  const sets = getExercisePRs(exName);
+
+  // Stats
+  let bestE1RM = 0, bestWeight = 0, totalSets = sets.length;
+  sets.forEach(s => {
+    if (s.e1rm > bestE1RM) bestE1RM = s.e1rm;
+    if (s.w > bestWeight) bestWeight = s.w;
+  });
+  document.getElementById('hist-modal-stats').innerHTML = `
+    <div class="hist-stat">
+      <div class="hist-stat-value">${bestE1RM ? Math.round(bestE1RM) : '—'}</div>
+      <div class="hist-stat-label">Est 1RM</div>
+    </div>
+    <div class="hist-stat">
+      <div class="hist-stat-value">${bestWeight ? bestWeight + (bestWeight ? '' : '') : '—'}</div>
+      <div class="hist-stat-label">Top Wt</div>
+    </div>
+    <div class="hist-stat">
+      <div class="hist-stat-value">${totalSets}</div>
+      <div class="hist-stat-label">Sets Done</div>
+    </div>
+  `;
+
+  // List - newest first, group by session
+  let listHtml = '';
+  if (sets.length === 0) {
+    listHtml = '<div class="hist-empty">No history yet — log your first set to see progress.</div>';
+  } else {
+    const reversed = [...sets].reverse();
+    reversed.forEach(s => {
+      const dateLbl = `W${s.wk} ${DAY_ABBRS[s.d]}`;
+      const setLbl = `${s.w ? s.w + ' lbs' : 'BW'} × ${s.r}`;
+      const prFlag = s.prE1RM ? ' has-pr' : '';
+      const prTxt = s.prE1RM ? ' · PR' : (s.prWeight ? ' · Heavy' : (s.prReps ? ' · Reps' : ''));
+      listHtml += `
+        <div class="hist-row${prFlag}">
+          <span class="hist-row-date">${dateLbl}</span>
+          <span class="hist-row-set">${escHtml(setLbl)}</span>
+          <span class="hist-row-e1rm">e1RM ${Math.round(s.e1rm) || '—'}${prTxt}</span>
+        </div>
+      `;
+    });
+  }
+  document.getElementById('hist-modal-list').innerHTML = listHtml;
+
+  modal.classList.remove('hidden');
+  // Defer chart draw until layout
+  requestAnimationFrame(() => drawHistChart(sets));
+}
+
+function drawHistChart(sets) {
+  const canvas = document.getElementById('hist-modal-chart');
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 120 * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = 120;
+  ctx.clearRect(0, 0, W, H);
+
+  // 1 e1RM data point per session (best set of session)
+  const sessionsMap = {};
+  sets.forEach(s => {
+    const key = `${s.wk}-${s.d}`;
+    if (!sessionsMap[key] || s.e1rm > sessionsMap[key].e1rm) sessionsMap[key] = s;
+  });
+  const sessions = Object.values(sessionsMap).sort((a,b) => (a.wk - b.wk) || (a.d - b.d));
+
+  if (sessions.length < 2) {
+    ctx.fillStyle = '#666';
+    ctx.font = '12px -apple-system';
+    ctx.textAlign = 'center';
+    ctx.fillText('Need at least 2 sessions to chart', W / 2, H / 2);
+    return;
+  }
+
+  const vals = sessions.map(s => s.e1rm);
+  const min = Math.min(...vals) * 0.95;
+  const max = Math.max(...vals) * 1.05 || min + 1;
+  const xStep = sessions.length === 1 ? W / 2 : W / (sessions.length - 1);
+  const padY = 14;
+  const toY = v => H - padY - ((v - min) / (max - min)) * (H - padY * 2);
+
+  // Gradient under line
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(255,107,53,0.35)');
+  grad.addColorStop(1, 'rgba(255,107,53,0)');
+
+  ctx.beginPath();
+  sessions.forEach((s, i) => {
+    const x = i * xStep, y = toY(s.e1rm);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.lineTo((sessions.length - 1) * xStep, H);
+  ctx.lineTo(0, H);
+  ctx.closePath();
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  ctx.beginPath();
+  sessions.forEach((s, i) => {
+    const x = i * xStep, y = toY(s.e1rm);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = '#FF6B35';
+  ctx.lineWidth = 2.2;
+  ctx.stroke();
+
+  sessions.forEach((s, i) => {
+    const x = i * xStep, y = toY(s.e1rm);
+    ctx.beginPath();
+    ctx.arc(x, y, s.prE1RM ? 4.5 : 3, 0, Math.PI * 2);
+    ctx.fillStyle = s.prE1RM ? '#FFD93D' : '#FF6B35';
+    ctx.fill();
+  });
+}
+
+function closeHistModal() {
+  document.getElementById('hist-modal').classList.add('hidden');
+}
+document.getElementById('hist-modal-backdrop').addEventListener('click', closeHistModal);
+document.getElementById('btn-hist-close').addEventListener('click', closeHistModal);
+
 // ===== Log Modal =====
 function openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existing, restStr) {
-  logContext = { weekNum, dayIdx, exIdx, setIdx, restStr: restStr || '' };
+  logContext = { weekNum, dayIdx, exIdx, setIdx, restStr: restStr || '', exName };
   document.body.classList.remove('chrome-hidden');
   document.getElementById('log-modal-title').textContent = exName;
   document.getElementById('log-modal-set-label').textContent =
@@ -404,12 +830,109 @@ function openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existi
 
   const wInput = document.getElementById('log-weight');
   const rInput = document.getElementById('log-reps');
-  wInput.value = existing ? existing.w : '';
-  rInput.value = existing ? existing.r : '';
+  const hint = document.getElementById('log-modal-hint');
+
+  let last = null;
+  if (existing) {
+    wInput.value = existing.w || '';
+    rInput.value = existing.r || '';
+    hint.classList.add('hidden');
+  } else {
+    last = findLastLog(exName, weekNum, dayIdx, exIdx, setIdx);
+    if (last) {
+      wInput.value = last.w || '';
+      rInput.value = last.r || '';
+      const wTxt = last.w ? `${last.w} lbs × ${last.r}` : `BW × ${last.r}`;
+      hint.innerHTML = `<span class="hint-label">Last</span><span class="hint-value">${escHtml(wTxt)}</span> <span style="color:var(--text-muted);font-weight:500">· ${escHtml(last.ctx)}</span>`;
+      hint.classList.remove('hidden');
+    } else {
+      wInput.value = '';
+      rInput.value = '';
+      hint.classList.add('hidden');
+    }
+  }
+
+  // Reset modal transform (in case of prior swipe)
+  document.getElementById('log-modal-card').style.transform = '';
 
   document.getElementById('log-modal').classList.remove('hidden');
-  setTimeout(() => wInput.focus(), 100);
+  // Don't auto-focus when we already have prefilled values — keeps keyboard hidden so user can use steppers
+  setTimeout(() => {
+    if (!wInput.value && !rInput.value) wInput.focus();
+  }, 100);
 }
+
+// ===== Plate Calculator =====
+function renderPlatePopover() {
+  const popover = document.getElementById('plate-popover');
+  const wInput = document.getElementById('log-weight');
+  const total = parseFloat(wInput.value) || 0;
+  if (!total) {
+    popover.innerHTML = '<div class="plate-popover-title">Enter a weight</div>';
+    return;
+  }
+  const result = calcPlates(total);
+  if (!result || result.perSide <= 0) {
+    popover.innerHTML = `<div class="plate-popover-title">Bar Only</div><div class="plate-formula">${state.barWeight} lb bar</div>`;
+    return;
+  }
+  const chips = result.plates.map(p => `<span class="plate-chip">${p}</span>`).join('');
+  const reach = result.plates.reduce((a,b) => a+b, 0) * 2 + state.barWeight;
+  const note = result.remaining > 0.01
+    ? `<div class="plate-formula" style="color:var(--danger)">Best fit: ${reach} lbs (off by ${(result.remaining*2).toFixed(1)})</div>`
+    : `<div class="plate-formula">${state.barWeight} bar + ${result.perSide} per side</div>`;
+  popover.innerHTML = `
+    <div class="plate-popover-title">Per Side</div>
+    <div class="plate-list">${chips}</div>
+    ${note}
+  `;
+}
+
+document.getElementById('btn-plate-toggle').addEventListener('click', e => {
+  e.preventDefault();
+  e.stopPropagation();
+  const popover = document.getElementById('plate-popover');
+  if (popover.classList.contains('hidden')) {
+    renderPlatePopover();
+    popover.classList.remove('hidden');
+  } else {
+    popover.classList.add('hidden');
+  }
+});
+
+document.getElementById('log-weight').addEventListener('input', () => {
+  const popover = document.getElementById('plate-popover');
+  if (!popover.classList.contains('hidden')) renderPlatePopover();
+});
+
+// Stepper buttons (+/- on weight & reps)
+document.querySelectorAll('.log-step').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.step === 'weight' ? 'log-weight' : 'log-reps';
+    const input = document.getElementById(target);
+    const delta = parseFloat(btn.dataset.delta);
+    const cur = parseFloat(input.value) || 0;
+    let next = cur + delta;
+    if (next < 0) next = 0;
+    // Round reps to integer
+    if (btn.dataset.step === 'reps') next = Math.round(next);
+    // Trim trailing .0
+    input.value = Number.isInteger(next) ? String(next) : String(next);
+    vibrate(8);
+    if (btn.dataset.step === 'weight') {
+      const popover = document.getElementById('plate-popover');
+      if (!popover.classList.contains('hidden')) renderPlatePopover();
+    }
+  });
+});
+
+// Enter key in reps field saves; Enter in weight moves to reps
+document.getElementById('log-weight').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); document.getElementById('log-reps').focus(); }
+});
+document.getElementById('log-reps').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-log-save').click(); }
+});
 
 document.getElementById('log-modal-backdrop').addEventListener('click', closeLogModal);
 document.getElementById('btn-log-cancel').addEventListener('click', closeLogModal);
@@ -422,6 +945,7 @@ document.getElementById('btn-log-save').addEventListener('click', () => {
 
   const { weekNum, dayIdx, exIdx, setIdx, restStr } = logContext;
   setLog(weekNum, dayIdx, `${exIdx}-${setIdx}`, w, r);
+  vibrate(15);
   const restSecs = parseRestToSeconds(restStr);
   closeLogModal();
   startRestTimer(restSecs ?? state.restDuration);
@@ -430,9 +954,46 @@ document.getElementById('btn-log-save').addEventListener('click', () => {
 });
 
 function closeLogModal() {
+  const card = document.getElementById('log-modal-card');
+  card.style.transform = '';
   document.getElementById('log-modal').classList.add('hidden');
+  document.getElementById('plate-popover').classList.add('hidden');
   logContext = null;
 }
+
+// Swipe-down to dismiss log modal
+(function setupSwipeDismiss() {
+  const card = document.getElementById('log-modal-card');
+  let startY = null, currentY = 0;
+
+  card.addEventListener('touchstart', e => {
+    // Only swipe if touching the card itself / grabber area, not interactive elements
+    const tag = e.target.tagName.toLowerCase();
+    if (tag === 'input' || tag === 'button') return;
+    startY = e.touches[0].clientY;
+    currentY = 0;
+    card.style.transition = 'none';
+  }, { passive: true });
+
+  card.addEventListener('touchmove', e => {
+    if (startY === null) return;
+    currentY = e.touches[0].clientY - startY;
+    if (currentY < 0) currentY = 0;
+    card.style.transform = `translateY(${currentY}px)`;
+  }, { passive: true });
+
+  card.addEventListener('touchend', () => {
+    if (startY === null) return;
+    card.style.transition = 'transform 0.2s ease';
+    if (currentY > 110) {
+      closeLogModal();
+    } else {
+      card.style.transform = '';
+    }
+    startY = null;
+    currentY = 0;
+  }, { passive: true });
+})();
 
 // ===== Rest Timer =====
 function startRestTimer(durationSeconds) {
@@ -449,9 +1010,14 @@ function startRestTimer(durationSeconds) {
 
   restTimer.interval = setInterval(() => {
     restTimer.remaining--;
+    if (restTimer.remaining === 10) {
+      // 10s warning - 3 short pulses
+      vibrate([60, 60, 60, 60, 60]);
+    }
     if (restTimer.remaining <= 0) {
       clearInterval(restTimer.interval);
       document.getElementById('rest-timer').classList.add('hidden');
+      vibrate([200, 80, 200]);
       try { new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAA==').play(); } catch(e) {}
     } else {
       updateRestDisplay();
@@ -551,7 +1117,10 @@ function renderSchedule() {
     else block2Html += weekHtml;
   });
 
+  const jumpBtn = cur ? `<button id="btn-jump-current" onclick="jumpToCurrentWeek()">Jump to Week ${cur.week}</button>` : '';
+
   html = `
+    ${jumpBtn}
     <div class="schedule-block-label">Block 1 — Weeks 1–6</div>
     ${block1Html}
     <div class="schedule-block-label">Block 2 — Weeks 7–12</div>
@@ -560,6 +1129,14 @@ function renderSchedule() {
 
   container.innerHTML = html;
 }
+
+window.jumpToCurrentWeek = function() {
+  const cur = getCurrentWeekDay();
+  if (!cur) return;
+  const target = document.querySelector('.schedule-day-btn.current-day') ||
+    document.querySelectorAll('.schedule-week')[cur.week - 1];
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+};
 
 window.openScheduleDay = function(weekNum, dayIdx) {
   const week = PROGRAM.weeks.find(w => w.week === weekNum);
@@ -579,28 +1156,79 @@ window.openScheduleDay = function(weekNum, dayIdx) {
 };
 
 // ===== Progress View =====
+// Map tracker lift labels → keyword + day index for auto-population from logs
+const TRACKER_MATCHERS = {
+  'Bench Press (Mon Heavy)': { keywords: ['Barbell Bench Press'], dayIdx: 0 },
+  'Back Squat (Tue Heavy)': { keywords: ['Back Squat'], dayIdx: 1, exclude: ['Front', 'Bulgarian', 'Goblet', 'Split', 'Pistol', 'Box'] },
+  'OHP (Wed)': { keywords: ['Overhead Press', 'OHP', 'Standing Press'], dayIdx: 2 },
+  'Weighted Pull-Up (Thu Heavy)': { keywords: ['Weighted Pull-Up', 'Weighted Pull Up', 'Weighted Chin'], dayIdx: 3 },
+  'Deadlift (Fri Heavy)': { keywords: ['Conventional Deadlift', 'Deadlift'], dayIdx: 4, exclude: ['RDL', 'Romanian', 'Sumo', 'Stiff'] },
+  'Row — Light (Mon)': { keywords: ['Row'], dayIdx: 0, exclude: ['Pull', 'Apart'] },
+  'RDL — Light (Tue)': { keywords: ['RDL', 'Romanian Deadlift'], dayIdx: 1 },
+  'Incline Press — Light (Thu)': { keywords: ['Incline'], dayIdx: 3 },
+  'Front Squat/Variation — Light (Fri)': { keywords: ['Front Squat', 'Goblet', 'Bulgarian'], dayIdx: 4 },
+};
+
+function findTopSetForLift(lift, dayIdx, weekNum) {
+  const matcher = TRACKER_MATCHERS[lift];
+  if (!matcher) return null;
+  const week = PROGRAM.weeks.find(w => w.week === weekNum);
+  if (!week) return null;
+  const day = week.days[dayIdx];
+  if (!day) return null;
+  const dayLog = getLog(weekNum, dayIdx);
+
+  // Find the first matching exercise slot (priority by keyword order)
+  let matchIdx = -1, matchEx = null;
+  for (const kw of matcher.keywords) {
+    const idx = day.exercises.findIndex(ex => {
+      if (!ex.exercise.toLowerCase().includes(kw.toLowerCase())) return false;
+      if (matcher.exclude && matcher.exclude.some(ex2 => ex.exercise.toLowerCase().includes(ex2.toLowerCase()))) return false;
+      return true;
+    });
+    if (idx >= 0) { matchIdx = idx; matchEx = day.exercises[idx]; break; }
+  }
+  if (matchIdx < 0) return null;
+
+  // Find heaviest logged set of this exercise this week
+  const n = parseInt(matchEx.sets) || 0;
+  let best = null;
+  for (let s = 0; s < n; s++) {
+    const hit = dayLog[`${matchIdx}-${s}`];
+    if (!hit || !hit.r) continue;
+    const w = parseFloat(hit.w) || 0;
+    if (!best || w > parseFloat(best.w || 0)) best = hit;
+  }
+  if (!best || !best.r) return null;
+  return best.w ? `${best.w}×${best.r}` : `BW×${best.r}`;
+}
+
 function renderProgress() {
   const container = document.getElementById('progress-content');
   const trackerData = loadTracker();
 
-  let html = `<p class="progress-intro">Log your top working set each week for your main lifts. Use "weight×reps" format (e.g. 185×5).</p>`;
+  let html = `<p class="progress-intro">Auto-filled from your logs. Tap any cell to override.</p>`;
 
   PROGRAM.tracker.lifts.forEach(({ lift, day }) => {
     const deloadCells = DELOAD_WEEKS;
+    const matcher = TRACKER_MATCHERS[lift];
     let inputsHtml = '';
     for (let w = 1; w <= 12; w++) {
       const tKey = `W${w}-${lift}`;
-      const val = trackerData[tKey] || '';
+      const manual = trackerData[tKey];
+      const auto = matcher ? findTopSetForLift(lift, matcher.dayIdx, w) : null;
+      const val = manual !== undefined ? manual : (auto || '');
+      const isAuto = !manual && auto;
       const isDeload = deloadCells.includes(w);
       inputsHtml += `
         <div class="tracker-week-cell">
           <span class="tracker-week-num">W${w}</span>
-          <input class="tracker-week-input ${isDeload ? 'deload-week' : ''}"
+          <input class="tracker-week-input ${isDeload ? 'deload-week' : ''} ${isAuto ? 'auto-filled' : ''}"
                  type="text" inputmode="text"
                  placeholder="${isDeload ? 'D' : '—'}"
                  value="${escAttr(val)}"
                  data-lift="${escAttr(lift)}" data-week="${w}"
-                 title="Week ${w}${isDeload ? ' (Deload)' : ''}" />
+                 title="Week ${w}${isDeload ? ' (Deload)' : ''}${isAuto ? ' · auto from logs' : ''}" />
         </div>
       `;
     }
@@ -719,6 +1347,48 @@ function renderSettings() {
   const restInput = document.getElementById('setting-rest-timer');
   restInput.value = state.restDuration || 90;
   updateRestLabel();
+
+  const barInput = document.getElementById('setting-bar-weight');
+  if (barInput) barInput.value = state.barWeight || 45;
+
+  // Highlight selected accent swatch
+  document.querySelectorAll('.accent-swatch').forEach(sw => {
+    sw.classList.toggle('selected', sw.dataset.accent === state.accent);
+  });
+}
+
+// Accent color application
+function applyAccent(color) {
+  document.documentElement.style.setProperty('--accent', color);
+  // Build dim variant by appending alpha
+  // Convert hex to rgb for the dim version
+  const hex = color.replace('#', '');
+  const r = parseInt(hex.substr(0,2),16), g = parseInt(hex.substr(2,2),16), b = parseInt(hex.substr(4,2),16);
+  document.documentElement.style.setProperty('--accent-dim', `rgba(${r},${g},${b},0.15)`);
+  // Update theme-color meta
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', color);
+}
+
+document.querySelectorAll('.accent-swatch').forEach(sw => {
+  sw.addEventListener('click', () => {
+    const color = sw.dataset.accent;
+    state.accent = color;
+    saveState(state);
+    applyAccent(color);
+    renderSettings();
+  });
+});
+
+const barInputEl = document.getElementById('setting-bar-weight');
+if (barInputEl) {
+  barInputEl.addEventListener('change', e => {
+    const v = parseFloat(e.target.value);
+    if (Number.isFinite(v) && v >= 0) {
+      state.barWeight = v;
+      saveState(state);
+    }
+  });
 }
 
 document.getElementById('setting-start-date').addEventListener('change', e => {
@@ -758,11 +1428,12 @@ document.getElementById('btn-reset-tracker').addEventListener('click', () => {
 // ===== Export / Import =====
 document.getElementById('btn-export').addEventListener('click', () => {
   const backup = {
-    version: 1,
+    version: 2,
     exportedAt: new Date().toISOString(),
     wk_state: loadState(),
     wk_logs: loadLogs(),
     wk_tracker: loadTracker(),
+    wk_subs: loadSubs(),
   };
   const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
@@ -786,10 +1457,14 @@ document.getElementById('btn-import').addEventListener('change', e => {
       if (data.wk_state) saveState(data.wk_state);
       if (data.wk_logs) saveLogs(data.wk_logs);
       if (data.wk_tracker) saveTracker(data.wk_tracker);
+      if (data.wk_subs) saveSubs(data.wk_subs);
       // Reload in-memory state
       state = loadState();
       logs = loadLogs();
       tracker = loadTracker();
+      subs = loadSubs();
+      invalidatePRCache();
+      applyAccent(state.accent || '#FF6B35');
       setImportStatus('✓ Data restored successfully', 'success');
       renderView(activeView);
     } catch (err) {
@@ -879,9 +1554,51 @@ function initScrollHideChrome() {
   });
 }
 
+// ===== Wake Lock =====
+let wakeLock = null;
+
+async function requestWakeLock() {
+  if (!('wakeLock' in navigator)) return;
+  try {
+    if (wakeLock) return;
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => { wakeLock = null; });
+  } catch (e) {
+    wakeLock = null;
+  }
+}
+
+async function releaseWakeLock() {
+  if (wakeLock) {
+    try { await wakeLock.release(); } catch (e) {}
+    wakeLock = null;
+  }
+}
+
+// Re-acquire when page becomes visible (e.g. after device sleep)
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && activeView === 'today') {
+    requestWakeLock();
+  }
+});
+
+// ===== Persistent storage =====
+async function requestPersistentStorage() {
+  if (navigator.storage && navigator.storage.persist) {
+    try {
+      const already = await navigator.storage.persisted();
+      if (!already) await navigator.storage.persist();
+    } catch (e) {}
+  }
+}
+
 // ===== Init =====
+applyAccent(state.accent || '#FF6B35');
 renderToday();
 initScrollHideChrome();
+updateStreakDisplay();
+requestPersistentStorage();
+requestWakeLock();
 
 // Register service worker
 if ('serviceWorker' in navigator) {
