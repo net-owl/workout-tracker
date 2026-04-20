@@ -36,37 +36,37 @@ const PROGRAM = {
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Pair with A2.",
+              "notes": "Horizontal push (upper pec angle).",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Banded Push-Up",
+              "exercise": "Banded Pull-Apart",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "2011",
+              "rest": "90s",
+              "notes": "Vertical/scap plane pull, AMRAP.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette / DB-Handle Push-Up",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
-              "rest": "90s",
-              "notes": "Band across back, max reps.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Chest Fly (mid)",
-              "sets": "3",
-              "reps": "15",
-              "tempo": "2011",
               "rest": "60s",
-              "notes": "Squeeze 1 sec.",
+              "notes": "Horizontal push, deficit ROM.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Lat Pulldown (wide grip)",
+              "exercise": "One-Arm DB Row (bench)",
               "sets": "3",
-              "reps": "12",
-              "tempo": "2011",
+              "reps": "8-10",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Drive elbows down.",
+              "notes": "Horizontal pull.",
               "isBonus": false
             },
             {
@@ -134,37 +134,37 @@ const PROGRAM = {
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Quad bias. Pair with A2.",
+              "notes": "Bilateral, knee-dominant quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Walking Lunge",
-              "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "20 steps.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Lying Hamstring Curl",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "Squeeze top.",
+              "rest": "90s",
+              "notes": "Knee-flexion hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Goblet Squat",
+              "exercise": "DB Walking Lunge",
               "sets": "3",
               "reps": "8-10",
               "tempo": "2010",
+              "rest": "60s",
+              "notes": "Unilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Single-Leg DB Romanian Deadlift",
+              "sets": "3",
+              "reps": "12",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Upright torso.",
+              "notes": "Hip-extension hamstring, unilateral.",
               "isBonus": false
             },
             {
@@ -227,22 +227,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Face Pull (rope)",
+              "exercise": "Face Pull (rope, high)",
               "sets": "3",
               "reps": "15",
               "tempo": "2012",
               "rest": "45s",
-              "notes": "Pair with A2.",
+              "notes": "Horizontal pull / rear delt.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pike Push-Up",
+              "exercise": "Parallette Pike Push-Up",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "Max reps, shoulder-dominant.",
+              "notes": "Vertical push, AMRAP.",
               "isBonus": false
             },
             {
@@ -252,7 +252,7 @@ const PROGRAM = {
               "reps": "8-10",
               "tempo": "2010",
               "rest": "45s",
-              "notes": "Brachialis.",
+              "notes": "Elbow flexion, brachialis.",
               "isBonus": false
             },
             {
@@ -262,7 +262,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "3010",
               "rest": "75s",
-              "notes": "Full stretch.",
+              "notes": "Elbow extension, overhead.",
               "isBonus": false
             },
             {
@@ -325,42 +325,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Single-Arm DB Row",
+              "exercise": "One-Arm DB Row",
               "sets": "3",
               "reps": "8-10",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Pair with A2.",
+              "notes": "Horizontal pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Push-Up",
+              "exercise": "Parallette Pike Push-Up",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "AMRAP strict.",
+              "notes": "Vertical push, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Seated Cable Row (close grip)",
+              "exercise": "Pull-Up (wide grip)",
               "sets": "3",
-              "reps": "8-10",
-              "tempo": "2011",
+              "reps": "AMRAP",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Mid-back.",
+              "notes": "Vertical pull, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Cable Chest Fly",
+              "exercise": "Parallette Push-Up (deficit)",
               "sets": "3",
-              "reps": "15",
-              "tempo": "2011",
+              "reps": "AMRAP",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Squeeze.",
+              "notes": "Horizontal push, AMRAP.",
               "isBonus": false
             },
             {
@@ -423,42 +423,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Romanian Deadlift (DB)",
               "sets": "3",
               "reps": "8-10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Pair with A2.",
+              "notes": "Hip-ext hamstring, bilateral.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Reverse Lunge",
+              "exercise": "BW Reverse Lunge",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "20 total.",
+              "notes": "Unilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Hip Thrust (BB)",
+              "exercise": "Lying Hamstring Curl",
               "sets": "3",
               "reps": "12",
-              "tempo": "2012",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "2 sec lockout hold.",
+              "notes": "Knee-flex hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Leg Press (moderate)",
+              "exercise": "Leg Press (bilateral)",
               "sets": "3",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Quad finisher.",
+              "notes": "Bilateral quad.",
               "isBonus": false
             },
             {
@@ -526,42 +526,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Low-Incline DB Press",
+              "exercise": "Flat DB Press",
               "sets": "3",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "15-20° incline.",
+              "notes": "Horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Push-Up (feet elevated)",
+              "exercise": "Inverted Row (parallettes or BB)",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "2011",
+              "rest": "90s",
+              "notes": "Horizontal pull, AMRAP.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Pike Push-Up",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical push.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Wide-Grip Pull-Up",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Max reps.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Pec Deck",
-              "sets": "3",
-              "reps": "12",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "2 sec squeeze.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Single-Arm DB Row",
-              "sets": "3",
-              "reps": "8-10",
-              "tempo": "2011",
-              "rest": "90s",
-              "notes": "Per side.",
+              "notes": "Vertical pull, AMRAP.",
               "isBonus": false
             },
             {
@@ -624,42 +624,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Hack Squat",
+              "exercise": "DB Bulgarian Split Squat",
               "sets": "3",
               "reps": "8-10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Quad-dominant.",
+              "notes": "Unilateral quad-dominant.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Reverse Lunge (BW)",
-              "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "20 total.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Seated Hamstring Curl",
+              "exercise": "BB Good Morning (light)",
               "sets": "3",
               "reps": "12",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "2 sec hold.",
+              "tempo": "3010",
+              "rest": "90s",
+              "notes": "Hip-extension hamstring, bilateral.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Step-Up (DB, high box)",
+              "exercise": "Hack Squat",
               "sets": "3",
               "reps": "8-10",
               "tempo": "2010",
+              "rest": "60s",
+              "notes": "Bilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Nordic Curl (eccentric)",
+              "sets": "3",
+              "reps": "8-10",
+              "tempo": "5010",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Knee-flexion hamstring, eccentric focus.",
               "isBonus": false
             },
             {
@@ -722,42 +722,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Reverse Pec Deck",
+              "exercise": "Reverse Pec Deck (or DB rear fly)",
               "sets": "3",
               "reps": "15",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Pure rear delt.",
+              "notes": "Horizontal pull / rear delt.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Chin-Up (AMRAP)",
+              "exercise": "Parallette Handstand Hold/Walk-Out",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "2010",
+              "tempo": "-",
               "rest": "75s",
-              "notes": "Supinated, max strict.",
+              "notes": "Vertical push isometric, 20-40s.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Cable Curl (straight bar)",
+              "exercise": "BB Cable Curl (straight bar)",
               "sets": "3",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "45s",
-              "notes": "Pin elbows.",
+              "notes": "Elbow flexion, bilateral.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Tricep Pushdown (V-bar)",
+              "exercise": "Close-Grip Push-Up (parallettes)",
               "sets": "3",
-              "reps": "12",
-              "tempo": "2011",
+              "reps": "AMRAP",
+              "tempo": "2010",
               "rest": "75s",
-              "notes": "Squeeze lockout.",
+              "notes": "Elbow extension, AMRAP.",
               "isBonus": false
             },
             {
@@ -820,42 +820,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Chest-Supported Row (DB)",
+              "exercise": "Neutral-Grip Pull-Up (weighted if poss)",
               "sets": "3",
-              "reps": "8-10",
+              "reps": "AMRAP",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "No body english.",
+              "notes": "Vertical pull, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Ring or TRX Push-Up",
+              "exercise": "Flat DB Press",
               "sets": "3",
-              "reps": "AMRAP",
+              "reps": "8-10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Instability, AMRAP.",
+              "notes": "Horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Lat Pulldown (close neutral grip)",
+              "exercise": "Seal Row (BB)",
+              "sets": "3",
+              "reps": "8-10",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Horizontal pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Banded DB Overhead Press",
               "sets": "3",
               "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Stretch lats.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Incline DB Fly",
-              "sets": "3",
-              "reps": "15",
-              "tempo": "3011",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Stretch emphasis.",
+              "notes": "Vertical push, band tension.",
               "isBonus": false
             },
             {
@@ -918,42 +918,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Stiff-Leg Deadlift (DB)",
+              "exercise": "Stiff-Leg BB Deadlift",
               "sets": "3",
               "reps": "8-10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Strict hinge.",
+              "notes": "Hip-ext hamstring, strict.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Sissy Squat (BW)",
+              "exercise": "Parallette Sissy Squat (BW)",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "Quad stretch.",
+              "notes": "BW quad stretch.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Single-Leg Hip Thrust",
-              "sets": "3",
-              "reps": "12",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "Per leg.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Goblet Squat",
+              "exercise": "Nordic Curl (eccentric)",
               "sets": "3",
               "reps": "8-10",
-              "tempo": "2010",
+              "tempo": "5010",
+              "rest": "60s",
+              "notes": "Knee-flex hamstring, eccentric.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Goblet Squat (paused)",
+              "sets": "3",
+              "reps": "8-10",
+              "tempo": "3210",
               "rest": "90s",
-              "notes": "Upright torso.",
+              "notes": "Bilateral quad, 2s bottom.",
               "isBonus": false
             },
             {
@@ -1021,42 +1021,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Flat DB Press",
+              "exercise": "Low-Incline BB Bench",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Neutral grip option.",
+              "notes": "Horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Archer Push-Up",
+              "exercise": "Pull-Up (neutral or chin)",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "3010",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Per side, shift weight.",
+              "notes": "Vertical pull, AMRAP strict.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Cable High-to-Low Fly",
-              "sets": "3",
-              "reps": "12-15",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Lower pec emphasis.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Chest-Supported Row (DB)",
+              "exercise": "Banded Overhead DB Press",
               "sets": "3",
               "reps": "10",
-              "tempo": "2011",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical push, band on DBs for top tension.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Seal Row (BB on bench)",
+              "sets": "3",
+              "reps": "10",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Squeeze blades.",
+              "notes": "Horizontal pull, no body english.",
               "isBonus": false
             },
             {
@@ -1119,42 +1119,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Front-Foot-Elevated Split Squat",
+              "exercise": "Front-Foot-Elevated Split Squat (DB)",
               "sets": "3",
               "reps": "10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Quad emphasis.",
+              "notes": "Unilateral quad emphasis.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Squat Jump",
-              "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "10X0",
-              "rest": "90s",
-              "notes": "12 explosive reps.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Lying Hamstring Curl",
+              "exercise": "Seated Hamstring Curl",
               "sets": "3",
               "reps": "12-15",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Higher reps.",
+              "tempo": "2012",
+              "rest": "90s",
+              "notes": "Knee-flexion hamstring, lengthened.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Belt Squat (or Hack Squat)",
+              "exercise": "Parallette Sissy Squat (BW)",
               "sets": "3",
-              "reps": "10",
+              "reps": "AMRAP",
               "tempo": "3010",
+              "rest": "60s",
+              "notes": "BW quad stretch.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Kettlebell Swing",
+              "sets": "3",
+              "reps": "12-15",
+              "tempo": "-",
               "rest": "90s",
-              "notes": "Quad-focused.",
+              "notes": "Hip-extension hamstring, ballistic.",
               "isBonus": false
             },
             {
@@ -1217,22 +1217,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Cable Face Pull (high)",
+              "exercise": "Band Pull-Apart (overhead variation)",
               "sets": "3",
               "reps": "15",
-              "tempo": "2012",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "High anchor.",
+              "notes": "Scap plane pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Handstand Hold (wall)",
+              "exercise": "Banded DB Overhead Press",
               "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "-",
+              "reps": "12-15",
+              "tempo": "2010",
               "rest": "75s",
-              "notes": "20-40 sec. Shoulder stability.",
+              "notes": "Vertical push, band over DBs.",
               "isBonus": false
             },
             {
@@ -1242,7 +1242,7 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "3010",
               "rest": "45s",
-              "notes": "Stretch position.",
+              "notes": "Elbow flexion, stretched.",
               "isBonus": false
             },
             {
@@ -1252,7 +1252,7 @@ const PROGRAM = {
               "reps": "12-15",
               "tempo": "3010",
               "rest": "75s",
-              "notes": "To forehead.",
+              "notes": "Elbow extension, supine.",
               "isBonus": false
             },
             {
@@ -1315,42 +1315,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pendlay Row",
+              "exercise": "Pendlay Row (explosive)",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Reset each rep, explode.",
+              "notes": "Horizontal pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Inverted Row (BW)",
+              "exercise": "Parallette HSPU (or pike)",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "AMRAP, feet on ground.",
+              "notes": "Vertical push, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Lat Pulldown (V-handle)",
+              "exercise": "Chin-Up (weighted if poss)",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical pull, AMRAP.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Incline DB Fly-Press",
               "sets": "3",
               "reps": "12-15",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "Squeeze elbows down.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Crossover (mid)",
-              "sets": "3",
-              "reps": "15",
-              "tempo": "2011",
               "rest": "90s",
-              "notes": "Squeeze midline.",
+              "notes": "Horizontal push-stretch hybrid.",
               "isBonus": false
             },
             {
@@ -1418,37 +1418,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Wide grip.",
+              "notes": "Hip-ext hamstring + upper back.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Jumping Lunge",
+              "exercise": "BW Bulgarian Split Squat",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "10X0",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "20 total, explosive.",
+              "notes": "Unilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "B-Stance Hip Thrust",
+              "exercise": "Seated Hamstring Curl",
               "sets": "3",
               "reps": "12-15",
               "tempo": "2012",
               "rest": "60s",
-              "notes": "One foot assisting.",
+              "notes": "Knee-flex hamstring, lengthened.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Step-Up (DB)",
+              "exercise": "DB Step-Up (high box)",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Unilateral quad.",
               "isBonus": false
             },
             {
@@ -1516,42 +1516,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Incline Smith Press",
+              "exercise": "DB Bench Press (neutral grip)",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Stable groove.",
+              "notes": "Horizontal push, shoulder-friendly.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pike Push-Up",
+              "exercise": "Chest-Supported DB Row (prone)",
+              "sets": "3",
+              "reps": "10",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Horizontal pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Handstand Push-Up (or pike)",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "60s",
+              "notes": "Vertical push, AMRAP.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Banded Pull-Up (assisted or resisted)",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Shoulder-dominant push-up.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Standing Cable Fly (low-to-high)",
-              "sets": "3",
-              "reps": "12-15",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Upper pec finisher.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Inverted Row (BB, feet elevated)",
-              "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "2011",
-              "rest": "90s",
-              "notes": "Max reps.",
+              "notes": "Vertical pull, AMRAP.",
               "isBonus": false
             },
             {
@@ -1619,37 +1619,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "¼ + full = 1 rep.",
+              "notes": "Bilateral quad, partial-full.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Bulgarian Split Squat",
+              "exercise": "Lying Hamstring Curl",
               "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "2010",
+              "reps": "12-15",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "Per leg, max 20.",
+              "notes": "Knee-flexion hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Nordic Curl (or GHR)",
+              "exercise": "DB Step-Up (high box)",
               "sets": "3",
               "reps": "10",
-              "tempo": "3010",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Eccentric focus.",
+              "notes": "Unilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Goblet Lunge (walking)",
+              "exercise": "Stiff-Leg DB Deadlift",
               "sets": "3",
-              "reps": "10",
-              "tempo": "2010",
+              "reps": "12-15",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Hip-extension hamstring.",
               "isBonus": false
             },
             {
@@ -1712,42 +1712,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bent-Over Reverse Fly (DB)",
+              "exercise": "Chest-Supported DB Rear Fly",
               "sets": "3",
               "reps": "15",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Strict.",
+              "notes": "Horizontal pull / rear delt.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Inverted Row (feet elevated)",
+              "exercise": "Parallette Pseudo-Planche Push-Up",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "2011",
+              "tempo": "3010",
               "rest": "75s",
-              "notes": "AMRAP, high elbows.",
+              "notes": "Angled vertical push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Preacher Curl (EZ-bar)",
+              "exercise": "Preacher Curl (EZ or DB)",
               "sets": "3",
               "reps": "10",
               "tempo": "3010",
               "rest": "45s",
-              "notes": "Full stretch.",
+              "notes": "Elbow flexion, stretched.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Rope Pushdown",
+              "exercise": "Tricep Rope Pushdown",
               "sets": "3",
               "reps": "12-15",
               "tempo": "2011",
               "rest": "75s",
-              "notes": "Spread at bottom.",
+              "notes": "Elbow extension, pronated.",
               "isBonus": false
             },
             {
@@ -1815,37 +1815,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Per side, lat thickness.",
+              "notes": "Horizontal pull per side.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pull-Up (AMRAP)",
+              "exercise": "DB Overhead Press (seated)",
               "sets": "3",
-              "reps": "AMRAP",
+              "reps": "10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Strict max reps.",
+              "notes": "Vertical push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "T-Bar Row",
+              "exercise": "Weighted Pull-Up (strict)",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Mid-back.",
+              "notes": "Vertical pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Fly (flat)",
+              "exercise": "Cable Fly (mid)",
               "sets": "3",
               "reps": "15",
-              "tempo": "3011",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "Stretch.",
+              "notes": "Horizontal push adduction.",
               "isBonus": false
             },
             {
@@ -1908,42 +1908,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Romanian Deadlift (paused)",
+              "exercise": "Single-Leg DB RDL",
               "sets": "3",
-              "reps": "10",
-              "tempo": "3110",
+              "reps": "12-15",
+              "tempo": "3010",
               "rest": "60s",
-              "notes": "1 sec pause shin.",
+              "notes": "Hip-ext hamstring, unilateral.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "BW Bulgarian Split Squat",
-              "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "Per leg, AMRAP 20.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Hip Thrust (heavy)",
-              "sets": "3",
-              "reps": "12-15",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "Push weight.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Goblet Lunge",
+              "exercise": "Hack Squat",
               "sets": "3",
               "reps": "10",
-              "tempo": "2010",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Bilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Banded Good Morning",
+              "sets": "3",
+              "reps": "12-15",
+              "tempo": "3010",
+              "rest": "60s",
+              "notes": "Hip-ext, band overload at top.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Pistol Squat (assisted)",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "90s",
+              "notes": "Unilateral BW quad.",
               "isBonus": false
             },
             {
@@ -2011,42 +2011,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Weighted Dip",
+              "exercise": "Weighted Dip (chest lean)",
               "sets": "4",
               "reps": "8",
-              "tempo": "3010",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Lean forward. Add weight.",
+              "notes": "Angled push (chest-forward dip).",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Banded Push-Up",
+              "exercise": "Meadows Row (single-arm BB)",
+              "sets": "4",
+              "reps": "8",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Horizontal pull per side.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Banded Push-Up (heavy band)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "2010",
-              "rest": "90s",
-              "notes": "Add band, max reps.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Machine Chest Press",
-              "sets": "4",
-              "reps": "10",
-              "tempo": "2011",
               "rest": "60s",
-              "notes": "Push weight.",
+              "notes": "Horizontal push, max reps.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Single-Arm Cable Row",
+              "exercise": "Weighted Pull-Up (cluster 3+3+3, 15s rest)",
               "sets": "4",
               "reps": "8",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Per side, rotation.",
+              "notes": "Vertical pull.",
               "isBonus": false
             },
             {
@@ -2114,37 +2114,37 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "3210",
               "rest": "60s",
-              "notes": "2 sec bottom.",
+              "notes": "Bilateral quad, 2s bottom.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Sissy Squat (BW)",
+              "exercise": "Nordic Curl",
+              "sets": "4",
+              "reps": "8",
+              "tempo": "3010",
+              "rest": "90s",
+              "notes": "Knee-flexion hamstring.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "BW Pistol Squat (assisted)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "3010",
-              "rest": "90s",
-              "notes": "Quad stretch, max reps.",
+              "rest": "60s",
+              "notes": "Unilateral quad, BW.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Seated Hamstring Curl",
+              "exercise": "Back Extension (weighted)",
               "sets": "4",
               "reps": "10",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "2 sec hold.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "DB Bulgarian Split Squat",
-              "sets": "4",
-              "reps": "8",
-              "tempo": "2010",
+              "tempo": "3011",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Hip-extension hamstring.",
               "isBonus": false
             },
             {
@@ -2207,22 +2207,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "DB Lateral Raise (heavy partials)",
+              "exercise": "Cable Face Pull → External Rotation",
               "sets": "4",
-              "reps": "10",
-              "tempo": "2010",
+              "reps": "12",
+              "tempo": "2012",
               "rest": "45s",
-              "notes": "Side delt.",
+              "notes": "Pull + cuff work.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pike Push-Up (feet elevated)",
+              "exercise": "Parallette HSPU (or Pike HSPU)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "More vertical, AMRAP.",
+              "notes": "Vertical push, AMRAP.",
               "isBonus": false
             },
             {
@@ -2232,17 +2232,17 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "2010",
               "rest": "45s",
-              "notes": "Hammer grip.",
+              "notes": "Elbow flexion, neutral.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Close-Grip Push-Up",
+              "exercise": "Diamond Parallette Push-Up",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "AMRAP, tricep focus.",
+              "notes": "Elbow extension, AMRAP.",
               "isBonus": false
             },
             {
@@ -2305,42 +2305,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Seal Row (BB)",
+              "exercise": "T-Bar Row",
               "sets": "4",
               "reps": "8",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Bench supported.",
+              "notes": "Horizontal pull, heavy.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Weighted Pull-Up (cluster)",
+              "exercise": "Parallette HSPU (deficit)",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "90s",
+              "notes": "Vertical push, extra ROM.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Weighted Pull-Up (cluster 3+3+3)",
+              "sets": "4",
+              "reps": "8",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical pull, cluster.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Weighted Parallette Dip",
               "sets": "4",
               "reps": "8",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "4+4+4, 15s rest.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Chest-Supported T-Bar",
-              "sets": "4",
-              "reps": "8",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "No cheat.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Low Cable Fly (upper pec)",
-              "sets": "4",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "90s",
-              "notes": "Low-to-high.",
+              "notes": "Angled push.",
               "isBonus": false
             },
             {
@@ -2408,37 +2408,37 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Easier on back.",
+              "notes": "Hip-ext hamstring, trap bar.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pistol Squat (assisted)",
+              "exercise": "Leg Press (1.25 reps)",
+              "sets": "4",
+              "reps": "8",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Bilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Lying Hamstring Curl (heavy)",
+              "sets": "4",
+              "reps": "10",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Knee-flex hamstring.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Sissy Squat (weighted)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "Per leg, TRX OK.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Glute Ham Raise (weighted)",
-              "sets": "4",
-              "reps": "8",
-              "tempo": "3010",
-              "rest": "60s",
-              "notes": "Plate on chest.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Front-Foot-Elevated Split Squat",
-              "sets": "4",
-              "reps": "8",
-              "tempo": "3010",
-              "rest": "90s",
-              "notes": "Quad emphasis.",
+              "notes": "BW+plate quad stretch.",
               "isBonus": false
             },
             {
@@ -2511,37 +2511,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "DELOAD — light.",
+              "notes": "DELOAD — light horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Push-Up",
+              "exercise": "Inverted Row (BW)",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2011",
+              "rest": "90s",
+              "notes": "Submaximal horizontal pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pike Push-Up",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "BW vertical push.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pull-Up (BW)",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "BW only, submaximal.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Fly",
-              "sets": "2",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Light.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Row",
-              "sets": "2",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "90s",
-              "notes": "Light.",
+              "notes": "Submaximal vertical pull.",
               "isBonus": false
             },
             {
@@ -2609,37 +2609,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "DELOAD — light.",
+              "notes": "DELOAD — bilateral quad, light.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Squat",
-              "sets": "2",
-              "reps": "AMRAP-2",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "BW only.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Lying Hamstring Curl",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
-              "rest": "60s",
+              "rest": "90s",
               "notes": "Light.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Lunge",
+              "exercise": "BW Reverse Lunge",
               "sets": "2",
-              "reps": "10",
+              "reps": "AMRAP-2",
               "tempo": "2010",
+              "rest": "60s",
+              "notes": "Submaximal unilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Bodyweight Good Morning",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Light.",
+              "notes": "Hip-extension, light.",
               "isBonus": false
             },
             {
@@ -2712,12 +2712,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Push-Up",
+              "exercise": "Pike Push-Up",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "BW, submaximal.",
+              "notes": "BW vertical push.",
               "isBonus": false
             },
             {
@@ -2727,7 +2727,7 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Light.",
+              "notes": "Light elbow flexion.",
               "isBonus": false
             },
             {
@@ -2737,7 +2737,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "2011",
               "rest": "75s",
-              "notes": "Light.",
+              "notes": "Light elbow extension.",
               "isBonus": false
             },
             {
@@ -2800,42 +2800,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "DB Row",
-              "sets": "2",
-              "reps": "10",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "DELOAD — light.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET A",
               "exercise": "Inverted Row (BW)",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Submaximal.",
+              "notes": "Submaximal horizontal pull.",
               "isBonus": false
             },
             {
-              "block": "SUPERSET B",
-              "exercise": "Cable Row",
+              "block": "SUPERSET A",
+              "exercise": "DB Overhead Press (light)",
               "sets": "2",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Light.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Fly",
-              "sets": "2",
-              "reps": "15",
-              "tempo": "2011",
+              "reps": "10",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Light.",
+              "notes": "DELOAD — vertical push.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pull-Up (BW)",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Submaximal vertical pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Push-Up (parallettes)",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Submaximal horizontal push.",
               "isBonus": false
             },
             {
@@ -2898,42 +2898,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Romanian Deadlift (light)",
               "sets": "2",
               "reps": "10",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "DELOAD — light.",
+              "notes": "DELOAD — hip-ext.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Squat",
+              "exercise": "BW Squat",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "BW.",
+              "notes": "Submaximal bilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Hip Thrust",
+              "exercise": "Lying Hamstring Curl",
               "sets": "2",
               "reps": "12",
-              "tempo": "2012",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Light.",
+              "notes": "Light knee-flex.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Lunge",
+              "exercise": "BW Lunge",
               "sets": "2",
-              "reps": "10",
+              "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Light.",
+              "notes": "Submaximal unilateral quad.",
               "isBonus": false
             },
             {
@@ -2991,52 +2991,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Incline Barbell Press",
+              "exercise": "Incline BB Bench (paused)",
+              "sets": "3",
+              "reps": "10",
+              "tempo": "3110",
+              "rest": "60s",
+              "notes": "Horizontal push, 1s chest pause.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET A",
+              "exercise": "Kroc Row (heavy DB)",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
-              "rest": "60s",
-              "notes": "Mid-incline.",
+              "rest": "90s",
+              "notes": "Horizontal pull, heavy and fast.",
               "isBonus": false
             },
             {
-              "block": "SUPERSET A",
-              "exercise": "Ring Push-Up (or TRX)",
+              "block": "SUPERSET B",
+              "exercise": "Parallette Pseudo-Planche Push-Up",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "Instability challenge.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Pec Deck",
-              "sets": "3",
-              "reps": "12",
-              "tempo": "2012",
+              "tempo": "3010",
               "rest": "60s",
-              "notes": "2 sec squeeze.",
+              "notes": "Vertical/angled push, lean forward.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Meadows Row (single arm BB)",
+              "exercise": "Band-Assisted One-Arm Pull-Up Negative",
               "sets": "3",
-              "reps": "10",
-              "tempo": "2010",
+              "reps": "AMRAP",
+              "tempo": "5010",
               "rest": "90s",
-              "notes": "Per side.",
+              "notes": "Vertical pull, 5s eccentric.",
               "isBonus": false
             },
             {
@@ -3089,12 +3089,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -3104,37 +3104,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Moderate-heavy.",
+              "notes": "Bilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
+              "exercise": "Seated Hamstring Curl",
+              "sets": "3",
+              "reps": "12",
+              "tempo": "2012",
+              "rest": "90s",
+              "notes": "Knee-flexion hamstring.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
               "exercise": "Jumping Lunge",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "10X0",
-              "rest": "90s",
-              "notes": "20 total, explosive.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Glute Ham Raise",
-              "sets": "3",
-              "reps": "10",
-              "tempo": "3010",
               "rest": "60s",
-              "notes": "Eccentric-only OK.",
+              "notes": "Unilateral explosive quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Goblet Squat (paused)",
+              "exercise": "Banded Good Morning",
               "sets": "3",
-              "reps": "10",
-              "tempo": "3210",
+              "reps": "12",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "2 sec pause bottom.",
+              "notes": "Hip-extension, band tension.",
               "isBonus": false
             },
             {
@@ -3197,42 +3197,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Cable Y-Raise",
+              "exercise": "Cable Y-Raise (lower trap)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Lower trap.",
+              "notes": "Scap plane pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Chin-Up (weighted if possible)",
+              "exercise": "Banded Push-Up (parallettes)",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "AMRAP or weighted 6-8.",
+              "notes": "Horizontal push, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Spider Curl",
+              "exercise": "Spider Curl (DB)",
               "sets": "3",
               "reps": "10",
               "tempo": "3010",
               "rest": "45s",
-              "notes": "Arms hang.",
+              "notes": "Elbow flexion, arms-down stretch.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Overhead Tricep Extension (DB, single arm)",
+              "exercise": "Overhead DB Tricep Ext (single arm)",
               "sets": "3",
               "reps": "12",
               "tempo": "3010",
               "rest": "75s",
-              "notes": "Per side.",
+              "notes": "Elbow extension, stretched.",
               "isBonus": false
             },
             {
@@ -3285,12 +3285,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -3300,37 +3300,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Underhand.",
+              "notes": "Horizontal pull, underhand.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Wide-Grip Pull-Up",
+              "exercise": "Parallette HSPU",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "AMRAP, lat width.",
+              "notes": "Vertical push, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Seated Cable Row (V-bar)",
+              "exercise": "Wide-Grip Pull-Up (weighted)",
               "sets": "3",
-              "reps": "10",
-              "tempo": "2011",
+              "reps": "AMRAP",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Squeeze.",
+              "notes": "Vertical pull, width focus.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Pec Deck",
+              "exercise": "Low-Incline DB Press",
               "sets": "3",
-              "reps": "15",
-              "tempo": "2012",
+              "reps": "12",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "2 sec squeeze.",
+              "notes": "Horizontal push.",
               "isBonus": false
             },
             {
@@ -3383,52 +3383,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Stiff-Leg Deadlift (BB)",
+              "exercise": "Stiff-Leg BB Deadlift",
               "sets": "3",
               "reps": "10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Strict.",
+              "notes": "Hip-ext hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Squat Jump",
+              "exercise": "Jumping Lunge",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "10X0",
               "rest": "90s",
-              "notes": "12 explosive.",
+              "notes": "Unilateral explosive quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Hip Thrust (single-leg, weighted)",
+              "exercise": "Nordic Curl (slow ecc)",
               "sets": "3",
-              "reps": "12",
-              "tempo": "2012",
+              "reps": "10",
+              "tempo": "5010",
               "rest": "60s",
-              "notes": "Per leg.",
+              "notes": "Knee-flex hamstring, 5s down.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Hack Squat",
+              "exercise": "Hack Squat (moderate)",
               "sets": "3",
               "reps": "10",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "Quad focus.",
+              "notes": "Bilateral quad.",
               "isBonus": false
             },
             {
@@ -3486,52 +3486,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Flat DB Press (paused)",
+              "exercise": "Flat DB Press (floor press variation)",
               "sets": "3",
               "reps": "10",
-              "tempo": "3110",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "1 sec pause chest.",
+              "notes": "Horizontal push, floor stops elbow.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Deficit Push-Up (hands on DBs)",
+              "exercise": "Seal Row",
               "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "3010",
+              "reps": "10",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Extra ROM, max reps.",
+              "notes": "Horizontal pull, fully supported.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "High Cable Fly",
-              "sets": "3",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Crossover at midline.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Pull-Up (weighted if possible)",
+              "exercise": "Band-Resisted Push-Up (parallettes)",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical/scap-heavy push, AMRAP.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Chin-Up (weighted)",
+              "sets": "3",
+              "reps": "10",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Wide grip, max.",
+              "notes": "Vertical pull.",
               "isBonus": false
             },
             {
@@ -3584,12 +3584,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -3599,37 +3599,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Higher foot placement.",
+              "notes": "Bilateral, glute/ham bias cue, still quad-priority.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "BW Pistol Squat (assisted)",
-              "sets": "3",
-              "reps": "AMRAP",
-              "tempo": "3010",
-              "rest": "90s",
-              "notes": "Per leg, TRX assist OK.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Lying Hamstring Curl (1.5 reps)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "½ + full = 1.",
+              "rest": "90s",
+              "notes": "Knee-flexion, half+full.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Step-Up (heavy DB)",
+              "exercise": "BW Pistol Squat",
               "sets": "3",
-              "reps": "10",
-              "tempo": "2010",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "60s",
+              "notes": "Unilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "KB Single-Leg RDL",
+              "sets": "3",
+              "reps": "12",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Unilateral hip-extension hamstring.",
               "isBonus": false
             },
             {
@@ -3697,27 +3697,27 @@ const PROGRAM = {
               "reps": "15",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Push weight.",
+              "notes": "Horizontal rear-delt pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Diamond Push-Up",
+              "exercise": "Parallette Dip (upright torso)",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "AMRAP, tricep focus.",
+              "notes": "Vertical push, AMRAP.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Cable Curl (rope)",
+              "exercise": "Cable Curl (rope, spread at top)",
               "sets": "3",
               "reps": "10",
               "tempo": "2010",
               "rest": "45s",
-              "notes": "Spread rope at top.",
+              "notes": "Elbow flexion.",
               "isBonus": false
             },
             {
@@ -3727,7 +3727,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "2011",
               "rest": "75s",
-              "notes": "Squeeze lockout.",
+              "notes": "Elbow extension, humerus locked.",
               "isBonus": false
             },
             {
@@ -3780,52 +3780,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Chest-Supported Row (paused)",
+              "exercise": "Chest-Supported BB Row (paused)",
               "sets": "3",
               "reps": "10",
               "tempo": "2110",
               "rest": "60s",
-              "notes": "1 sec pause top.",
+              "notes": "Horizontal pull, 1s top pause.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Deficit Push-Up (on DBs)",
+              "exercise": "Standing DB Push Press",
+              "sets": "3",
+              "reps": "10",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Vertical push with leg drive.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Neutral-Grip Chin-Up",
+              "sets": "3",
+              "reps": "AMRAP",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical pull, AMRAP.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Deficit Push-Up",
               "sets": "3",
               "reps": "AMRAP",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "AMRAP, extra ROM.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Neutral-Grip Pulldown",
-              "sets": "3",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Drive elbows down.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "High Cable Fly (upper pec)",
-              "sets": "3",
-              "reps": "15",
-              "tempo": "2011",
-              "rest": "90s",
-              "notes": "Crossover.",
+              "notes": "Horizontal push, extra ROM.",
               "isBonus": false
             },
             {
@@ -3878,12 +3878,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Block 2 — add weight vs Block 1. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Block 2 — add weight vs Block 1. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -3893,37 +3893,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Extra ROM.",
+              "notes": "Hip-ext hamstring, extra ROM.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Reverse Lunge (BW, deficit)",
+              "exercise": "BW Pistol Squat",
               "sets": "3",
               "reps": "AMRAP",
-              "tempo": "2010",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Front foot on plate.",
+              "notes": "Unilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "B-Stance Hip Thrust",
+              "exercise": "Seated Hamstring Curl (1.5 reps)",
               "sets": "3",
               "reps": "12",
-              "tempo": "2012",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Per leg.",
+              "notes": "Knee-flex, half+full.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Walking Lunge (DB)",
+              "exercise": "DB Bulgarian Split Squat (paused)",
               "sets": "3",
               "reps": "10",
-              "tempo": "2010",
+              "tempo": "3210",
               "rest": "90s",
-              "notes": "Per leg.",
+              "notes": "Unilateral quad, 2s bottom.",
               "isBonus": false
             },
             {
@@ -3981,52 +3981,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Moderate-heavy. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Incline DB Press",
+              "exercise": "Incline DB Press (heavy)",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Heavy DBs.",
+              "notes": "Horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Banded Push-Up (max reps)",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "Heavy band.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Crossover (mid)",
-              "sets": "4",
-              "reps": "12",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "2 sec squeeze.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "T-Bar Row",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Heavy.",
+              "notes": "Horizontal pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Handstand Push-Up",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical push, AMRAP (or pike sub).",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Weighted Pull-Up",
+              "sets": "4",
+              "reps": "8-10",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Vertical pull.",
               "isBonus": false
             },
             {
@@ -4079,12 +4079,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Moderate-heavy. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -4094,37 +4094,37 @@ const PROGRAM = {
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Push weight.",
+              "notes": "Bilateral quad, back-friendly.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Squat Jump",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "10X0",
-              "rest": "90s",
-              "notes": "15 explosive.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Nordic Curl",
               "sets": "4",
               "reps": "8-10",
               "tempo": "3010",
-              "rest": "60s",
-              "notes": "Tempo focus.",
+              "rest": "90s",
+              "notes": "Knee-flexion hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Walking Lunge (DB)",
+              "exercise": "DB Walking Lunge (long stride)",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2010",
+              "rest": "60s",
+              "notes": "Unilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Stiff-Leg BB Deadlift",
+              "sets": "4",
+              "reps": "12",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Long stride.",
+              "notes": "Hip-extension hamstring.",
               "isBonus": false
             },
             {
@@ -4187,42 +4187,42 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Cable Face Pull",
+              "exercise": "Cable Rear Delt Row (high elbow)",
               "sets": "4",
               "reps": "15",
-              "tempo": "2012",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "External rotation.",
+              "notes": "Horizontal rear-delt pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pseudo Planche Push-Up",
+              "exercise": "Parallette HSPU (deficit)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "3010",
               "rest": "75s",
-              "notes": "Hands at hips, lean forward.",
+              "notes": "Vertical push, extra ROM.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Concentration Curl (DB)",
+              "exercise": "Concentration Curl",
               "sets": "4",
               "reps": "8-10",
               "tempo": "3010",
               "rest": "45s",
-              "notes": "Per arm.",
+              "notes": "Elbow flexion, per arm.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Dip (AMRAP)",
+              "exercise": "Weighted Parallette Dip",
               "sets": "4",
-              "reps": "AMRAP",
+              "reps": "8-10",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "Upright torso.",
+              "notes": "Elbow extension, upright.",
               "isBonus": false
             },
             {
@@ -4275,12 +4275,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Moderate-heavy. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -4290,37 +4290,37 @@ const PROGRAM = {
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Push weight.",
+              "notes": "Horizontal pull.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Chin-Up (weighted, cluster)",
+              "exercise": "Banded DB Overhead Press",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "3+3+3, 20s rest.",
+              "notes": "Vertical push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "T-Bar Row (heavy)",
+              "exercise": "Weighted Chin-Up (cluster)",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Heavy.",
+              "notes": "Vertical pull, 3+3+3.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Fly (stretch focus)",
+              "exercise": "Parallette Push-Up (slow eccentric)",
               "sets": "4",
-              "reps": "15",
-              "tempo": "3011",
+              "reps": "AMRAP",
+              "tempo": "5010",
               "rest": "90s",
-              "notes": "Deep stretch.",
+              "notes": "Horizontal push, 5s down.",
               "isBonus": false
             },
             {
@@ -4373,52 +4373,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Moderate-heavy. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Moderate-heavy. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Snatch-Grip Deadlift",
+              "exercise": "Snatch-Grip Deadlift (light)",
               "sets": "4",
               "reps": "8-10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Posterior chain.",
+              "notes": "Hip-ext + posterior chain.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Sissy Squat (weighted if possible)",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "3010",
-              "rest": "90s",
-              "notes": "Plate held.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Hip Thrust (drop set last)",
-              "sets": "4",
-              "reps": "12",
-              "tempo": "2012",
-              "rest": "60s",
-              "notes": "Drop set final.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Belt Squat",
+              "exercise": "Belt Squat (heavy)",
               "sets": "4",
               "reps": "8-10",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "Quad.",
+              "notes": "Bilateral quad, back-friendly.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Nordic Curl (BW)",
+              "sets": "4",
+              "reps": "8-10",
+              "tempo": "3010",
+              "rest": "60s",
+              "notes": "Knee-flex hamstring.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette Sissy Squat (weighted)",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "90s",
+              "notes": "Quad stretch.",
               "isBonus": false
             },
             {
@@ -4476,12 +4476,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -4491,37 +4491,37 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Heavy, drop to BW last set.",
+              "notes": "Angled push, drop to BW.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Plyo Push-Up",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "10X0",
-              "rest": "90s",
-              "notes": "6-8 explosive reps.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Machine Incline Press",
-              "sets": "4",
-              "reps": "10-12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Heavier load.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Chest-Supported Row (heavy)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Push weight.",
+              "notes": "Horizontal pull, explosive.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Plyo Push-Up (clap or hand release)",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "10X0",
+              "rest": "60s",
+              "notes": "Horizontal explosive push.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pull-Up (weighted, drop to BW last)",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Vertical pull.",
               "isBonus": false
             },
             {
@@ -4574,12 +4574,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -4589,37 +4589,37 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Drop set on last set.",
+              "notes": "Bilateral quad, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Sissy Squat (weighted)",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "3010",
-              "rest": "90s",
-              "notes": "Plate if possible.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Seated Hamstring Curl",
               "sets": "4",
               "reps": "10-12",
               "tempo": "2012",
-              "rest": "60s",
-              "notes": "2 sec hold.",
+              "rest": "90s",
+              "notes": "Knee-flexion hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Bulgarian Split Squat (paused)",
+              "exercise": "Parallette Sissy Squat (weighted)",
               "sets": "4",
-              "reps": "8",
-              "tempo": "3210",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "60s",
+              "notes": "Quad stretch, plate held.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Single-Leg Back Extension",
+              "sets": "4",
+              "reps": "10-12",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "2 sec bottom.",
+              "notes": "Hip-extension hamstring, unilateral.",
               "isBonus": false
             },
             {
@@ -4682,22 +4682,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "DB Lateral Raise (drop set last)",
+              "exercise": "Band Pull-Apart (drop tension last)",
               "sets": "4",
-              "reps": "10-12",
+              "reps": "12-15",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Drop on final.",
+              "notes": "Scap plane pull, drop set.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Handstand Push-Up (wall)",
+              "exercise": "Parallette HSPU → Pike (mech drop)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "AMRAP or neg only.",
+              "notes": "Vertical push, failure drop.",
               "isBonus": false
             },
             {
@@ -4707,17 +4707,17 @@ const PROGRAM = {
               "reps": "10-12",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "7+7+7.",
+              "notes": "7 lower + 7 upper + 7 full.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Weighted Dip",
+              "exercise": "Close-Grip Bench → Parallette Dip (mech drop)",
               "sets": "4",
               "reps": "8",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "Upright torso.",
+              "notes": "Elbow extension drop.",
               "isBonus": false
             },
             {
@@ -4770,12 +4770,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -4785,37 +4785,37 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Drop set final.",
+              "notes": "Horizontal pull, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Pull-Up (drop set: weighted → BW)",
+              "exercise": "Parallette HSPU (drop to pike)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Weighted to failure, drop weight.",
+              "notes": "Vertical push, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Lat Pulldown (drop set last)",
+              "exercise": "Pull-Up (weighted → BW drop)",
               "sets": "4",
-              "reps": "10-12",
-              "tempo": "2011",
+              "reps": "AMRAP",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Drop set final.",
+              "notes": "Vertical pull, drop weight at failure.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Machine Chest Press",
+              "exercise": "Cable Fly (drop set last)",
               "sets": "4",
               "reps": "12-15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Higher reps.",
+              "notes": "Horizontal push, drop final.",
               "isBonus": false
             },
             {
@@ -4868,12 +4868,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "4",
               "reps": "8",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Push weight, still RPE 7-8. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Push weight, still RPE 7-8. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -4883,37 +4883,37 @@ const PROGRAM = {
               "reps": "8",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Push weight.",
+              "notes": "Hip-ext hamstring.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "BW Pistol Squat",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "3010",
-              "rest": "90s",
-              "notes": "Per leg.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Hip Thrust (paused at top)",
-              "sets": "4",
-              "reps": "10-12",
-              "tempo": "2014",
-              "rest": "60s",
-              "notes": "4 sec hold.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "DB Bulgarian Split Squat (paused)",
+              "exercise": "Leg Press (drop set last)",
               "sets": "4",
               "reps": "8",
-              "tempo": "3210",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "2 sec bottom.",
+              "notes": "Bilateral quad, drop final.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Lying Hamstring Curl (drop set last)",
+              "sets": "4",
+              "reps": "10-12",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Knee-flex, drop final.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Deficit DB Reverse Lunge",
+              "sets": "4",
+              "reps": "8",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Unilateral quad, front foot on plate.",
               "isBonus": false
             },
             {
@@ -4971,12 +4971,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "Drop set on final set. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -4986,37 +4986,37 @@ const PROGRAM = {
               "reps": "6-8 (drop set last)",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Floor stops elbows.",
+              "notes": "Horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Banded Push-Up → Push-Up (mech drop)",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "To failure banded, drop band, continue.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Fly (drop set last)",
-              "sets": "4",
-              "reps": "10",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Drop set last.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Seal Row (heavy)",
+              "exercise": "Meadows Row (drop set last)",
               "sets": "4",
               "reps": "6-8 (drop set last)",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Bench-supported.",
+              "notes": "Horizontal pull per side, drop set.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Parallette HSPU → Pike Push-Up (mech drop)",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Vertical push, failure drop.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Archer Pull-Up",
+              "sets": "4",
+              "reps": "AMRAP",
+              "tempo": "3010",
+              "rest": "90s",
+              "notes": "Vertical pull, unilateral bias.",
               "isBonus": false
             },
             {
@@ -5069,12 +5069,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "Drop set on final set. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -5084,37 +5084,37 @@ const PROGRAM = {
               "reps": "6-8 (drop set last)",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Drop set last set.",
+              "notes": "Bilateral quad, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Plyo Box Jump",
-              "sets": "4",
-              "reps": "AMRAP",
-              "tempo": "10X0",
-              "rest": "90s",
-              "notes": "8 reps, full reset.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Lying Hamstring Curl (drop set last)",
               "sets": "4",
               "reps": "10",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "Drop set last.",
+              "rest": "90s",
+              "notes": "Knee-flexion, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Reverse Lunge (DB, deficit)",
+              "exercise": "Box Jump",
               "sets": "4",
-              "reps": "6-8 (drop set last)",
-              "tempo": "2010",
+              "reps": "AMRAP",
+              "tempo": "10X0",
+              "rest": "60s",
+              "notes": "Explosive quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "KB Swing (heavy)",
+              "sets": "4",
+              "reps": "10",
+              "tempo": "-",
               "rest": "90s",
-              "notes": "Front foot on plate.",
+              "notes": "Hip-extension, ballistic.",
               "isBonus": false
             },
             {
@@ -5177,22 +5177,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bent-Over Reverse Fly (drop set last)",
+              "exercise": "Chest-Supported DB Rear Fly (drop set last)",
               "sets": "4",
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Drop set last.",
+              "notes": "Horizontal pull, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Archer Pull-Up",
+              "exercise": "Archer Parallette Push-Up",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "3010",
               "rest": "75s",
-              "notes": "Per side, hard progression.",
+              "notes": "Unilateral push.",
               "isBonus": false
             },
             {
@@ -5202,17 +5202,17 @@ const PROGRAM = {
               "reps": "6-8 (drop set last)",
               "tempo": "2010",
               "rest": "45s",
-              "notes": "Drop set last.",
+              "notes": "Elbow flexion, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Diamond Push-Up → Push-Up (mech drop)",
+              "exercise": "Diamond Push-Up → Standard (mech drop)",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "Diamond to failure, open to standard.",
+              "notes": "Elbow extension drop.",
               "isBonus": false
             },
             {
@@ -5265,12 +5265,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep chest work. Control, full ROM.",
+              "notes": "Drop set on final set. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -5280,37 +5280,37 @@ const PROGRAM = {
               "reps": "6-8 (drop set last)",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Push weight.",
+              "notes": "Horizontal pull, supported heavy.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Weighted Pull-Up → BW AMRAP",
+              "exercise": "DB Push Jerk",
               "sets": "4",
               "reps": "6-8 (drop set last)",
-              "tempo": "2010",
+              "tempo": "10X0",
               "rest": "90s",
-              "notes": "Heavy 3, then BW AMRAP.",
+              "notes": "Vertical push, explosive.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Chest-Supported T-Bar (drop set last)",
+              "exercise": "Archer Pull-Up",
               "sets": "4",
-              "reps": "6-8 (drop set last)",
-              "tempo": "2010",
+              "reps": "AMRAP",
+              "tempo": "3010",
               "rest": "60s",
-              "notes": "Drop set last.",
+              "notes": "Vertical pull, unilateral bias.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Cable Pullover (rope)",
+              "exercise": "Plyo Parallette Push-Up",
               "sets": "4",
-              "reps": "12",
-              "tempo": "3011",
+              "reps": "AMRAP",
+              "tempo": "10X0",
               "rest": "90s",
-              "notes": "Slow eccentric.",
+              "notes": "Horizontal push, explosive.",
               "isBonus": false
             },
             {
@@ -5363,12 +5363,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "4",
               "reps": "8 + drop set last",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Drop set on final set. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "Drop set on final set. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
@@ -5378,37 +5378,37 @@ const PROGRAM = {
               "reps": "6-8 (drop set last)",
               "tempo": "3010",
               "rest": "60s",
-              "notes": "Drop set last.",
+              "notes": "Hip-ext hamstring, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Plyo Box Jump",
+              "exercise": "Box Jump",
               "sets": "4",
               "reps": "AMRAP",
               "tempo": "10X0",
               "rest": "90s",
-              "notes": "8 reps, full reset.",
+              "notes": "Bilateral explosive quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Hip Thrust (heavy 6 → AMRAP 15)",
+              "exercise": "Seated Hamstring Curl (drop set last)",
               "sets": "4",
               "reps": "10",
               "tempo": "2012",
               "rest": "60s",
-              "notes": "Heavy then drop.",
+              "notes": "Knee-flex, drop final.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Leg Press (drop set last)",
+              "exercise": "Leg Press (heavy 6 → 15 drop)",
               "sets": "4",
               "reps": "6-8 (drop set last)",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Drop set final.",
+              "notes": "Bilateral quad, mech drop.",
               "isBonus": false
             },
             {
@@ -5466,12 +5466,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Chest-Supported Row (DB or Machine)",
+              "exercise": "Pendlay Row",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep back work. Focus on squeeze + control.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Explosive unsupported horizontal pull from dead stop. Core demand, novel motor pattern vs Block 1 supported row.",
               "isBonus": false
             },
             {
@@ -5481,37 +5481,37 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "DELOAD — light.",
+              "notes": "DELOAD — light horizontal push.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Push-Up",
+              "exercise": "Inverted Row (BW)",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2011",
+              "rest": "90s",
+              "notes": "Submaximal horizontal pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pike Push-Up",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "BW vertical push.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pull-Up (BW)",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "BW.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Fly",
-              "sets": "2",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Light.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Row",
-              "sets": "2",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "90s",
-              "notes": "Light.",
+              "notes": "Submaximal vertical pull.",
               "isBonus": false
             },
             {
@@ -5564,12 +5564,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Barbell Good Morning",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep hinge. Hinge, soft knee, feel hamstrings.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Bar on back shifts load angle vs RDL. Hits hamstrings in a more stretched position at hip flexion. Keep load conservative.",
               "isBonus": false
             },
             {
@@ -5584,32 +5584,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Squat",
-              "sets": "2",
-              "reps": "AMRAP-2",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "BW.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
               "exercise": "Lying Hamstring Curl",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
-              "rest": "60s",
+              "rest": "90s",
               "notes": "Light.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Lunge",
+              "exercise": "BW Reverse Lunge",
               "sets": "2",
-              "reps": "10",
+              "reps": "AMRAP-2",
               "tempo": "2010",
+              "rest": "60s",
+              "notes": "Submaximal unilateral quad.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Bodyweight Good Morning",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Light.",
+              "notes": "Light hip-extension.",
               "isBonus": false
             },
             {
@@ -5682,12 +5682,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Push-Up",
+              "exercise": "Pike Push-Up",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "75s",
-              "notes": "BW.",
+              "notes": "BW vertical push.",
               "isBonus": false
             },
             {
@@ -5697,7 +5697,7 @@ const PROGRAM = {
               "reps": "10",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Light.",
+              "notes": "Light elbow flexion.",
               "isBonus": false
             },
             {
@@ -5707,7 +5707,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "2011",
               "rest": "75s",
-              "notes": "Light.",
+              "notes": "Light elbow extension.",
               "isBonus": false
             },
             {
@@ -5760,22 +5760,12 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Incline DB Press",
+              "exercise": "DB Floor Press",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep chest work. Control, full ROM.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET A",
-              "exercise": "DB Row",
-              "sets": "2",
-              "reps": "10",
-              "tempo": "2010",
-              "rest": "90s",
-              "notes": "DELOAD — light.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Floor stops elbows at 90° — lockout-biased, increased tricep contribution, reduced shoulder stress. Different ROM stimulus vs incline.",
               "isBonus": false
             },
             {
@@ -5785,27 +5775,37 @@ const PROGRAM = {
               "reps": "AMRAP-2",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Submaximal.",
+              "notes": "Submaximal horizontal pull.",
               "isBonus": false
             },
             {
-              "block": "SUPERSET B",
-              "exercise": "Cable Row",
+              "block": "SUPERSET A",
+              "exercise": "DB Overhead Press (light)",
               "sets": "2",
-              "reps": "12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Light.",
-              "isBonus": false
-            },
-            {
-              "block": "SUPERSET B",
-              "exercise": "Cable Fly",
-              "sets": "2",
-              "reps": "15",
-              "tempo": "2011",
+              "reps": "10",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Light.",
+              "notes": "DELOAD — vertical push.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Pull-Up (BW)",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Submaximal vertical pull.",
+              "isBonus": false
+            },
+            {
+              "block": "SUPERSET B",
+              "exercise": "Push-Up (parallettes)",
+              "sets": "2",
+              "reps": "AMRAP-2",
+              "tempo": "2010",
+              "rest": "90s",
+              "notes": "Submaximal horizontal push.",
               "isBonus": false
             },
             {
@@ -5858,52 +5858,52 @@ const PROGRAM = {
             },
             {
               "block": "STRENGTH (Light)",
-              "exercise": "Front Squat",
+              "exercise": "Belt Squat",
               "sets": "2",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "DELOAD — light, full ROM. | Higher-rep quad work. Upright torso, full depth.",
+              "notes": "DELOAD — light, full ROM. | Block 2 swap. Zero axial spinal load after heavy deadlifts. Isolates quad drive. Novel stimulus vs front squat.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Romanian Deadlift",
+              "exercise": "Romanian Deadlift (light)",
               "sets": "2",
               "reps": "10",
               "tempo": "3010",
               "rest": "90s",
-              "notes": "DELOAD — light.",
+              "notes": "DELOAD — hip-ext.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A",
-              "exercise": "Bodyweight Squat",
+              "exercise": "BW Squat",
               "sets": "2",
               "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "BW.",
+              "notes": "Submaximal bilateral quad.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "Hip Thrust",
+              "exercise": "Lying Hamstring Curl",
               "sets": "2",
               "reps": "12",
-              "tempo": "2012",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Light.",
+              "notes": "Light knee-flex.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B",
-              "exercise": "DB Lunge",
+              "exercise": "BW Lunge",
               "sets": "2",
-              "reps": "10",
+              "reps": "AMRAP-2",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Light.",
+              "notes": "Submaximal unilateral quad.",
               "isBonus": false
             },
             {
