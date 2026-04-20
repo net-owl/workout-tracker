@@ -190,7 +190,7 @@
       <div id="log-modal-hint" class="hidden"></div>
       <div class="log-inputs">
         <div class="log-input-group">
-          <label>Weight (lbs) <button id="btn-plate-toggle" type="button" title="Plate calculator">🧮</button></label>
+          <label>Weight (lbs) <button id="btn-plate-toggle" type="button" title="Plate calculator" aria-expanded="false" aria-controls="plate-popover">🧮</button></label>
           <div class="log-input-row">
             <button class="log-step" data-step="weight" data-delta="-5">−5</button>
             <button class="log-step" data-step="weight" data-delta="-2.5">−2.5</button>
@@ -208,6 +208,12 @@
             <button class="log-step" data-step="reps" data-delta="1">+1</button>
           </div>
         </div>
+        <div id="log-cardio-group" class="log-input-group log-cardio-group hidden">
+          <label id="log-cardio-label">Cardio</label>
+          <div class="log-input-row">
+            <input type="number" id="log-cardio" placeholder="0" inputmode="decimal" />
+          </div>
+        </div>
       </div>
       <div class="log-modal-actions">
         <button id="btn-log-cancel" class="btn-secondary">Cancel</button>
@@ -217,6 +223,6 @@
   </div>
 
   <script src="data.js?v=5"></script>
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const CACHE = 'workout-pwa-v8';
+const CACHE = 'workout-pwa-v11';
 const ASSETS = ['.', 'index.html', 'styles.css', 'app.js', 'data.js', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {

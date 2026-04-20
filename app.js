@@ -97,6 +97,8 @@ let logContext = null;
 let restTimer = { interval: null, remaining: 0, total: 0 };
 // When browsing a specific workout from schedule, store it here
 let pinnedWorkout = null; // { weekNum, dayIdx }
+let activeLoggedSet = null; // { weekNum, dayIdx, exIdx, setIdx }
+let openBlockState = null; // { weekNum, dayIdx, blockKey }
 
 // ===== Inline SVG icons =====
 const ICONS = {
@@ -126,10 +128,14 @@ function getLog(weekNum, dayIdx) {
   return logs[logKey(weekNum, dayIdx)] || {};
 }
 
-function setLog(weekNum, dayIdx, setKey, weight, reps) {
+function setLog(weekNum, dayIdx, setKey, weight, reps, cardioValue = '', cardioUnit = '') {
   const k = logKey(weekNum, dayIdx);
   if (!logs[k]) logs[k] = {};
   logs[k][setKey] = { w: weight, r: reps };
+  if (cardioValue) {
+    logs[k][setKey].c = cardioValue;
+    logs[k][setKey].cu = cardioUnit;
+  }
   saveLogs(logs);
   invalidatePRCache();
 }
@@ -174,7 +180,7 @@ function findLastLog(exName, curWeek, curDay, curExIdx, curSetIdx) {
   const curLog = getLog(curWeek, curDay);
   for (let s = curSetIdx - 1; s >= 0; s--) {
     const hit = curLog[`${curExIdx}-${s}`];
-    if (hit && hit.r) return { w: hit.w, r: hit.r, ctx: `Set ${s + 1} this session` };
+    if (hit && hit.r) return { w: hit.w, r: hit.r, c: hit.c, cu: hit.cu, ctx: `Set ${s + 1} this session` };
   }
 
   // 2) Walk backwards through prior sessions (this week earlier days, then prior weeks)
@@ -199,7 +205,7 @@ function findLastLog(exName, curWeek, curDay, curExIdx, curSetIdx) {
           const w = parseFloat(hit.w) || 0;
           if (!best || w > parseFloat(best.w || 0)) best = hit;
         }
-        if (best) return { w: best.w, r: best.r, ctx: `W${wk} ${DAY_ABBRS[d]}` };
+        if (best) return { w: best.w, r: best.r, c: best.c, cu: best.cu, ctx: `W${wk} ${DAY_ABBRS[d]}` };
       }
     }
   }
@@ -481,21 +487,8 @@ function renderWorkoutDay(container, weekNum, dayIdx, day) {
     </div>
   `;
 
-  // Group exercises by block
-  const blocks = [];
-  let curBlock = null;
-  day.exercises.forEach((ex, exIdx) => {
-    if (ex.isFinisher) {
-      blocks.push({ type: 'finisher', ex, exIdx });
-      return;
-    }
-    const blockKey = ex.block.toUpperCase();
-    if (!curBlock || curBlock.key !== blockKey) {
-      curBlock = { key: blockKey, name: ex.block, exercises: [], isBonus: ex.isBonus };
-      blocks.push({ type: 'block', block: curBlock });
-    }
-    curBlock.exercises.push({ ex, exIdx });
-  });
+  const blocks = getWorkoutBlocks(day);
+  ensureOpenBlock(weekNum, dayIdx, blocks);
 
   blocks.forEach(item => {
     if (item.type === 'finisher') {
@@ -546,9 +539,119 @@ function renderWorkoutDay(container, weekNum, dayIdx, day) {
   attachSetListeners(container, weekNum, dayIdx, day);
 }
 
+function getWorkoutBlocks(day) {
+  const blocks = [];
+  let curBlock = null;
+  day.exercises.forEach((ex, exIdx) => {
+    if (ex.isFinisher) {
+      blocks.push({ type: 'finisher', ex, exIdx });
+      return;
+    }
+    const blockInfo = normalizeBlock(ex.block);
+    const blockKey = blockInfo.key;
+    if (!curBlock || curBlock.key !== blockKey) {
+      curBlock = { key: blockKey, name: blockInfo.name, exercises: [], isBonus: ex.isBonus };
+      blocks.push({ type: 'block', block: curBlock });
+    }
+    curBlock.exercises.push({ ex, exIdx, blockLabel: blockInfo.label });
+  });
+  return blocks;
+}
+
+function firstBlockKey(blocks) {
+  return blocks.find(item => item.type === 'block')?.block.key || null;
+}
+
+function ensureOpenBlock(weekNum, dayIdx, blocks) {
+  const firstKey = firstBlockKey(blocks);
+  const hasOpenBlock = openBlockState
+    && openBlockState.weekNum === weekNum
+    && openBlockState.dayIdx === dayIdx
+    && blocks.some(item => item.type === 'block' && item.block.key === openBlockState.blockKey);
+  if (!hasOpenBlock) {
+    openBlockState = firstKey ? { weekNum, dayIdx, blockKey: firstKey } : null;
+  }
+}
+
+function getBlockProgress(block, dayLog) {
+  let done = 0, total = 0;
+  block.exercises.forEach(({ ex, exIdx }) => {
+    const n = parseInt(ex.sets) || 0;
+    total += n;
+    for (let s = 0; s < n; s++) {
+      if (dayLog[`${exIdx}-${s}`]) done++;
+    }
+  });
+  return { done, total, complete: total > 0 && done >= total };
+}
+
+function updateOpenBlockAfterLog(weekNum, dayIdx, day, exIdx) {
+  const blocks = getWorkoutBlocks(day);
+  const dayLog = getLog(weekNum, dayIdx);
+  const currentIdx = blocks.findIndex(item =>
+    item.type === 'block' && item.block.exercises.some(exercise => exercise.exIdx === exIdx)
+  );
+  if (currentIdx < 0) {
+    ensureOpenBlock(weekNum, dayIdx, blocks);
+    return;
+  }
+
+  const currentBlock = blocks[currentIdx].block;
+  const currentProgress = getBlockProgress(currentBlock, dayLog);
+  if (!currentProgress.complete) {
+    openBlockState = { weekNum, dayIdx, blockKey: currentBlock.key };
+    return;
+  }
+
+  const nextBlock = blocks.slice(currentIdx + 1).find(item => item.type === 'block')?.block;
+  openBlockState = {
+    weekNum,
+    dayIdx,
+    blockKey: nextBlock ? nextBlock.key : currentBlock.key
+  };
+}
+
+function normalizeBlock(blockName) {
+  const raw = blockName || '';
+  const superMatch = raw.match(/^\s*SUPERSET\s+([A-Z])(?:\s*[—-]\s*([A-Z]\d+))?/i);
+  if (superMatch) {
+    const letter = superMatch[1].toUpperCase();
+    return {
+      key: `SUPERSET ${letter}`,
+      name: `SUPERSET ${letter}`,
+      label: superMatch[2] ? superMatch[2].toUpperCase() : ''
+    };
+  }
+  return { key: raw.toUpperCase(), name: raw, label: '' };
+}
+
+function getCardioMetric(exName, targetReps = '') {
+  const text = `${exName || ''} ${targetReps || ''}`.toLowerCase();
+  if (!text.includes('cardio') && !text.includes('erg') && !text.includes('bike') && !text.includes('distance') && !text.includes('meter') && !text.includes('calorie')) {
+    return null;
+  }
+  if (text.includes('calorie') || text.includes('calories') || text.includes('air bike') || text.includes('assault') || text.includes('echo')) {
+    return { label: 'Calories', unit: 'cal' };
+  }
+  if (text.includes('meter') || text.includes('distance') || text.includes('row erg') || text.includes('ski erg')) {
+    return { label: 'Distance (m)', unit: 'm' };
+  }
+  return null;
+}
+
+function formatLoggedValue(logged) {
+  const lift = `${logged.w ? logged.w + ' lbs' : 'BW'} × ${logged.r} reps`;
+  if (!logged.c) return lift;
+  return `${lift} · ${logged.c} ${logged.cu || ''}`.trim();
+}
+
 function renderBlock(weekNum, dayIdx, block, day) {
   const dayLog = getLog(weekNum, dayIdx);
   const color = blockColor(block.name);
+  const isActiveBlock = activeLoggedSet
+    && activeLoggedSet.weekNum === weekNum
+    && activeLoggedSet.dayIdx === dayIdx
+    && block.exercises.some(({ exIdx }) => exIdx === activeLoggedSet.exIdx);
 
   // Count logged sets for this block
   let blockDone = 0, blockTotal = 0;
@@ -560,12 +663,14 @@ function renderBlock(weekNum, dayIdx, block, day) {
     }
   });
 
-  const isSupersetBlock = block.key.includes('SUPERSET');
-  const blockComplete = blockTotal > 0 && blockDone >= blockTotal;
-  const collapsed = (block.isBonus || blockComplete) ? 'collapsed' : '';
+  const isOpenBlock = openBlockState
+    && openBlockState.weekNum === weekNum
+    && openBlockState.dayIdx === dayIdx
+    && openBlockState.blockKey === block.key;
+  const collapsed = isOpenBlock ? '' : 'collapsed';
 
   let html = `
-    <div class="block-card ${collapsed}" data-block="${block.key}">
+    <div class="block-card ${collapsed} ${isActiveBlock ? 'active' : ''}" data-block="${escAttr(block.key)}" data-week="${weekNum}" data-day="${dayIdx}">
       <div class="block-header" onclick="toggleBlock(this)">
         <div class="block-header-left">
           <div class="block-dot" style="background:${color}"></div>
@@ -577,25 +682,15 @@ function renderBlock(weekNum, dayIdx, block, day) {
       <div class="block-body">
   `;
 
-  if (isSupersetBlock) {
-    // Group pairs by superset letter
-    const pairs = {};
-    block.exercises.forEach(({ ex, exIdx }) => {
-      const letter = block.key.slice(-1);
-      if (!pairs[letter]) pairs[letter] = [];
-      pairs[letter][exIdx] = { ex, exIdx };
-    });
-  }
-
-  block.exercises.forEach(({ ex, exIdx }) => {
-    html += renderExercise(weekNum, dayIdx, ex, exIdx, dayLog);
+  block.exercises.forEach(({ ex, exIdx, blockLabel }) => {
+    html += renderExercise(weekNum, dayIdx, ex, exIdx, dayLog, blockLabel);
   });
 
   html += `</div></div>`;
   return html;
 }
 
-function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
+function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog, blockLabel = '') {
   const n = parseInt(ex.sets) || 0;
   const notesHtml = ex.notes ? `<div class="exercise-notes">${escHtml(ex.notes)}</div>` : '';
   const bonusBadge = ex.isBonus ? '<span class="bonus-badge">Optional Bonus</span>' : '';
@@ -625,7 +720,7 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
         <div class="set-info">
           <div class="set-label">Set ${s + 1}</div>
           ${isLogged
-            ? `<div class="set-logged-value">${logged.w ? logged.w + ' lbs' : 'BW'} × ${logged.r} reps</div>`
+            ? `<div class="set-logged-value">${escHtml(formatLoggedValue(logged))}</div>`
             : `<div class="set-target">${escHtml(ex.reps || '—')} reps${ex.tempo ? ' · ' + escHtml(ex.tempo) : ''}</div>`
           }
         </div>
@@ -643,7 +738,7 @@ function renderExercise(weekNum, dayIdx, ex, exIdx, dayLog) {
     <div class="exercise-item">
       ${bonusBadge}
       <div class="exercise-name-row">
-        <div class="exercise-name" data-ex-name="${escAttr(displayName)}">${escHtml(displayName)} ${subBadge}</div>
+        <div class="exercise-name" data-ex-name="${escAttr(displayName)}">${blockLabel ? `<span class="superset-part-label">${escHtml(blockLabel)}</span>` : ''}${escHtml(displayName)} ${subBadge}</div>
         ${subBtn}
       </div>
       ${isSubbed ? `<div class="sub-original">was: ${escHtml(ex.exercise)}</div>` : ''}
@@ -684,7 +779,16 @@ function attachSetListeners(container, weekNum, dayIdx, day) {
 }
 
 function toggleBlock(headerEl) {
-  headerEl.closest('.block-card').classList.toggle('collapsed');
+  const card = headerEl.closest('.block-card');
+  const blockKey = card.dataset.block;
+  const weekNum = parseInt(card.dataset.week, 10);
+  const dayIdx = parseInt(card.dataset.day, 10);
+  const willOpen = card.classList.contains('collapsed');
+  document.querySelectorAll('.block-card').forEach(el => {
+    if (el !== card) el.classList.add('collapsed');
+  });
+  card.classList.toggle('collapsed', !willOpen);
+  openBlockState = willOpen ? { weekNum, dayIdx, blockKey } : null;
 }
 window.toggleBlock = toggleBlock;
 
@@ -830,30 +934,52 @@ function openLogModal(weekNum, dayIdx, exIdx, setIdx, exName, targetReps, existi
 
   const wInput = document.getElementById('log-weight');
   const rInput = document.getElementById('log-reps');
+  const cardioGroup = document.getElementById('log-cardio-group');
+  const cardioInput = document.getElementById('log-cardio');
+  const cardioLabel = document.getElementById('log-cardio-label');
   const hint = document.getElementById('log-modal-hint');
+  const cardioMetric = getCardioMetric(exName, targetReps);
+  logContext.cardioMetric = cardioMetric;
+
+  if (cardioMetric) {
+    cardioLabel.textContent = cardioMetric.label;
+    cardioInput.value = '';
+    cardioGroup.classList.remove('hidden');
+  } else {
+    cardioInput.value = '';
+    cardioGroup.classList.add('hidden');
+  }
 
   let last = null;
   if (existing) {
     wInput.value = existing.w || '';
     rInput.value = existing.r || '';
+    cardioInput.value = existing.c || '';
     hint.classList.add('hidden');
   } else {
     last = findLastLog(exName, weekNum, dayIdx, exIdx, setIdx);
     if (last) {
       wInput.value = last.w || '';
       rInput.value = last.r || '';
-      const wTxt = last.w ? `${last.w} lbs × ${last.r}` : `BW × ${last.r}`;
+      cardioInput.value = last.c || '';
+      const wTxt = formatLoggedValue(last);
       hint.innerHTML = `<span class="hint-label">Last</span><span class="hint-value">${escHtml(wTxt)}</span> <span style="color:var(--text-muted);font-weight:500">· ${escHtml(last.ctx)}</span>`;
       hint.classList.remove('hidden');
     } else {
       wInput.value = '';
       rInput.value = '';
+      cardioInput.value = '';
       hint.classList.add('hidden');
     }
   }
 
   // Reset modal transform (in case of prior swipe)
   document.getElementById('log-modal-card').style.transform = '';
+
+  const popover = document.getElementById('plate-popover');
+  renderPlatePopover();
+  popover.classList.remove('hidden');
+  document.getElementById('btn-plate-toggle').setAttribute('aria-expanded', 'true');
 
   document.getElementById('log-modal').classList.remove('hidden');
   // Don't auto-focus when we already have prefilled values — keeps keyboard hidden so user can use steppers
@@ -873,18 +999,38 @@ function renderPlatePopover() {
   }
   const result = calcPlates(total);
   if (!result || result.perSide <= 0) {
-    popover.innerHTML = `<div class="plate-popover-title">Bar Only</div><div class="plate-formula">${state.barWeight} lb bar</div>`;
+    popover.innerHTML = `
+      <div class="plate-popover-title">Plate Guide</div>
+      ${renderBarbellGuide([])}
+      <div class="plate-formula">${state.barWeight} lb bar</div>
+    `;
     return;
   }
-  const chips = result.plates.map(p => `<span class="plate-chip">${p}</span>`).join('');
   const reach = result.plates.reduce((a,b) => a+b, 0) * 2 + state.barWeight;
   const note = result.remaining > 0.01
     ? `<div class="plate-formula" style="color:var(--danger)">Best fit: ${reach} lbs (off by ${(result.remaining*2).toFixed(1)})</div>`
     : `<div class="plate-formula">${state.barWeight} bar + ${result.perSide} per side</div>`;
   popover.innerHTML = `
-    <div class="plate-popover-title">Per Side</div>
-    <div class="plate-list">${chips}</div>
+    <div class="plate-popover-title">Plate Guide</div>
+    ${renderBarbellGuide(result.plates)}
     ${note}
+  `;
+}
+
+function renderBarbellGuide(plates) {
+  const plateMarkup = p => {
+    const height = Math.round(34 + (Math.min(p, 45) / 45) * 26);
+    return `<span class="barbell-plate plate-${String(p).replace('.', '-')}" style="--plate-height:${height}px">${p}</span>`;
+  };
+  const left = [...plates].reverse().map(plateMarkup).join('');
+  const right = plates.map(plateMarkup).join('');
+  return `
+    <div class="barbell-guide" aria-label="Barbell plate guide">
+      <div class="barbell-rail"></div>
+      <div class="barbell-side barbell-side-left">${left}</div>
+      <div class="barbell-center"><span>${state.barWeight} lb bar</span></div>
+      <div class="barbell-side barbell-side-right">${right}</div>
+    </div>
   `;
 }
 
@@ -895,8 +1041,10 @@ document.getElementById('btn-plate-toggle').addEventListener('click', e => {
   if (popover.classList.contains('hidden')) {
     renderPlatePopover();
     popover.classList.remove('hidden');
+    e.currentTarget.setAttribute('aria-expanded', 'true');
   } else {
     popover.classList.add('hidden');
+    e.currentTarget.setAttribute('aria-expanded', 'false');
   }
 });
 
@@ -933,6 +1081,9 @@ document.getElementById('log-weight').addEventListener('keydown', e => {
 document.getElementById('log-reps').addEventListener('keydown', e => {
   if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-log-save').click(); }
 });
+document.getElementById('log-cardio').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-log-save').click(); }
+});
 
 document.getElementById('log-modal-backdrop').addEventListener('click', closeLogModal);
 document.getElementById('btn-log-cancel').addEventListener('click', closeLogModal);
@@ -941,16 +1092,21 @@ document.getElementById('btn-log-save').addEventListener('click', () => {
   if (!logContext) return;
   const w = document.getElementById('log-weight').value.trim();
   const r = document.getElementById('log-reps').value.trim();
+  const cardio = document.getElementById('log-cardio').value.trim();
+  const cardioUnit = logContext.cardioMetric?.unit || '';
   if (!r) { document.getElementById('log-reps').focus(); return; }
 
   const { weekNum, dayIdx, exIdx, setIdx, restStr } = logContext;
-  setLog(weekNum, dayIdx, `${exIdx}-${setIdx}`, w, r);
+  setLog(weekNum, dayIdx, `${exIdx}-${setIdx}`, w, r, cardio, cardioUnit);
+  activeLoggedSet = { weekNum, dayIdx, exIdx, setIdx };
+  const day = PROGRAM.weeks.find(wk => wk.week === weekNum)?.days[dayIdx];
+  if (day) updateOpenBlockAfterLog(weekNum, dayIdx, day, exIdx);
   vibrate(15);
   const restSecs = parseRestToSeconds(restStr);
   closeLogModal();
   startRestTimer(restSecs ?? state.restDuration);
   // Re-render the same workout in place rather than calling renderToday (which would show rest day on weekends)
-  openScheduleDay(weekNum, dayIdx);
+  openScheduleDay(weekNum, dayIdx, true);
 });
 
 function closeLogModal() {
@@ -958,6 +1114,7 @@ function closeLogModal() {
   card.style.transform = '';
   document.getElementById('log-modal').classList.add('hidden');
   document.getElementById('plate-popover').classList.add('hidden');
+  document.getElementById('btn-plate-toggle').setAttribute('aria-expanded', 'false');
   logContext = null;
 }
 
@@ -1138,11 +1295,12 @@ window.jumpToCurrentWeek = function() {
   if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
 
-window.openScheduleDay = function(weekNum, dayIdx) {
+window.openScheduleDay = function(weekNum, dayIdx, preserveOpenBlock = false) {
   const week = PROGRAM.weeks.find(w => w.week === weekNum);
   if (!week) return;
   const day = week.days[dayIdx];
   if (!day) return;
+  if (!preserveOpenBlock) openBlockState = null;
 
   // Switch to today view without re-rendering it via renderToday
   activeView = 'today';

@@ -199,11 +199,31 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 
 /* ===== Block Cards ===== */
 .block-card {
+  position: relative;
   background: var(--card);
   border-radius: 14px;
   margin-bottom: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
+}
+
+.block-card.active {
+  border-left-color: var(--accent);
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.block-card.active::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 86px;
+  background: linear-gradient(90deg, var(--accent-dim), transparent);
+  pointer-events: none;
+}
+
+.block-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .block-header {
@@ -268,6 +288,22 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   line-height: 1.3;
   flex: 1;
   min-width: 0;
+}
+
+.superset-part-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  margin-right: 8px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: 1px;
 }
 
 .exercise-name-row {
@@ -977,6 +1013,8 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 #log-modal-card {
   position: relative;
   width: 100%;
+  max-height: 92dvh;
+  box-sizing: border-box;
   background: var(--surface);
   border-radius: 20px 20px 0 0;
   padding: 14px 20px calc(20px + var(--safe-bottom));
@@ -984,6 +1022,9 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   touch-action: pan-y;
   transition: transform 0.2s ease;
   will-change: transform;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 #log-modal-grabber {
@@ -1032,9 +1073,13 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 
 .log-inputs {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
   gap: 12px;
   margin-bottom: 20px;
+}
+
+.log-cardio-group {
+  grid-column: 1 / -1;
 }
 
 .log-input-group label {
@@ -1051,6 +1096,7 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   display: flex;
   align-items: stretch;
   gap: 4px;
+  min-width: 0;
 }
 
 .log-input-row input {
@@ -1071,15 +1117,17 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 
 .log-step {
   flex-shrink: 0;
-  min-width: 36px;
+  width: clamp(34px, 11vw, 46px);
+  min-width: 0;
   background: var(--card-alt);
   border: 1.5px solid var(--border);
   border-radius: 10px;
   color: var(--text);
-  font-size: 13px;
+  font-size: clamp(11px, 3vw, 13px);
   font-weight: 700;
-  padding: 0 6px;
+  padding: 0 4px;
   transition: background 0.1s ease;
+  font-variant-numeric: tabular-nums;
 }
 
 .log-step:active {
@@ -1092,6 +1140,30 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
+}
+
+@media (max-width: 520px) {
+  #log-modal-card {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .log-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .log-cardio-group {
+    grid-column: auto;
+  }
+
+  .log-input-row input {
+    font-size: 20px;
+    padding: 12px 4px;
+  }
+
+  .log-step {
+    width: clamp(42px, 15vw, 56px);
+  }
 }
 
 /* ===== Buttons ===== */
@@ -1369,17 +1441,16 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 
 /* ===== Plate Calculator Inline Popover ===== */
 .plate-popover {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(100% + 6px);
+  position: static;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 12px;
+  margin-top: 8px;
   z-index: 10;
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
   font-size: 12px;
+  overflow: hidden;
 }
 
 .plate-popover-title {
@@ -1391,21 +1462,6 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   margin-bottom: 8px;
 }
 
-.plate-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-}
-
-.plate-chip {
-  background: var(--accent-dim);
-  color: var(--accent);
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 14px;
-}
-
 .plate-formula {
   margin-top: 8px;
   text-align: center;
@@ -1414,6 +1470,81 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 }
 
 .log-input-group { position: relative; }
+
+.barbell-guide {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 74px;
+  padding: 8px 0;
+  overflow: hidden;
+}
+
+.barbell-rail {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 50%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--border), var(--text-muted), var(--border));
+  transform: translateY(-50%);
+  opacity: 0.9;
+}
+
+.barbell-center {
+  position: relative;
+  z-index: 2;
+  min-width: 64px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.28);
+}
+
+.barbell-side {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.barbell-side-left {
+  justify-content: flex-end;
+}
+
+.barbell-side-right {
+  justify-content: flex-start;
+}
+
+.barbell-plate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(19px, 6vw, 28px);
+  height: var(--plate-height);
+  max-height: 64px;
+  min-height: 34px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--accent-dim), rgba(255,255,255,0.04));
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2), 0 3px 8px rgba(0,0,0,0.26);
+}
 
 /* ===== Utilities ===== */
 .hidden { display: none !important; }
