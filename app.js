@@ -325,21 +325,55 @@ window.promptSubstitute = function(weekNum, dayIdx, exIdx, originalName) {
   openScheduleDay(weekNum, dayIdx);
 };
 
-// Calculate current week/day from start date
+// Parse a YYYY-MM-DD start date string as a local-timezone midnight Date
+function parseStartDate(str) {
+  if (!str) return null;
+  const [y, m, d] = str.split('-').map(Number);
+  if (!y || !m || !d) return null;
+  return new Date(y, m - 1, d);
+}
+
+// Calculate current week/day from start date.
+// The program is a 7-day cycle (5 workout days + 2 rest days) repeated 12 times.
+// Whichever weekday the user picks as their start date becomes Day 1 of the cycle.
 function getCurrentWeekDay() {
-  if (!state.startDate) return null;
-  const start = new Date(state.startDate);
+  const start = parseStartDate(state.startDate);
+  if (!start) return null;
   start.setHours(0, 0, 0, 0);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const diffDays = Math.floor((today - start) / 86400000);
   if (diffDays < 0) return null;
   const weekIdx = Math.floor(diffDays / 7);
-  const dayOfWeek = today.getDay(); // 0=Sun,1=Mon...5=Fri,6=Sat
   if (weekIdx >= 12) return { week: 12, dayIdx: 4 }; // program finished
-  // Map dayOfWeek to program day index (Mon=0,...Fri=4)
-  const dayIdx = dayOfWeek >= 1 && dayOfWeek <= 5 ? dayOfWeek - 1 : null;
+  const cyclePos = diffDays % 7; // 0..6, with 0 == start weekday
+  const dayIdx = cyclePos <= 4 ? cyclePos : null; // first 5 = workouts, last 2 = rest
   return { week: weekIdx + 1, dayIdx };
+}
+
+// What calendar date does (weekNum, dayIdx) fall on, given the user's start date?
+function getDateForProgramDay(weekNum, dayIdx) {
+  const start = parseStartDate(state.startDate);
+  if (!start) return null;
+  const offset = (weekNum - 1) * 7 + dayIdx;
+  const d = new Date(start);
+  d.setDate(d.getDate() + offset);
+  return d;
+}
+
+const WEEKDAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const WEEKDAY_ABBRS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// Display name for a program day. Uses the user's calendar weekday when a
+// start date is set; otherwise falls back to the program's built-in label.
+function getDisplayDayName(weekNum, dayIdx, day) {
+  const d = getDateForProgramDay(weekNum, dayIdx);
+  return d ? WEEKDAY_NAMES[d.getDay()] : (day && day.day) || '';
+}
+
+function getDisplayDayAbbr(weekNum, dayIdx) {
+  const d = getDateForProgramDay(weekNum, dayIdx);
+  return d ? WEEKDAY_ABBRS[d.getDay()] : DAY_ABBRS[dayIdx];
 }
 
 // ===== Navigation =====
@@ -374,7 +408,7 @@ function renderView(name) {
 }
 
 // ===== Streak =====
-// Count consecutive workout-days (Mon-Fri only) with logged sets, walking back from current/most recent program day
+// Count consecutive workout-days (first 5 days of each 7-day cycle) with logged sets, walking back from the current/most recent program day
 function computeStreak() {
   const cur = getCurrentWeekDay();
   if (!cur) return 0;
@@ -382,7 +416,7 @@ function computeStreak() {
   // Build a flat sequence of all program days (week*5 + dayIdx)
   let pointer;
   if (cur.dayIdx === null) {
-    // Today is a weekend - start from Friday of current week
+    // Today is a rest day in the cycle - start from the last workout day of current week
     pointer = (cur.week - 1) * 5 + 4;
   } else {
     pointer = (cur.week - 1) * 5 + cur.dayIdx;
@@ -432,7 +466,7 @@ function renderToday() {
     noWorkout.innerHTML = `
       <div class="empty-icon">${ICONS.bicep}</div>
       <div class="empty-title">Set Your Start Date</div>
-      <div class="empty-sub">Tell us when you started Week 1 to see today's workout.</div>
+      <div class="empty-sub">Pick any day to begin Week 1 — we'll schedule the rest for you.</div>
       <button class="setup-cta" onclick="navigateTo('settings')">Go to Settings</button>
     `;
     container.innerHTML = '';
@@ -460,7 +494,7 @@ function renderToday() {
   const day = week.days[cur.dayIdx];
   if (!day) { container.innerHTML = '<p style="color:var(--text-secondary);padding:20px">No workout today.</p>'; return; }
 
-  document.getElementById('header-sub').textContent = `Week ${cur.week} · ${day.day}`;
+  document.getElementById('header-sub').textContent = `Week ${cur.week} · ${getDisplayDayName(cur.week, cur.dayIdx, day)}`;
 
   renderWorkoutDay(container, cur.week, cur.dayIdx, day);
 }
@@ -497,7 +531,7 @@ function renderWorkoutDay(container, weekNum, dayIdx, day) {
       <div class="workout-header-week">WEEK ${weekNum}${isDeload ? ' · DELOAD' : ''}</div>
       <div class="workout-header-title">${day.label}</div>
       <div class="workout-header-meta">
-        <span class="workout-header-day">${day.day}</span>
+        <span class="workout-header-day">${getDisplayDayName(weekNum, dayIdx, day)}</span>
         <span class="workout-progress-pill">${done}/${total} sets</span>
         ${isDeload ? '<span class="deload-badge">Deload</span>' : ''}
       </div>
@@ -614,7 +648,7 @@ function renderSessionGraphic(weekNum, dayIdx, day) {
 
   ctx.fillStyle = '#999';
   ctx.font = '600 28px -apple-system, system-ui, sans-serif';
-  ctx.fillText(`Week ${weekNum} · ${day.day}`, W / 2, 330);
+  ctx.fillText(`Week ${weekNum} · ${getDisplayDayName(weekNum, dayIdx, day)}`, W / 2, 330);
 
   // Stats grid: 2x2
   const cardW = 420, cardH = 200, gap = 30;
@@ -1268,7 +1302,7 @@ document.getElementById('btn-log-save').addEventListener('click', () => {
   const restSecs = parseRestToSeconds(restStr);
   closeLogModal();
   startRestTimer(restSecs ?? state.restDuration);
-  // Re-render the same workout in place rather than calling renderToday (which would show rest day on weekends)
+  // Re-render the same workout in place rather than calling renderToday (which would show rest day on rest-day cycle positions)
   openScheduleDay(weekNum, dayIdx, true);
 });
 
@@ -1407,8 +1441,9 @@ function renderSchedule() {
     ].filter(Boolean).join('');
 
     let daysHtml = '';
-    DAY_ABBRS.forEach((abbr, dayIdx) => {
+    DAY_ABBRS.forEach((_fallbackAbbr, dayIdx) => {
       const day = week.days[dayIdx];
+      const abbr = getDisplayDayAbbr(week.week, dayIdx);
       if (!day) { daysHtml += `<div class="schedule-day-btn" style="opacity:0.2"><span class="schedule-day-abbr">${abbr}</span></div>`; return; }
 
       const isComplete = isDayComplete(week.week, dayIdx, day);
@@ -1473,7 +1508,7 @@ window.openScheduleDay = function(weekNum, dayIdx, preserveOpenBlock = false) {
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-today'));
 
   document.getElementById('today-no-workout').classList.add('hidden');
-  document.getElementById('header-sub').textContent = `Week ${weekNum} · ${day.day}`;
+  document.getElementById('header-sub').textContent = `Week ${weekNum} · ${getDisplayDayName(weekNum, dayIdx, day)}`;
   renderWorkoutDay(document.getElementById('today-workout'), weekNum, dayIdx, day);
 };
 
