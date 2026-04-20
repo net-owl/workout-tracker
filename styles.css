@@ -1116,9 +1116,8 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
 .log-input-row input:focus { border-color: var(--accent); }
 
 .log-step {
-  flex-shrink: 0;
-  width: clamp(34px, 11vw, 46px);
-  min-width: 0;
+  flex: 0 1 clamp(34px, 11vw, 46px);
+  min-width: 28px;
   background: var(--card-alt);
   border: 1.5px solid var(--border);
   border-radius: 10px;
@@ -1162,7 +1161,7 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   }
 
   .log-step {
-    width: clamp(42px, 15vw, 56px);
+    flex-basis: clamp(34px, 12vw, 44px);
   }
 }
 
@@ -1469,7 +1468,7 @@ body.chrome-hidden #bottom-nav { transform: translateY(100%); }
   color: var(--text-secondary);
 }
 
-.log-input-group { position: relative; }
+.log-input-group { position: relative; min-width: 0; }
 
 .barbell-guide {
   position: relative;
