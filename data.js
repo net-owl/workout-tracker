@@ -413,12 +413,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "RDL (BB)",
+              "exercise": "Barbell Hip Thrust",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Hip-ext ham. Feel the stretch.",
+              "notes": "Drive through heels. Full hip extension. Spine decompressed vs DL.",
               "isBonus": false
             },
             {
@@ -898,12 +898,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Good Morning (BB)",
+              "exercise": "Cable Pull-Through (rope)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Hip-ext. Soft knee.",
+              "notes": "Hip ext + glute. Spine neutral, no axial load. Face away from cable.",
               "isBonus": false
             },
             {
@@ -913,7 +913,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Unilateral quad. Drive heel.",
+              "notes": "Unilateral quad. Drive through heel.",
               "isBonus": false
             },
             {
@@ -923,7 +923,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Knee-flex. Dorsi-flex.",
+              "notes": "Knee-flex. Dorsiflex foot.",
               "isBonus": false
             },
             {
@@ -1021,12 +1021,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "DB Shoulder Press (neutral grip)",
+              "exercise": "Weighted Dip (slight forward lean)",
               "sets": "3",
               "reps": "8–10",
               "tempo": "2010",
               "rest": "45s",
-              "notes": "No arch. Brace core.",
+              "notes": "Chest bias. Control descent. Tricep + pec.",
               "isBonus": false
             },
             {
@@ -1109,12 +1109,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A2",
-              "exercise": "Nordic Hamstring Curl",
+              "exercise": "Lying Hamstring Curl",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "slow 3s",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "BW eccentric. Very hard.",
+              "notes": "Knee-flex isolation. Save Nordics for standalone sets.",
               "isBonus": false
             },
             {
@@ -1197,12 +1197,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Arnold Press",
+              "exercise": "Cable Lateral Raise (low cable)",
               "sets": "3",
-              "reps": "8–10",
-              "tempo": "2010",
+              "reps": "10–12",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "Rotate through full ROM.",
+              "notes": "IWT already had OHP — no more pressing. Pure delt isolation.",
               "isBonus": false
             },
             {
@@ -1285,22 +1285,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Pendlay Row",
+              "exercise": "Chest-Supported DB Row",
               "sets": "3",
               "reps": "8–10",
-              "tempo": "20X0",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Explosive concentric. Dead stop.",
+              "notes": "Supported horizontal pull — no spinal erector stacking after pull-ups.",
               "isBonus": false
             },
             {
               "block": "SUPERSET A — A2",
-              "exercise": "Inverted Row (feet elevated)",
+              "exercise": "Push-Up (slow 3s eccentric)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "2011",
+              "tempo": "3010",
               "rest": "90s",
-              "notes": "Horizontal pull BW.",
+              "notes": "BW. Eccentric emphasis. Controlled chest push.",
               "isBonus": false
             },
             {
@@ -1310,17 +1310,17 @@ const PROGRAM = {
               "reps": "10–12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Lats only.",
+              "notes": "Lats only. Arms stay straight.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Push-Up (slow 3s down)",
+              "exercise": "Inverted Row (feet elevated)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "3010",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "Eccentric emphasis BW.",
+              "notes": "Horizontal pull BW. Note: B pairs pull+pull here for extra back volume on pull day.",
               "isBonus": false
             },
             {
@@ -1383,12 +1383,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Single-Leg RDL (DB)",
+              "exercise": "Single-Leg Hip Thrust (BW or DB)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Hip-ext. Balance + strength.",
+              "notes": "Unilateral glute. No spinal load. Control pelvis tilt.",
               "isBonus": false
             },
             {
@@ -1408,7 +1408,7 @@ const PROGRAM = {
               "reps": "10–12",
               "tempo": "slow 3s",
               "rest": "45s",
-              "notes": "BW eccentric emphasis.",
+              "notes": "BW eccentric. Heavy posterior. Standalone set — not in superset.",
               "isBonus": false
             },
             {
@@ -1712,12 +1712,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "JM Press",
+              "exercise": "Overhead Tricep Extension (cable rope)",
               "sets": "3",
               "reps": "8–10",
               "tempo": "2010",
               "rest": "90s",
-              "notes": "Tricep power move.",
+              "notes": "Long head stretch. More practical than JM in superset.",
               "isBonus": false
             },
             {
@@ -1868,12 +1868,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Stiff-Leg DL (DB)",
+              "exercise": "Glute-Ham Raise (BW or light load)",
               "sets": "3",
-              "reps": "8–10",
+              "reps": "10–12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Hip-ext, more knee than RDL.",
+              "notes": "Posterior chain. Hip ext + knee flex together. Less spinal load than RDL.",
               "isBonus": false
             },
             {
@@ -1893,7 +1893,7 @@ const PROGRAM = {
               "reps": "12–15",
               "tempo": "X010",
               "rest": "45s",
-              "notes": "Explosive hip-ext. Glutes.",
+              "notes": "Hip ext + bracing. Glute lockout at top.",
               "isBonus": false
             },
             {
@@ -1991,12 +1991,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "DB Lateral Raise",
+              "exercise": "Low-to-High Cable Fly",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Slight forward lean.",
+              "notes": "Upper pec. Squeeze at top. Low CNS cost.",
               "isBonus": false
             },
             {
@@ -2353,12 +2353,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Light RDL",
+              "exercise": "Light Hip Thrust",
               "sets": "3",
               "reps": "10",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WEEK. Moderate load.",
+              "notes": "PEAK WEEK. Easy glute activation.",
               "isBonus": false
             },
             {
@@ -2838,12 +2838,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Light RDL",
+              "exercise": "Light Hip Thrust (BW)",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. Easy glute movement.",
               "isBonus": false
             },
             {
@@ -3137,12 +3137,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Seated DB Shoulder Press",
+              "exercise": "DB Lateral Raise (seated, strict)",
               "sets": "3",
-              "reps": "10–12",
-              "tempo": "2010",
+              "reps": "12",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "Neutral grip. No back arch.",
+              "notes": "IWT already had OHP — lateral raises only. Strict form, no swing.",
               "isBonus": false
             },
             {
@@ -3323,12 +3323,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "RDL (BB — add load vs W1)",
+              "exercise": "Barbell Hip Thrust (add load vs W1)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "New block. Beat B1 weights.",
+              "notes": "Beat W1 load. Full hip lock-out. Spine still decompressed.",
               "isBonus": false
             },
             {
@@ -3348,7 +3348,7 @@ const PROGRAM = {
               "reps": "12",
               "tempo": "slow 4s",
               "rest": "45s",
-              "notes": "Increase eccentric time.",
+              "notes": "Longer eccentric vs W3. BW controlled.",
               "isBonus": false
             },
             {
@@ -3622,12 +3622,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Upright Row (cable)",
+              "exercise": "Cable Y-Raise",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Cable for constant tension.",
+              "notes": "Lower trap + rear delt. No internal rotation stress unlike upright row.",
               "isBonus": false
             },
             {
@@ -3740,12 +3740,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Push-Up (plyo clap)",
+              "exercise": "Archer Push-Up (parallettes)",
               "sets": "3",
               "reps": "12",
               "tempo": "X010",
               "rest": "90s",
-              "notes": "Power push. Control landing.",
+              "notes": "Advanced BW. Controlled unilateral push — hypertrophy focused.",
               "isBonus": false
             },
             {
@@ -3808,12 +3808,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Good Morning (BB, more load)",
+              "exercise": "Cable Pull-Through (heavier than W2)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Add load vs W2. Hip hinge.",
+              "notes": "Add load vs W2. Same decompressed hip ext pattern.",
               "isBonus": false
             },
             {
@@ -4293,12 +4293,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Single-Leg RDL (BB)",
+              "exercise": "Single-Leg Hip Thrust (DB on hip)",
               "sets": "3",
               "reps": "8–10",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "More load B2. Hip-ext.",
+              "notes": "Add load vs W3. Full hip ext on each rep.",
               "isBonus": false
             },
             {
@@ -4778,12 +4778,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Stiff-Leg DL (BB)",
+              "exercise": "Glute-Ham Raise (add load)",
               "sets": "3",
               "reps": "8–10",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Add load vs W4. Hip-ext.",
+              "notes": "Add load vs W4. Posterior chain peak without axial spine load.",
               "isBonus": false
             },
             {
@@ -4798,12 +4798,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "KB Single-Leg RDL",
+              "exercise": "RDL (DB, moderate — NOT BB)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Balance + hip ext.",
+              "notes": "Light DB only. Spinal erectors partially recovered by B1 position.",
               "isBonus": false
             },
             {
@@ -4901,12 +4901,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "DB Lateral Raise",
+              "exercise": "Light Cable Fly (low-to-high)",
               "sets": "2",
               "reps": "10",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Light. Shoulder health.",
+              "notes": "PEAK WEEK. Upper pec. Feather-light.",
               "isBonus": false
             },
             {
@@ -5263,12 +5263,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Light RDL",
+              "exercise": "Light Hip Thrust",
               "sets": "2",
               "reps": "10",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WEEK. Moderate.",
+              "notes": "PEAK WEEK. Easy glute.",
               "isBonus": false
             },
             {
@@ -5748,7 +5748,7 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A1",
-              "exercise": "Light RDL",
+              "exercise": "Light Hip Thrust (BW)",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
