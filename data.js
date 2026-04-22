@@ -433,12 +433,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Lying Hamstring Curl",
+              "exercise": "Reverse Hyper (or Hyper Bench)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Knee-flex. Slow negative.",
+              "notes": "Posterior chain decompressed. Different stimulus from accessory ham curl.",
               "isBonus": false
             },
             {
@@ -918,12 +918,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Seated Hamstring Curl",
+              "exercise": "Glute Bridge March (single-leg)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Knee-flex. Dorsiflex foot.",
+              "notes": "Unilateral glute + core. Decompressed. No ham curl overlap.",
               "isBonus": false
             },
             {
@@ -1403,12 +1403,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Nordic Hamstring Curl",
+              "exercise": "Back Extension (45° hyper, BW or plate)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "slow 3s",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "BW eccentric. Heavy posterior. Standalone set — not in superset.",
+              "notes": "Glute + erector. Pause at top. No ham curl overlap.",
               "isBonus": false
             },
             {
@@ -1888,12 +1888,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "KB Swing",
+              "exercise": "Cable Glute Kickback",
               "sets": "3",
-              "reps": "12–15",
-              "tempo": "X010",
+              "reps": "10–12",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "Hip ext + bracing. Glute lockout at top.",
+              "notes": "Pure glute isolation. No KB swing overlap with accessory.",
               "isBonus": false
             },
             {
@@ -2373,12 +2373,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Ham Curl",
+              "exercise": "Light Back Extension (BW)",
               "sets": "3",
-              "reps": "10",
+              "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "PEAK WEEK.",
+              "notes": "PEAK WEEK. Erector + glute. Accessory covers ham curl.",
               "isBonus": false
             },
             {
@@ -2858,12 +2858,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Ham Curl",
+              "exercise": "Light Glute Bridge",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. Easy glute. Accessory covers ham curl.",
               "isBonus": false
             },
             {
@@ -3343,12 +3343,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Nordic Hamstring Curl",
+              "exercise": "Reverse Hyper (loaded vs W1)",
               "sets": "3",
               "reps": "12",
-              "tempo": "slow 4s",
+              "tempo": "2011",
               "rest": "45s",
-              "notes": "Longer eccentric vs W3. BW controlled.",
+              "notes": "Add load vs W1. Decompressed posterior chain.",
               "isBonus": false
             },
             {
@@ -3828,12 +3828,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Lying Ham Curl (drop set)",
+              "exercise": "Glute Bridge (weighted, plate on hips)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Drop 20% final set.",
+              "notes": "Floor-based glute. Different from A1 hip thrust angle.",
               "isBonus": false
             },
             {
@@ -4313,12 +4313,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Seated Ham Curl (paused)",
+              "exercise": "Back Extension (paused at top, weighted)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011+2s pause",
               "rest": "45s",
-              "notes": "Pause at peak flex.",
+              "notes": "Glute + erector. Pause peak contraction.",
               "isBonus": false
             },
             {
@@ -4798,12 +4798,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "RDL (DB, moderate — NOT BB)",
+              "exercise": "Cable Glute Kickback (drop set)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "Light DB only. Spinal erectors partially recovered by B1 position.",
+              "notes": "Drop 20% final set. Glute isolation peak.",
               "isBonus": false
             },
             {
@@ -5283,12 +5283,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Ham Curl",
+              "exercise": "Light Back Extension (BW)",
               "sets": "2",
-              "reps": "10",
+              "reps": "12",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "PEAK WEEK.",
+              "notes": "PEAK WEEK. Accessory covers ham curl.",
               "isBonus": false
             },
             {
@@ -5768,12 +5768,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Ham Curl",
+              "exercise": "Light Glute Bridge",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "45s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. Accessory covers ham curl.",
               "isBonus": false
             },
             {
