@@ -159,12 +159,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (DB)",
+              "exercise": "Swiss Ball Hamstring Curl",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext ham. Balance focus.",
+              "notes": "Floor-based hip-ext + knee-flex. No RDL overlap.",
               "isBonus": false
             },
             {
@@ -644,12 +644,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "RDL (BB)",
+              "exercise": "Cable Pull-Through (rope)",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext ham. Hinge, not squat.",
+              "notes": "Hip-ext. Spine neutral. Different stimulus from light-lift RDL.",
               "isBonus": false
             },
             {
@@ -1114,7 +1114,7 @@ const PROGRAM = {
               "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Knee-flex isolation. Save Nordics for standalone sets.",
+              "notes": "Knee-flex isolation.",
               "isBonus": false
             },
             {
@@ -1134,7 +1134,7 @@ const PROGRAM = {
               "reps": "12–15",
               "tempo": "X010",
               "rest": "90s",
-              "notes": "Hip-ext. Explosive glute snap.",
+              "notes": "Hip-ext. Explosive glute snap. No RDL pattern.",
               "isBonus": false
             },
             {
@@ -1315,12 +1315,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Inverted Row (feet elevated)",
+              "exercise": "DB Floor Press (neutral grip)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Horizontal pull BW. Note: B pairs pull+pull here for extra back volume on pull day.",
+              "notes": "Horizontal push. Tricep + chest. Corrects B2 from pull to push.",
               "isBonus": false
             },
             {
@@ -1614,12 +1614,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Stiff-Leg DL (DB)",
+              "exercise": "Glute-Ham Raise (BW)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext ham. More knee than RDL.",
+              "notes": "Hip-ext + knee-flex combo. Posterior chain without spinal hinge.",
               "isBonus": false
             },
             {
@@ -2099,12 +2099,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (BW)",
+              "exercise": "Light Swiss Ball Curl",
               "sets": "3",
               "reps": "12",
-              "tempo": "2010",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "Balance + hip ext. Light.",
+              "notes": "PEAK WEEK. Easy floor-based ham.",
               "isBonus": false
             },
             {
@@ -2584,12 +2584,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Light RDL",
+              "exercise": "Light Glute Bridge",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. Easy hip-ext.",
               "isBonus": false
             },
             {
@@ -3069,12 +3069,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Good Morning (BB, light)",
+              "exercise": "Cable Pull-Through (heavier vs W2)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext. Hinge under load.",
+              "notes": "Add load vs B1. Hip-ext. No RDL overlap.",
               "isBonus": false
             },
             {
@@ -3554,12 +3554,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (BB)",
+              "exercise": "Swiss Ball Hamstring Curl (feet elevated)",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext. Add load B2.",
+              "notes": "Harder variation — elevated feet increase leverage.",
               "isBonus": false
             },
             {
@@ -4039,12 +4039,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "KB Single-Leg RDL",
+              "exercise": "Band-Assisted GHR",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext balance work.",
+              "notes": "GHR with band decel. Hip-ext + knee-flex combo.",
               "isBonus": false
             },
             {
@@ -4524,12 +4524,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Stiff-Leg DL (BB)",
+              "exercise": "KB Swing (heavy)",
               "sets": "3",
-              "reps": "8–10",
-              "tempo": "2011",
+              "reps": "10–12",
+              "tempo": "X010",
               "rest": "90s",
-              "notes": "Add load vs W4.",
+              "notes": "Heaviest swing of program. Hip-ext dominant.",
               "isBonus": false
             },
             {
@@ -5009,12 +5009,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (BW)",
+              "exercise": "Light Cable Pull-Through",
               "sets": "2",
               "reps": "12",
-              "tempo": "2010",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WEEK. Light.",
+              "notes": "PEAK WEEK. Easy hip-ext.",
               "isBonus": false
             },
             {
@@ -5494,12 +5494,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Light RDL",
+              "exercise": "Light Glute Bridge",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. End of program.",
               "isBonus": false
             },
             {
