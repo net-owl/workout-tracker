@@ -206,6 +206,28 @@ const PROGRAM = {
           "title": "WEEK 1 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
             {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Press  ×8 reps  |  ~70% 1RM — controlled press, explode up. RIR 2-3.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Log meters every round.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional if strong)",
+              "reps": "8 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 4×5 target | ~70% 1RM. Control eccentric, explode up.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean  ×8 reps  |  ~65% 3RM — bar speed is the goal. Reset each rep.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Log meters every round.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional if strong)",
+              "reps": "8 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W1: Establish baselines. Record every row/ski distance — the goal is to beat them week over week.",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
               "block": "SUPERSET A — A1",
               "exercise": "DB Lateral Raise",
               "sets": "3",
@@ -670,6 +692,28 @@ const PROGRAM = {
           "label": "Accessory",
           "title": "WEEK 2 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
+            {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Strict OHP  ×8 reps  |  ~72% 1RM — add 5 lb vs W1. Same effort feel.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Beat W1 distance.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "8 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 4×5 target | ~70% 1RM. Control eccentric, explode up.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Hang Power Clean  ×8 reps  |  ~65% 3RM — same load, cleaner technique vs W1.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Beat W1 distance.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "8 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W2: Beat W1 cardio distances. Hang clean variation — slightly different pull pattern.",
+              "isBonus": false,
+              "isFinisher": false
+            },
             {
               "block": "SUPERSET A — A1",
               "exercise": "Cable Lateral Raise",
@@ -1136,6 +1180,28 @@ const PROGRAM = {
           "title": "WEEK 3 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
             {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Jerk  ×10 reps  |  ~70% 1RM — higher reps, keep bar speed intent.\n→ Immediately into: Air Bike (Assault/Echo) — 2 min @90-95% MHR. Log calories.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "10 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 4×5 target | Add 5 lb vs prior week. RIR 2.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean  ×8 reps  |  ~67% 3RM — add 5 lb vs W1.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Beat W2 distance.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "8 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W3: Air bike adds variety to Phase 1 cardio. Log calories as your new benchmark.",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
               "block": "SUPERSET A — A1",
               "exercise": "Cable Lateral Raise (low cable)",
               "sets": "3",
@@ -1600,6 +1666,28 @@ const PROGRAM = {
           "label": "Accessory",
           "title": "WEEK 4 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
+            {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Press  ×10 reps  |  ~72% 1RM — same as W3 but cleaner reps. This is the hardest B1 week.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Best row distance of Block 1.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "10 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 4×5 target | Add 5 lb vs prior week. RIR 2.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Hang Power Snatch (or snatch-grip high pull if technique is shaky)  ×6 reps  |  ~60% 3RM snatch — lower load than clean due to technical demand.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Best ski distance of Block 1.\n→ Rest 2 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "6 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W4: Snatch variation changes the pull pattern. Technical — reduce load if form breaks.",
+              "isBonus": false,
+              "isFinisher": false
+            },
             {
               "block": "SUPERSET A — A1",
               "exercise": "Lateral Raise (cable, cross-body)",
@@ -2066,6 +2154,28 @@ const PROGRAM = {
           "title": "WEEK 5 — Wednesday — Accessory (Shoulder + IWT + Arms)  [PEAK WEEK]",
           "exercises": [
             {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Strict OHP  ×5 reps  |  ~65% 1RM — PEAK WEEK. Easy. Save CNS for Mon/Tue.\n→ Immediately into: Row Erg — 90s @80-85% MHR. Sub-maximal effort.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 4×4 target | Bridge into peak. ~80–82% 1RM.  ⚡ After final round: 4 min rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean (light)  ×5 reps  |  ~60% 3RM — light and technical. No grinding.\n→ Immediately into: Ski Erg — 90s @80-85% MHR. Easy.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W5 PEAK WEEK: 2 rounds, sub-max effort. IWT is maintenance — protect peak bench/squat days.",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
               "block": "SUPERSET A — A1",
               "exercise": "DB Lateral Raise (light)",
               "sets": "3",
@@ -2530,6 +2640,28 @@ const PROGRAM = {
           "label": "Accessory",
           "title": "WEEK 6 — Wednesday — Accessory (Shoulder + IWT + Arms)  [DELOAD WEEK]",
           "exercises": [
+            {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Press (Deload)  ×5 reps  |  ~55-60% 1RM — DELOAD. Light bar, perfect reps only.\n→ Immediately into: Row Erg — 90s @65-70% MHR. Conversational pace.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 2×5 target | DELOAD. ~60% top weight.  ⚡ After final round: 3 min rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean (deload load)  ×5 reps  |  ~55% 3RM — DELOAD. Move well, no intensity.\n→ Immediately into: Ski Erg — 90s @65-70% MHR. Easy pace.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W6 DELOAD: 2 rounds, low HR, light loads. Full recovery before Block 2.",
+              "isBonus": false,
+              "isFinisher": false
+            },
             {
               "block": "SUPERSET A — A1",
               "exercise": "Light Lateral Raise",
@@ -2996,6 +3128,28 @@ const PROGRAM = {
           "title": "WEEK 7 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
             {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Press  ×6 reps  |  ~77% 1RM — Block 2 strength shift. Beat B1 OHP loads.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Shorter interval, same max effort.\n→ Rest 2-3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "6 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2-3 min",
+              "notes": "Sets/load: 4×5 target | Restart ~75% 1RM. Push past B1 loads.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean  ×6 reps  |  ~72% 3RM — heavier than any B1 week. Strong, crisp reps.\n→ Immediately into: Ski Erg — 90s @90-95% MHR.\n→ Rest 2-3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "6 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2-3 min",
+              "notes": "W7 Block 2: Load up vs Block 1. 90s cardio is shorter but same max-effort intensity.",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
               "block": "SUPERSET A — A1",
               "exercise": "DB Lateral Raise (seated, strict)",
               "sets": "3",
@@ -3460,6 +3614,28 @@ const PROGRAM = {
           "label": "Accessory",
           "title": "WEEK 8 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
+            {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Strict OHP  ×6 reps  |  ~80% 1RM — add 5 lb vs W7.\n→ Immediately into: Air Bike — 90s @90-95% MHR. Log calories as new B2 benchmark.\n→ Rest 2-3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "6 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2-3 min",
+              "notes": "Sets/load: 4×5 target | Restart ~75% 1RM. Push past B1 loads.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Hang Power Clean  ×6 reps  |  ~74% 3RM — add 5 lb vs W7.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Beat W7 distance.\n→ Rest 2-3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "6 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2-3 min",
+              "notes": "W8: Add weight to both phases. Hang clean variation — slightly higher starting position.",
+              "isBonus": false,
+              "isFinisher": false
+            },
             {
               "block": "SUPERSET A — A1",
               "exercise": "Cable Y-Raise",
@@ -3926,6 +4102,28 @@ const PROGRAM = {
           "title": "WEEK 9 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
             {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Jerk  ×5 reps  |  ~82-83% 1RM — transmutation. Heavy press under fatigue.\n→ Immediately into: Row Erg — 90s @90-95% MHR.\n→ Rest 3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "5 reps + cardio",
+              "tempo": "20X0",
+              "rest": "3 min",
+              "notes": "Sets/load: 5×4 target | 5x4. ~80% 1RM.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean + Push Press (1 clean, 1 press = 1 rep)  ×5 reps  |  ~70% 3RM clean — complex adds press demand. Manageable load.\n→ Immediately into: Ski Erg — 90s @90-95% MHR.\n→ Rest 3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "5 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "3 min",
+              "notes": "W9: Clean + Push Press complex chains the two movements. The press in Phase 2 mirrors Phase 1 — intentional stimulus.",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
               "block": "SUPERSET A — A1",
               "exercise": "Lateral Raise drop set (DB)",
               "sets": "3",
@@ -4390,6 +4588,28 @@ const PROGRAM = {
           "label": "Accessory",
           "title": "WEEK 10 — Wednesday — Accessory (Shoulder + IWT + Arms)",
           "exercises": [
+            {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Strict OHP  ×5 reps  |  ~85% 1RM — heaviest OHP of the program in IWT context.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Best row of B2.\n→ Rest 3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "5 reps + cardio",
+              "tempo": "20X0",
+              "rest": "3 min",
+              "notes": "Sets/load: 4×4 target | ~83–85% 1RM.  ⚡ After final round: 5 min complete rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean  ×5 reps  |  ~77% 3RM — heaviest clean of the program. Bar speed still the priority.\n→ Immediately into: Ski Erg — 90s @90-95% MHR. Best ski of B2.\n→ Rest 3 min before next round",
+              "sets": "2 (3 optional)",
+              "reps": "5 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "3 min",
+              "notes": "W10: Peak IWT loading. Log every set and cardio split — this is your Block 2 benchmark.",
+              "isBonus": false,
+              "isFinisher": false
+            },
             {
               "block": "SUPERSET A — A1",
               "exercise": "Cable Y-Raise",
@@ -4856,6 +5076,28 @@ const PROGRAM = {
           "title": "WEEK 11 — Wednesday — Accessory (Shoulder + IWT + Arms)  [PEAK WEEK]",
           "exercises": [
             {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Press  ×5 reps  |  ~65% 1RM — PEAK WEEK. Light and technical only.\n→ Immediately into: Row Erg — 90s @80% MHR. Easy.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 4×3 target | Peak — ~88% 1RM.  ⚡ After final round: 4 min rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean (light)  ×5 reps  |  ~60% 3RM — PEAK WEEK. Quality reps only.\n→ Immediately into: Ski Erg — 90s @80% MHR. Easy.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W11 PEAK WEEK: Easy IWT. 2 rounds, low intensity. Protect Mon bench + Tue squat peaks.",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
               "block": "SUPERSET A — A1",
               "exercise": "Light Lateral Raise",
               "sets": "2",
@@ -5320,6 +5562,28 @@ const PROGRAM = {
           "label": "Accessory",
           "title": "WEEK 12 — Wednesday — Accessory (Shoulder + IWT + Arms)  [DELOAD WEEK]",
           "exercises": [
+            {
+              "block": "IWT — PHASE 1  (OHP)",
+              "exercise": "Lift: Push Jerk (Deload)  ×5 reps  |  ~55% 1RM — DELOAD. Last session of the program.\n→ Immediately into: Row Erg — 90s @65% MHR. Very easy.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "20X0",
+              "rest": "2 min",
+              "notes": "Sets/load: 2×5 target | DELOAD. ~60% top weight.  ⚡ After final round: 3 min rest",
+              "isBonus": false,
+              "isFinisher": false
+            },
+            {
+              "block": "IWT — PHASE 2  (Power)",
+              "exercise": "Lift: Power Clean (very light)  ×5 reps  |  ~50% 3RM — DELOAD. Technique only.\n→ Immediately into: Ski Erg — 90s @65% MHR. Very easy.\n→ Rest 2 min before next round",
+              "sets": "2",
+              "reps": "5 reps + cardio",
+              "tempo": "explosive / 20X0",
+              "rest": "2 min",
+              "notes": "W12 DELOAD: End of program. Move well, recover fully. Retest 1RMs next cycle.",
+              "isBonus": false,
+              "isFinisher": false
+            },
             {
               "block": "SUPERSET A — A1",
               "exercise": "Light Lateral Raise",
