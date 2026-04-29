@@ -159,32 +159,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (DB)",
+              "exercise": "Swiss Ball Hamstring Curl",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext ham. Balance focus.",
+              "notes": "Floor-based hip-ext + knee-flex. No RDL overlap.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
+              "exercise": "Standing Calf Raise",
+              "sets": "",
+              "reps": "3×15",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Gastrocnemius. Full ROM — stretch at bottom.",
+              "isBonus": false
+            },
+            {
+              "block": "BONUS (Optional) — Quad",
               "exercise": "Leg Extension",
               "sets": "",
               "reps": "3×12–15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "VMO isolation. Slow negative.",
-              "isBonus": false
-            },
-            {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Lying Hamstring Curl (extra)",
-              "sets": "",
-              "reps": "3×12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Optional. Knee-flex.",
+              "notes": "Optional. Quad isolation.",
               "isBonus": true
             },
             {
@@ -208,22 +208,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×8 reps  |  ~70% 1RM — controlled press, explode up. RIR 2-3.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Log meters every round.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional if strong)",
               "reps": "8 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 4×5 target | ~70% 1RM. Control eccentric, explode up.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×8 reps  |  ~65% 3RM — bar speed is the goal. Reset each rep.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Log meters every round.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional if strong)",
               "reps": "8 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W1: Establish baselines. Record every row/ski distance — the goal is to beat them week over week.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -644,32 +646,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "RDL (BB)",
+              "exercise": "Cable Pull-Through (rope)",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext ham. Hinge, not squat.",
+              "notes": "Hip-ext. Spine neutral. Different stimulus from light-lift RDL.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Goblet Squat (paused)",
+              "exercise": "Adductor Machine",
               "sets": "",
-              "reps": "3×10",
-              "tempo": "2010+2s",
-              "rest": "75s",
-              "notes": "Pause at bottom. Quad stretch.",
+              "reps": "3×12",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Inner thigh. Important for squat stability.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Nordic Ham Curl",
+              "exercise": "BW Split Squat",
               "sets": "",
-              "reps": "3×6–8",
-              "tempo": "slow",
-              "rest": "75s",
-              "notes": "Optional. Eccentric emphasis.",
+              "reps": "3×10/leg",
+              "tempo": "2010",
+              "rest": "60s",
+              "notes": "Optional. Unilateral quad.",
               "isBonus": true
             },
             {
@@ -693,22 +695,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×8 reps  |  ~72% 1RM — add 5 lb vs W1. Same effort feel.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Beat W1 distance.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "8 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 4×5 target | ~70% 1RM. Control eccentric, explode up.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Hang Power Clean  ×8 reps  |  ~65% 3RM — same load, cleaner technique vs W1.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Beat W1 distance.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "8 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W2: Beat W1 cardio distances. Hang clean variation — slightly different pull pattern.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -1114,7 +1118,7 @@ const PROGRAM = {
               "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Knee-flex isolation. Save Nordics for standalone sets.",
+              "notes": "Knee-flex isolation.",
               "isBonus": false
             },
             {
@@ -1134,27 +1138,27 @@ const PROGRAM = {
               "reps": "12–15",
               "tempo": "X010",
               "rest": "90s",
-              "notes": "Hip-ext. Explosive glute snap.",
+              "notes": "Hip-ext. Explosive glute snap. No RDL pattern.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Sissy Squat (BW or light DB)",
+              "exercise": "Seated Calf Raise",
               "sets": "",
-              "reps": "3×10–12",
-              "tempo": "2010",
-              "rest": "75s",
-              "notes": "Advanced terminal ext.",
+              "reps": "3×15",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Soleus emphasis. Knees bent.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Single-Leg Ham Curl",
+              "exercise": "DB Goblet Squat",
               "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2011",
+              "reps": "3×12",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Optional. Unilateral.",
+              "notes": "Optional. Upright quad focus.",
               "isBonus": true
             },
             {
@@ -1178,22 +1182,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Jerk  ×10 reps  |  ~70% 1RM — higher reps, keep bar speed intent.\n→ Immediately into: Air Bike (Assault/Echo) — 2 min @90-95% MHR. Log calories.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "10 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 4×5 target | Add 5 lb vs prior week. RIR 2.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×8 reps  |  ~67% 3RM — add 5 lb vs W1.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Beat W2 distance.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "8 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W3: Air bike adds variety to Phase 1 cardio. Log calories as your new benchmark.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -1315,12 +1321,12 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Inverted Row (feet elevated)",
+              "exercise": "DB Floor Press (neutral grip)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "90s",
-              "notes": "Horizontal pull BW. Note: B pairs pull+pull here for extra back volume on pull day.",
+              "notes": "Horizontal push. Tricep + chest. Corrects B2 from pull to push.",
               "isBonus": false
             },
             {
@@ -1614,32 +1620,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Stiff-Leg DL (DB)",
+              "exercise": "Glute-Ham Raise (BW)",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext ham. More knee than RDL.",
+              "notes": "Hip-ext + knee-flex combo. Posterior chain without spinal hinge.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Split Squat (BW)",
+              "exercise": "Copenhagen Plank",
               "sets": "",
-              "reps": "3×12/leg",
-              "tempo": "2010",
+              "reps": "3×20s/side",
+              "tempo": "iso",
               "rest": "60s",
-              "notes": "Bodyweight. Unilateral focus.",
+              "notes": "Adductor isometric. Build to 30s.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "KB Swing",
+              "exercise": "Sissy Squat (BW)",
               "sets": "",
-              "reps": "3×15",
-              "tempo": "X010",
+              "reps": "3×10",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Optional. Hip-ext power.",
+              "notes": "Optional. Terminal knee ext.",
               "isBonus": true
             },
             {
@@ -1663,22 +1669,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×10 reps  |  ~72% 1RM — same as W3 but cleaner reps. This is the hardest B1 week.\n→ Immediately into: Row Erg — 2 min @90-95% MHR. Best row distance of Block 1.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "10 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 4×5 target | Add 5 lb vs prior week. RIR 2.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Hang Power Snatch (or snatch-grip high pull if technique is shaky)  ×6 reps  |  ~60% 3RM snatch — lower load than clean due to technical demand.\n→ Immediately into: Ski Erg — 2 min @90-95% MHR. Best ski distance of Block 1.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "6 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W4: Snatch variation changes the pull pattern. Technical — reduce load if form breaks.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -2021,12 +2029,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Chest",
-              "exercise": "Low-to-High Cable Fly",
+              "exercise": "Pec Deck",
               "sets": "",
               "reps": "3×12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Upper pec.",
+              "notes": "PEAK WK OPTIONAL. Different stimulus from B1 cable fly.",
               "isBonus": true
             },
             {
@@ -2099,32 +2107,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (BW)",
+              "exercise": "Light Swiss Ball Curl",
               "sets": "3",
               "reps": "12",
-              "tempo": "2010",
+              "tempo": "2011",
               "rest": "90s",
-              "notes": "Balance + hip ext. Light.",
+              "notes": "PEAK WEEK. Easy floor-based ham.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Leg Extension (drop set)",
+              "exercise": "Single-Leg Calf Raise (BW)",
               "sets": "",
-              "reps": "3×12 drop",
+              "reps": "2×12/side",
               "tempo": "2011",
-              "rest": "90s",
-              "notes": "PEAK WK. Drop 20% last set.",
+              "rest": "60s",
+              "notes": "PEAK WK. Easy calf.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "RDL (light)",
+              "exercise": "Light Leg Extension",
               "sets": "",
-              "reps": "2×12",
+              "reps": "2×15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL.",
+              "notes": "PEAK WK OPTIONAL. Easy isolation.",
               "isBonus": true
             },
             {
@@ -2148,22 +2156,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×5 reps  |  ~65% 1RM — PEAK WEEK. Easy. Save CNS for Mon/Tue.\n→ Immediately into: Row Erg — 90s @80-85% MHR. Sub-maximal effort.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 4×4 target | Bridge into peak. ~80–82% 1RM.  ⚡ After final round: 4 min rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (light)  ×5 reps  |  ~60% 3RM — light and technical. No grinding.\n→ Immediately into: Ski Erg — 90s @80-85% MHR. Easy.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W5 PEAK WEEK: 2 rounds, sub-max effort. IWT is maintenance — protect peak bench/squat days.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -2584,30 +2594,30 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Light RDL",
+              "exercise": "Light Glute Bridge",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. Easy hip-ext.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Light Leg Extension",
+              "exercise": "Light Calf Raise",
               "sets": "",
-              "reps": "2×12",
+              "reps": "2×15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. Easy movement.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Light Ham Curl",
+              "exercise": "Light BW Squat",
               "sets": "",
               "reps": "2×12",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "60s",
               "notes": "DELOAD OPTIONAL.",
               "isBonus": true
@@ -2633,22 +2643,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press (Deload)  ×5 reps  |  ~55-60% 1RM — DELOAD. Light bar, perfect reps only.\n→ Immediately into: Row Erg — 90s @65-70% MHR. Conversational pace.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 2×5 target | DELOAD. ~60% top weight.  ⚡ After final round: 3 min rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (deload load)  ×5 reps  |  ~55% 3RM — DELOAD. Move well, no intensity.\n→ Immediately into: Ski Erg — 90s @65-70% MHR. Easy pace.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W6 DELOAD: 2 rounds, low HR, light loads. Full recovery before Block 2.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -3069,32 +3081,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Good Morning (BB, light)",
+              "exercise": "Cable Pull-Through (heavier vs W2)",
               "sets": "3",
               "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext. Hinge under load.",
+              "notes": "Add load vs B1. Hip-ext. No RDL overlap.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "DB Lateral Lunge",
+              "exercise": "Tibialis Raise (wall or band)",
               "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2010",
-              "rest": "75s",
-              "notes": "Adductor + quad. Step wide.",
+              "reps": "3×15",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Shin / tib anterior. Knee health + shin splint prevention.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Lying Ham Curl (add load vs W1)",
+              "exercise": "Leg Extension (heavier)",
               "sets": "",
               "reps": "3×10",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "Optional.",
+              "rest": "75s",
+              "notes": "Optional. Add load vs B1.",
               "isBonus": true
             },
             {
@@ -3118,22 +3130,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×6 reps  |  ~77% 1RM — Block 2 strength shift. Beat B1 OHP loads.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Shorter interval, same max effort.\n→ Rest 2-3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "6 reps + cardio",
               "tempo": "20X0",
               "rest": "2-3 min",
               "notes": "Sets/load: 4×5 target | Restart ~75% 1RM. Push past B1 loads.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×6 reps  |  ~72% 3RM — heavier than any B1 week. Strong, crisp reps.\n→ Immediately into: Ski Erg — 90s @90-95% MHR.\n→ Rest 2-3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "6 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2-3 min",
               "notes": "W7 Block 2: Load up vs Block 1. 90s cardio is shorter but same max-effort intensity.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -3554,32 +3568,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (BB)",
+              "exercise": "Swiss Ball Hamstring Curl (feet elevated)",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext. Add load B2.",
+              "notes": "Harder variation — elevated feet increase leverage.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Wall Sit (BW, 60s)",
+              "exercise": "Adductor Machine (heavier)",
               "sets": "",
-              "reps": "3×60s",
-              "tempo": "iso",
-              "rest": "60s",
-              "notes": "Isometric quad. Burn.",
+              "reps": "3×10",
+              "tempo": "2011",
+              "rest": "75s",
+              "notes": "Add load vs W2. Adductor strength.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Stiff-Leg DL (DB)",
+              "exercise": "DB Walking Lunge",
               "sets": "",
-              "reps": "3×12",
-              "tempo": "2011",
+              "reps": "3×10/leg",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "Optional. Hip-ext ham.",
+              "notes": "Optional. Unilateral quad volume.",
               "isBonus": true
             },
             {
@@ -3603,22 +3617,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×6 reps  |  ~80% 1RM — add 5 lb vs W7.\n→ Immediately into: Air Bike — 90s @90-95% MHR. Log calories as new B2 benchmark.\n→ Rest 2-3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "6 reps + cardio",
               "tempo": "20X0",
               "rest": "2-3 min",
               "notes": "Sets/load: 4×5 target | Restart ~75% 1RM. Push past B1 loads.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Hang Power Clean  ×6 reps  |  ~74% 3RM — add 5 lb vs W7.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Beat W7 distance.\n→ Rest 2-3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "6 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2-3 min",
               "notes": "W8: Add weight to both phases. Hang clean variation — slightly higher starting position.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -3961,12 +3977,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Chest",
-              "exercise": "Weighted Dip (chest lean)",
+              "exercise": "Incline DB Fly",
               "sets": "",
-              "reps": "3×8–10",
-              "tempo": "2010",
+              "reps": "3×10–12",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Optional. Chest bias dip.",
+              "notes": "Optional. Different from A1 dip pattern.",
               "isBonus": true
             },
             {
@@ -4039,32 +4055,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "KB Single-Leg RDL",
+              "exercise": "Band-Assisted GHR",
               "sets": "3",
               "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Hip-ext balance work.",
+              "notes": "GHR with band decel. Hip-ext + knee-flex combo.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "BW Pistol Squat (parallette assist)",
+              "exercise": "Single-Leg Calf Raise (weighted)",
               "sets": "",
-              "reps": "3×6/leg",
-              "tempo": "controlled",
-              "rest": "75s",
-              "notes": "Skill + strength.",
+              "reps": "3×12/side",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Add load. Full stretch.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Seated Ham Curl",
+              "exercise": "BW Pistol Squat (parallette assist)",
               "sets": "",
-              "reps": "3×10–12",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Optional.",
+              "reps": "3×5/leg",
+              "tempo": "controlled",
+              "rest": "75s",
+              "notes": "Optional. Skill + strength.",
               "isBonus": true
             },
             {
@@ -4088,22 +4104,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Jerk  ×5 reps  |  ~82-83% 1RM — transmutation. Heavy press under fatigue.\n→ Immediately into: Row Erg — 90s @90-95% MHR.\n→ Rest 3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "3 min",
               "notes": "Sets/load: 5×4 target | 5x4. ~80% 1RM.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean + Push Press (1 clean, 1 press = 1 rep)  ×5 reps  |  ~70% 3RM clean — complex adds press demand. Manageable load.\n→ Immediately into: Ski Erg — 90s @90-95% MHR.\n→ Rest 3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "3 min",
               "notes": "W9: Clean + Push Press complex chains the two movements. The press in Phase 2 mirrors Phase 1 — intentional stimulus.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -4524,32 +4542,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Stiff-Leg DL (BB)",
+              "exercise": "KB Swing (heavy)",
               "sets": "3",
-              "reps": "8–10",
-              "tempo": "2011",
+              "reps": "10–12",
+              "tempo": "X010",
               "rest": "90s",
-              "notes": "Add load vs W4.",
+              "notes": "Heaviest swing of program. Hip-ext dominant.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Leg Extension (paused)",
+              "exercise": "Copenhagen Plank (weighted)",
               "sets": "",
-              "reps": "3×10+2s",
-              "tempo": "2011",
+              "reps": "3×25s/side",
+              "tempo": "iso",
               "rest": "75s",
-              "notes": "Pause at top. VMO squeeze.",
+              "notes": "Add light plate. Adductor peak.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "SL RDL (KB)",
+              "exercise": "Leg Press (slow eccentric)",
               "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2011",
-              "rest": "60s",
-              "notes": "Optional. Balance focus.",
+              "reps": "3×10",
+              "tempo": "3010",
+              "rest": "75s",
+              "notes": "Optional. Eccentric quad overload.",
               "isBonus": true
             },
             {
@@ -4573,22 +4591,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Strict OHP  ×5 reps  |  ~85% 1RM — heaviest OHP of the program in IWT context.\n→ Immediately into: Row Erg — 90s @90-95% MHR. Best row of B2.\n→ Rest 3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "3 min",
               "notes": "Sets/load: 4×4 target | ~83–85% 1RM.  ⚡ After final round: 5 min complete rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean  ×5 reps  |  ~77% 3RM — heaviest clean of the program. Bar speed still the priority.\n→ Immediately into: Ski Erg — 90s @90-95% MHR. Best ski of B2.\n→ Rest 3 min before next round",
-              "sets": "3",
+              "sets": "2 (3 optional)",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "3 min",
               "notes": "W10: Peak IWT loading. Log every set and cardio split — this is your Block 2 benchmark.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -5009,29 +5029,29 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Single-Leg RDL (BW)",
+              "exercise": "Light Cable Pull-Through",
               "sets": "2",
               "reps": "12",
-              "tempo": "2010",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WEEK. Light.",
+              "notes": "PEAK WEEK. Easy hip-ext.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Light BW Squat",
+              "exercise": "Light Calf Raise",
               "sets": "",
-              "reps": "2×15",
-              "tempo": "2010",
+              "reps": "2×12",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WK. Active recovery.",
+              "notes": "PEAK WK. Easy.",
               "isBonus": false
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Light Ham Curl",
+              "exercise": "Light Leg Extension",
               "sets": "",
-              "reps": "2×10",
+              "reps": "2×12",
               "tempo": "2011",
               "rest": "60s",
               "notes": "PEAK WK OPTIONAL.",
@@ -5058,22 +5078,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Press  ×5 reps  |  ~65% 1RM — PEAK WEEK. Light and technical only.\n→ Immediately into: Row Erg — 90s @80% MHR. Easy.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 4×3 target | Peak — ~88% 1RM.  ⚡ After final round: 4 min rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (light)  ×5 reps  |  ~60% 3RM — PEAK WEEK. Quality reps only.\n→ Immediately into: Ski Erg — 90s @80% MHR. Easy.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W11 PEAK WEEK: Easy IWT. 2 rounds, low intensity. Protect Mon bench + Tue squat peaks.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
@@ -5494,17 +5516,17 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Light RDL",
+              "exercise": "Light Glute Bridge",
               "sets": "2",
               "reps": "15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD.",
+              "notes": "DELOAD. End of program.",
               "isBonus": false
             },
             {
               "block": "ACCESSORY",
-              "exercise": "Light Leg Extension",
+              "exercise": "Light Calf Raise",
               "sets": "",
               "reps": "2×12",
               "tempo": "2011",
@@ -5514,10 +5536,10 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Light RDL",
+              "exercise": "Light BW Squat",
               "sets": "",
-              "reps": "2×12",
-              "tempo": "2011",
+              "reps": "2×10",
+              "tempo": "2010",
               "rest": "60s",
               "notes": "DELOAD OPTIONAL.",
               "isBonus": true
@@ -5543,22 +5565,24 @@ const PROGRAM = {
             {
               "block": "IWT — PHASE 1  (OHP)",
               "exercise": "Lift: Push Jerk (Deload)  ×5 reps  |  ~55% 1RM — DELOAD. Last session of the program.\n→ Immediately into: Row Erg — 90s @65% MHR. Very easy.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "20X0",
               "rest": "2 min",
               "notes": "Sets/load: 2×5 target | DELOAD. ~60% top weight.  ⚡ After final round: 3 min rest",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "IWT — PHASE 2  (Power)",
               "exercise": "Lift: Power Clean (very light)  ×5 reps  |  ~50% 3RM — DELOAD. Technique only.\n→ Immediately into: Ski Erg — 90s @65% MHR. Very easy.\n→ Rest 2 min before next round",
-              "sets": "3",
+              "sets": "2",
               "reps": "5 reps + cardio",
               "tempo": "explosive / 20X0",
               "rest": "2 min",
               "notes": "W12 DELOAD: End of program. Move well, recover fully. Retest 1RMs next cycle.",
-              "isBonus": false
+              "isBonus": false,
+              "isFinisher": false
             },
             {
               "block": "SUPERSET A — A1",
