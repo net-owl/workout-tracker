@@ -51,22 +51,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Parallette Push-Up (feet elevated)",
+              "exercise": "Pec Deck",
               "sets": "3",
-              "reps": "12",
-              "tempo": "X010",
-              "rest": "45s",
-              "notes": "BW. Max control.",
+              "reps": "10–12",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Chest isolation. Machine = pure pec, no triceps. Squeeze 1s at peak.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "One-Arm DB Row",
+              "exercise": "Snatch-Grip BB Shrug",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Full ROM, let shoulder drop.",
+              "notes": "Upper trap focus. Wide grip elevates traps and rear delt. Pause 1s at top.",
               "isBonus": false
             },
             {
@@ -475,7 +475,7 @@ const PROGRAM = {
             },
             {
               "block": "FINISHER",
-              "exercise": "AB ROUTINE — 3 rounds, 60s rest between rounds:\n  • Hanging Knee Raise — 3×12 [Hip flexion. Full dead hang. No swinging.]\n  • Pallof Press — 3×10/side [Anti-rotation. Cable or band.]\n  • KB KB Swing (core focus) — 3×12 [KB — hip ext + anterior bracing. Squeeze glutes at top.]",
+              "exercise": "AB ROUTINE — 3 rounds, 60s rest between rounds:\n  • Hanging Knee Raise — 3×12 [Hip flexion. Full dead hang. No swinging.]\n  • Pallof Press — 3×10/side [Anti-rotation. Cable or band.]\n  • KB Swing (core focus) — 3×12 [KB — hip ext + anterior bracing. Squeeze glutes at top.]",
               "sets": "",
               "reps": "",
               "tempo": "",
@@ -538,22 +538,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Flat DB Press",
+              "exercise": "Cable Crossover (high-to-low)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "2010",
-              "rest": "45s",
-              "notes": "Full stretch at bottom.",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Chest isolation. Constant tension. Lower-mid pec emphasis.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Straight-Arm Pulldown",
+              "exercise": "Cable Reverse Fly",
               "sets": "3",
-              "reps": "12",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Lats only, arms straight.",
+              "notes": "Mid trap + rear delt. Squeeze blades at peak. Distinct from lat pulldown in A2.",
               "isBonus": false
             },
             {
@@ -1025,22 +1025,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Weighted Dip (slight forward lean)",
+              "exercise": "Cable Fly (mid)",
               "sets": "3",
-              "reps": "8–10",
-              "tempo": "2010",
-              "rest": "45s",
-              "notes": "Chest bias. Control descent. Tricep + pec.",
+              "reps": "10–12",
+              "tempo": "2011+1s",
+              "rest": "60s",
+              "notes": "Chest isolation. Mid-chest fibers. Pause 1s peak contraction.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Close-Grip Lat Pulldown",
+              "exercise": "Kelso Shrug (chest-supported DB)",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Elbows track beside torso.",
+              "notes": "Scapular retraction isolation. Mid/lower trap. Chest on bench, retract blades only.",
               "isBonus": false
             },
             {
@@ -1512,22 +1512,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Banded Push-Up (max reps capped 20)",
+              "exercise": "DB Fly (flat)",
               "sets": "3",
-              "reps": "12–15",
-              "tempo": "X010",
-              "rest": "45s",
-              "notes": "BW + band resistance.",
+              "reps": "10–12",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Chest isolation. Free-weight stretch at bottom. Different from A1 cable.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Chest-Supported DB Row",
+              "exercise": "Cable Y-Raise",
               "sets": "3",
-              "reps": "8–10",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "No momentum. Chest on pad.",
+              "notes": "Lower trap. Scapular depression at 45° angle. Slow and controlled.",
               "isBonus": false
             },
             {
@@ -1640,12 +1640,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Sissy Squat (BW)",
-              "sets": "",
+              "exercise": "BW Step-Up (high box, slow 3s ascent)",
+              "sets": "3×10/leg",
               "reps": "3×10",
-              "tempo": "2010",
+              "tempo": "3010",
               "rest": "60s",
-              "notes": "Optional. Terminal knee ext.",
+              "notes": "Optional. Unilateral quad with slow tempo. Different from A1 hack squat and B1 reverse lunge.",
               "isBonus": true
             },
             {
@@ -1999,22 +1999,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Low-to-High Cable Fly",
-              "sets": "3",
-              "reps": "10",
+              "exercise": "Light Cable Crossover",
+              "sets": "2",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "45s",
-              "notes": "Upper pec. Squeeze at top. Low CNS cost.",
+              "rest": "60s",
+              "notes": "PEAK WK. Easy chest isolation.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Rear Delt Cable Fly",
-              "sets": "3",
-              "reps": "12",
+              "exercise": "Light DB Trap-3 Raise (prone)",
+              "sets": "2",
+              "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Light, feel the contraction.",
+              "notes": "PEAK WK. Lower trap. Lie on incline bench, raise DBs in Y pattern.",
               "isBonus": false
             },
             {
@@ -2029,12 +2029,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Chest",
-              "exercise": "Pec Deck",
-              "sets": "",
+              "exercise": "Light DB Squeeze Press",
+              "sets": "3×12",
               "reps": "3×12",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Different stimulus from B1 cable fly.",
+              "notes": "PEAK WK OPTIONAL. Squeeze 2 DBs together. Different from A1 pec deck.",
               "isBonus": true
             },
             {
@@ -2127,12 +2127,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Light Leg Extension",
-              "sets": "",
+              "exercise": "Light Goblet Squat",
+              "sets": "2×12",
               "reps": "2×15",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Easy isolation.",
+              "notes": "PEAK WK OPTIONAL. Easy bilateral quad. Different from A1 leg extension.",
               "isBonus": true
             },
             {
@@ -2486,22 +2486,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Lateral Raise",
+              "exercise": "Light DB Fly (flat)",
               "sets": "2",
-              "reps": "15",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "45s",
-              "notes": "DELOAD.",
+              "rest": "60s",
+              "notes": "DELOAD. Easy chest isolation.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Light Face Pull",
+              "exercise": "Light Cable Y-Raise",
               "sets": "2",
-              "reps": "15",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "DELOAD.",
+              "rest": "90s",
+              "notes": "DELOAD. Lower trap. Light cable only.",
               "isBonus": false
             },
             {
@@ -2802,12 +2802,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Back",
-              "exercise": "Light Row",
-              "sets": "",
+              "exercise": "Light Reverse Pec Deck",
+              "sets": "2×12",
               "reps": "2×12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD OPTIONAL.",
+              "notes": "DELOAD OPTIONAL. Rear delt + mid trap. Different from A1 light row.",
               "isBonus": true
             },
             {
@@ -2973,22 +2973,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Parallette Dip (ring or bar)",
+              "exercise": "Incline DB Fly",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "2010",
-              "rest": "45s",
-              "notes": "BW or weighted. Chest bias, slight lean.",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Chest isolation. Upper pec stretch. Free weight vs A1 press, no triceps.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "One-Arm DB Row (elbow out)",
+              "exercise": "Snatch-Grip DB Shrug",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Elbow flares — upper back emphasis.",
+              "notes": "Upper trap. DB version for unilateral control. Pause at top.",
               "isBonus": false
             },
             {
@@ -3450,32 +3450,32 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET A — A2",
-              "exercise": "Seated Cable Row (neutral)",
+              "exercise": "Chest-Supported T-Bar Row",
               "sets": "3",
-              "reps": "12",
+              "reps": "mid",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Mid-back emphasis.",
+              "notes": "Pull. Different equipment & angle from light-lift seated row.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Pseudo-Planche Lean (parallettes)",
+              "exercise": "High-to-Low Cable Fly (decline angle)",
               "sets": "3",
-              "reps": "12",
-              "tempo": "hold 3s",
+              "reps": "10–12",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "BW. Protract, lean forward 20°.",
+              "notes": "Chest isolation. Lower pec fibers. Different from A1 incline press.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Chest-Supported Row (pronated)",
+              "exercise": "Cable Pull-to-Face (high cable)",
               "sets": "3",
-              "reps": "10–12",
-              "tempo": "2011",
+              "reps": "12–15",
+              "tempo": "2011+1s",
               "rest": "90s",
-              "notes": "Overhand — more rhomboids.",
+              "notes": "Upper back + posterior delt. High cable to face. Different from cable row.",
               "isBonus": false
             },
             {
@@ -3947,22 +3947,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Incline DB Press (steep 45°)",
+              "exercise": "Low-to-High Cable Fly",
               "sets": "3",
-              "reps": "8–10",
-              "tempo": "2010",
-              "rest": "45s",
-              "notes": "Upper pec. Full ROM.",
+              "reps": "10–12",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Chest isolation. Upper pec emphasis. Different from A1 dip pattern.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Straight-Arm Pulldown",
+              "exercise": "Powell Raise (kneeling neutral DB)",
               "sets": "3",
-              "reps": "10–12",
+              "reps": "10–12/side",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Keep arms straight. Lats.",
+              "notes": "Rhomboid + mid trap. Half-kneeling, lateral raise with neutral grip.",
               "isBonus": false
             },
             {
@@ -4165,12 +4165,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Shoulder",
-              "exercise": "Lateral Raise (cable seated)",
-              "sets": "",
+              "exercise": "DB Front Raise",
+              "sets": "3×12",
               "reps": "3×12",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Optional.",
+              "notes": "Optional. Anterior delt isolation. Different from A1 lateral raise.",
               "isBonus": true
             },
             {
@@ -4434,22 +4434,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Archer Push-Up (parallettes)",
+              "exercise": "Pec Deck (paused at peak)",
               "sets": "3",
-              "reps": "10–12",
-              "tempo": "X010",
+              "reps": "8–10+2s",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "BW advanced. One arm assists.",
+              "notes": "Chest isolation with 2s peak hold. Different from A1 cable fly.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Chest-Supported T-Bar Row",
+              "exercise": "Bent-Over DB Reverse Fly",
               "sets": "3",
-              "reps": "8–10",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Loaded. Control the negative.",
+              "notes": "Rear delt + mid trap. Chest down, retract and lift. Distinct from lat work.",
               "isBonus": false
             },
             {
@@ -4562,12 +4562,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Leg Press (slow eccentric)",
-              "sets": "",
+              "exercise": "Sissy Squat (DB held)",
+              "sets": "3×10",
               "reps": "3×10",
-              "tempo": "3010",
+              "tempo": "2010",
               "rest": "75s",
-              "notes": "Optional. Eccentric quad overload.",
+              "notes": "Optional. Terminal knee extension with light DB. Different from A1 leg press.",
               "isBonus": true
             },
             {
@@ -4921,22 +4921,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Cable Fly (low-to-high)",
+              "exercise": "Light Incline DB Fly",
               "sets": "2",
-              "reps": "10",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "45s",
-              "notes": "PEAK WEEK. Upper pec. Feather-light.",
+              "rest": "60s",
+              "notes": "PEAK WK. Easy chest isolation.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Rear Delt DB Fly",
+              "exercise": "Light Cable Reverse Fly",
               "sets": "2",
-              "reps": "12",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "Control only.",
+              "rest": "90s",
+              "notes": "PEAK WK. Rear delt + mid trap. Light cable.",
               "isBonus": false
             },
             {
@@ -4951,12 +4951,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Chest",
-              "exercise": "Light Cable Fly",
-              "sets": "",
+              "exercise": "Light DB Squeeze Press",
+              "sets": "2×12",
               "reps": "2×12",
-              "tempo": "2011",
+              "tempo": "2010",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL.",
+              "notes": "PEAK WK OPTIONAL. Inner-pec squeeze. Different from B1 incline fly and A1 pec deck.",
               "isBonus": true
             },
             {
@@ -5049,12 +5049,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Quad",
-              "exercise": "Light Leg Extension",
-              "sets": "",
+              "exercise": "Light BW Squat (slow 3s descent)",
+              "sets": "2×10",
               "reps": "2×12",
-              "tempo": "2011",
+              "tempo": "3010",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL.",
+              "notes": "PEAK WK OPTIONAL. Bilateral BW. Different from A1 leg extension and B1 pistol assist.",
               "isBonus": true
             },
             {
@@ -5335,12 +5335,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Light Leg Press",
-              "sets": "",
+              "exercise": "Light BW Squat",
+              "sets": "2×10",
               "reps": "2×12",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL.",
+              "notes": "PEAK WK OPTIONAL. BW only. Different from B2 leg press.",
               "isBonus": true
             },
             {
@@ -5408,22 +5408,22 @@ const PROGRAM = {
             },
             {
               "block": "SUPERSET B — B1",
-              "exercise": "Light Lateral Raise",
+              "exercise": "Light Pec Deck",
               "sets": "2",
-              "reps": "15",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "45s",
-              "notes": "DELOAD.",
+              "rest": "60s",
+              "notes": "DELOAD. Easy chest isolation.",
               "isBonus": false
             },
             {
               "block": "SUPERSET B — B2",
-              "exercise": "Light Face Pull",
+              "exercise": "Light Cable Y-Raise",
               "sets": "2",
-              "reps": "15",
+              "reps": "10–12",
               "tempo": "2011",
-              "rest": "60s",
-              "notes": "DELOAD.",
+              "rest": "90s",
+              "notes": "DELOAD. Lower trap. End of program.",
               "isBonus": false
             },
             {
@@ -5724,12 +5724,12 @@ const PROGRAM = {
             },
             {
               "block": "BONUS (Optional) — Back",
-              "exercise": "Light Row",
-              "sets": "",
-              "reps": "2×12",
+              "exercise": "Light Face Pull",
+              "sets": "2×15",
+              "reps": "2×15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "DELOAD OPTIONAL.",
+              "notes": "DELOAD OPTIONAL. External rotation + rear delt. Different from B1 band pull-apart.",
               "isBonus": true
             },
             {
