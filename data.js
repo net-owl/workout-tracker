@@ -178,14 +178,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Leg Extension",
-              "sets": "",
-              "reps": "3×12–15",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Adductor Machine",
+              "sets": "3",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Optional. Quad isolation.",
-              "isBonus": true
+              "notes": "Replaces optional leg extension. Adds adductor volume for squat/leg balance.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -330,7 +330,7 @@ const PROGRAM = {
               "exercise": "Parallette Pike Push-Up",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "BW. Vertical push plane.",
               "isBonus": false
@@ -350,7 +350,7 @@ const PROGRAM = {
               "exercise": "Parallette Push-Up (deficit)",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "BW. Full ROM.",
               "isBonus": false
@@ -464,14 +464,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Leg Extension",
-              "sets": "",
-              "reps": "3×12–15",
-              "tempo": "2011",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "Optional. Quad isolation.",
-              "isBonus": true
+              "notes": "Replaces optional leg extension. Adds soleus/calf volume.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -665,14 +665,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "BW Split Squat",
-              "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "Optional. Unilateral quad.",
-              "isBonus": true
+              "notes": "Keeps adductor machine in row above and adds calf coverage.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -817,7 +817,7 @@ const PROGRAM = {
               "exercise": "Band-Assisted Pike Push-Up",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Vertical plane push.",
               "isBonus": false
@@ -837,7 +837,7 @@ const PROGRAM = {
               "exercise": "Push-Up (archer variation)",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Unilateral focus.",
               "isBonus": false
@@ -951,14 +951,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "BW Split Squat",
-              "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2010",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Copenhagen Plank",
+              "sets": "3",
+              "reps": "20–30s/side",
+              "tempo": "iso",
               "rest": "60s",
-              "notes": "Optional. Quad.",
-              "isBonus": true
+              "notes": "Replaces optional split squat. Adds adductor stability without more quad fatigue.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -1008,7 +1008,7 @@ const PROGRAM = {
               "exercise": "Decline Push-Up (feet on bench)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "60s",
               "notes": "BW. Lower pec bias.",
               "isBonus": false
@@ -1136,7 +1136,7 @@ const PROGRAM = {
               "exercise": "KB Swing",
               "sets": "3",
               "reps": "12–15",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Hip-ext. Explosive glute snap. No RDL pattern.",
               "isBonus": false
@@ -1152,14 +1152,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "DB Goblet Squat",
-              "sets": "",
-              "reps": "3×12",
-              "tempo": "2010",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Adductor Machine",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Optional. Upright quad focus.",
-              "isBonus": true
+              "notes": "Replaces optional quad work to round out leg coverage.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -1438,14 +1438,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "DB Goblet Squat",
-              "sets": "",
-              "reps": "3×12",
-              "tempo": "2010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "Optional. Quad endurance.",
-              "isBonus": true
+              "notes": "Adds weekly calf volume without taxing the spine.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -1541,14 +1541,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Chest",
-              "exercise": "Svend Press",
-              "sets": "",
-              "reps": "3×12",
+              "block": "ACCESSORY — Lat Balance",
+              "exercise": "Straight-Arm Cable Pulldown",
+              "sets": "3",
+              "reps": "12–15",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "Optional. Squeeze plate. Inner pec.",
-              "isBonus": true
+              "notes": "Replaces optional chest. Adds direct lat work so the week is not row/chest dominant.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -1639,14 +1639,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "BW Step-Up (high box, slow 3s ascent)",
-              "sets": "3×10/leg",
-              "reps": "3×10",
-              "tempo": "3010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "Optional. Unilateral quad with slow tempo. Different from A1 hack squat and B1 reverse lunge.",
-              "isBonus": true
+              "notes": "Replaces optional quad work as intensity rises.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -1811,7 +1811,7 @@ const PROGRAM = {
               "exercise": "Banded Push-Up",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Resistance band over back.",
               "isBonus": false
@@ -1919,20 +1919,20 @@ const PROGRAM = {
               "exercise": "KB Swing (heavy)",
               "sets": "",
               "reps": "3×15",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "75s",
               "notes": "Hip-ext. Explosive.",
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Leg Press (light)",
-              "sets": "",
-              "reps": "3×15",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Lateral Lunge (DB)",
+              "sets": "3",
+              "reps": "10–12/side",
               "tempo": "2010",
               "rest": "60s",
-              "notes": "Optional. High rep quad.",
-              "isBonus": true
+              "notes": "Replaces optional leg press. Adds frontal-plane/adductor work.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -2028,14 +2028,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Chest",
-              "exercise": "Light DB Squeeze Press",
-              "sets": "3×12",
-              "reps": "3×12",
-              "tempo": "2010",
-              "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Squeeze 2 DBs together. Different from A1 pec deck.",
-              "isBonus": true
+              "block": "REMOVED — Peak Recovery",
+              "exercise": "—",
+              "sets": "",
+              "reps": "",
+              "tempo": "",
+              "rest": "",
+              "notes": "Optional chest removed by default. Keep peak week focused on heavy bench and recovery.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -2126,14 +2126,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Light Goblet Squat",
-              "sets": "2×12",
-              "reps": "2×15",
-              "tempo": "2010",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Light Adductor Machine",
+              "sets": "3",
+              "reps": "12–15, RIR 3",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Easy bilateral quad. Different from A1 leg extension.",
-              "isBonus": true
+              "notes": "Peak-week low-fatigue adductor work; no extra quad overload.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -2278,7 +2278,7 @@ const PROGRAM = {
               "exercise": "Light Push-Up",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "PEAK WEEK. BW.",
               "isBonus": false
@@ -2412,14 +2412,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Light Leg Extension",
-              "sets": "",
-              "reps": "2×15",
-              "tempo": "2011",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Light Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15, RIR 3",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL.",
-              "isBonus": true
+              "notes": "Peak-week low-fatigue calf work.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -2613,14 +2613,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Light BW Squat",
-              "sets": "",
-              "reps": "2×12",
-              "tempo": "2010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Light Calf Raise",
+              "sets": "2",
+              "reps": "15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "DELOAD OPTIONAL.",
-              "isBonus": true
+              "notes": "Deload. Easy calf work with full stretch/hold.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -2765,7 +2765,7 @@ const PROGRAM = {
               "exercise": "Light Push-Up",
               "sets": "2",
               "reps": "15",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "60s",
               "notes": "DELOAD.",
               "isBonus": false
@@ -2899,14 +2899,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Light BW Squat",
-              "sets": "",
-              "reps": "2×15",
-              "tempo": "2010",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Light Copenhagen Plank",
+              "sets": "2",
+              "reps": "20s/side",
+              "tempo": "iso",
               "rest": "60s",
-              "notes": "DELOAD OPTIONAL.",
-              "isBonus": true
+              "notes": "Deload. Easy adductor stability.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -3100,14 +3100,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Leg Extension (heavier)",
-              "sets": "",
-              "reps": "3×10",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Adductor Machine",
+              "sets": "3",
+              "reps": "12–15",
               "tempo": "2011",
-              "rest": "75s",
-              "notes": "Optional. Add load vs B1.",
-              "isBonus": true
+              "rest": "60s",
+              "notes": "Block 2 starts with consistent adductor volume.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -3386,14 +3386,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "BW Pistol Squat (parallette)",
-              "sets": "",
-              "reps": "3×5/leg",
-              "tempo": "controlled",
-              "rest": "75s",
-              "notes": "Optional. Skill work.",
-              "isBonus": true
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
+              "rest": "60s",
+              "notes": "Adds calf volume without adding hinge fatigue.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -3452,10 +3452,10 @@ const PROGRAM = {
               "block": "SUPERSET A — A2",
               "exercise": "Chest-Supported T-Bar Row",
               "sets": "3",
-              "reps": "mid",
+              "reps": "10–12",
               "tempo": "2011",
               "rest": "90s",
-              "notes": "Pull. Different equipment & angle from light-lift seated row.",
+              "notes": "Pull. Different equipment & angle from light-lift seated row. Corrected typo from 'mid'.",
               "isBonus": false
             },
             {
@@ -3587,14 +3587,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "DB Walking Lunge",
-              "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Standing Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "Optional. Unilateral quad volume.",
-              "isBonus": true
+              "notes": "Adds gastrocnemius emphasis.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -3739,7 +3739,7 @@ const PROGRAM = {
               "exercise": "Parallette Push-Up (weighted vest)",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "BW + vest. Horizontal push.",
               "isBonus": false
@@ -3759,7 +3759,7 @@ const PROGRAM = {
               "exercise": "Archer Push-Up (parallettes)",
               "sets": "3",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Advanced BW. Controlled unilateral push — hypertrophy focused.",
               "isBonus": false
@@ -3873,14 +3873,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Wall Sit (90s)",
-              "sets": "",
-              "reps": "3×90s",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Copenhagen Plank",
+              "sets": "3",
+              "reps": "20–30s/side",
               "tempo": "iso",
               "rest": "60s",
-              "notes": "Optional. Quad isometric.",
-              "isBonus": true
+              "notes": "Adds adductor stability while limiting extra quad/posterior-chain work.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -3909,10 +3909,10 @@ const PROGRAM = {
               "block": "STRENGTH (Heavy) — Bench",
               "exercise": "Barbell Bench Press",
               "sets": "4",
-              "reps": "3 reps  |  ~83–85% TM — Transmutation W9. RIR 1.",
+              "reps": "4 reps  |  ~82–84% TM — Transmutation W9 bridge. RIR 1–2.",
               "tempo": "20X0",
-              "rest": "3–4 min",
-              "notes": "Reps drop to 3, intensity climbs. Stay explosive.",
+              "rest": "3 min",
+              "notes": "Changed from triples to 4s to preserve hypertrophy volume before heavier W10–W11 work.",
               "isBonus": false
             },
             {
@@ -4007,10 +4007,10 @@ const PROGRAM = {
               "block": "STRENGTH (Heavy) — Squat",
               "exercise": "Back Squat",
               "sets": "4",
-              "reps": "3 reps  |  ~83–85% TM — Transmutation W9. RIR 1.",
+              "reps": "4 reps  |  ~82–84% TM — Transmutation W9 bridge. RIR 1–2.",
               "tempo": "20X0",
-              "rest": "3–4 min",
-              "notes": "Triples at 83–85%. Heavy but submaximal. Stay crisp.",
+              "rest": "3 min",
+              "notes": "Changed from triples to 4s to maintain quality volume and reduce peak-week fatigue.",
               "isBonus": false
             },
             {
@@ -4074,14 +4074,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "BW Pistol Squat (parallette assist)",
-              "sets": "",
-              "reps": "3×5/leg",
-              "tempo": "controlled",
-              "rest": "75s",
-              "notes": "Optional. Skill + strength.",
-              "isBonus": true
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Adductor Machine",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2011",
+              "rest": "60s",
+              "notes": "Replaces pistol squat to avoid more quad skill fatigue in W9.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -4158,19 +4158,19 @@ const PROGRAM = {
               "exercise": "Close-Grip Push-Up (parallettes)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "BW tricep push.",
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Shoulder",
-              "exercise": "DB Front Raise",
-              "sets": "3×12",
-              "reps": "3×12",
-              "tempo": "2011",
+              "block": "BONUS (Optional) — Side Delt",
+              "exercise": "Cable Lateral Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2111",
               "rest": "60s",
-              "notes": "Optional. Anterior delt isolation. Different from A1 lateral raise.",
+              "notes": "Replaces front raise. Front delts already receive plenty from pressing; side delts needed more weekly volume.",
               "isBonus": true
             },
             {
@@ -4246,7 +4246,7 @@ const PROGRAM = {
               "exercise": "Diamond Push-Up",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Tricep push BW.",
               "isBonus": false
@@ -4292,11 +4292,11 @@ const PROGRAM = {
             {
               "block": "STRENGTH (Heavy)",
               "exercise": "Conventional Deadlift",
-              "sets": "5",
-              "reps": "3 reps  |  5x3. ~83–85% 1RM.",
+              "sets": "4",
+              "reps": "4 reps  |  ~82–84% 1RM — Transmutation W9 bridge. RIR 1–2.",
               "tempo": "20X0",
-              "rest": "3–4 min",
-              "notes": "5x3. ~83–85% 1RM.",
+              "rest": "3 min",
+              "notes": "Changed from 5×3 to 4×4. More useful volume while staying above 3 reps per set.",
               "isBonus": false
             },
             {
@@ -4360,14 +4360,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Lateral Lunge (DB)",
-              "sets": "",
-              "reps": "3×10/leg",
-              "tempo": "2010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Seated Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "Optional. Adductor + quad.",
-              "isBonus": true
+              "notes": "Replaces optional lateral lunge because W9 already has high lower-body demand.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -4545,7 +4545,7 @@ const PROGRAM = {
               "exercise": "KB Swing (heavy)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Heaviest swing of program. Hip-ext dominant.",
               "isBonus": false
@@ -4561,14 +4561,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Sissy Squat (DB held)",
-              "sets": "3×10",
-              "reps": "3×10",
-              "tempo": "2010",
-              "rest": "75s",
-              "notes": "Optional. Terminal knee extension with light DB. Different from A1 leg press.",
-              "isBonus": true
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Standing Calf Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2112",
+              "rest": "60s",
+              "notes": "Replaces optional sissy squat. Keeps peak approach balanced.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -4713,7 +4713,7 @@ const PROGRAM = {
               "exercise": "Archer Push-Up (parallettes)",
               "sets": "3",
               "reps": "10–12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "Advanced unilateral BW.",
               "isBonus": false
@@ -4749,13 +4749,13 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Back",
-              "exercise": "DB Pullover",
-              "sets": "",
-              "reps": "3×12",
-              "tempo": "2011",
+              "block": "BONUS (Optional) — Side Delt",
+              "exercise": "Machine or Cable Lateral Raise",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2111",
               "rest": "60s",
-              "notes": "Optional. Lat/serratus.",
+              "notes": "Replaces optional back. Adds side-delt volume without much systemic fatigue.",
               "isBonus": true
             },
             {
@@ -4847,14 +4847,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Leg Press (slow eccentric)",
-              "sets": "",
-              "reps": "3×10",
-              "tempo": "3010",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Adductor Machine",
+              "sets": "3",
+              "reps": "12–15",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "Optional. Slow down.",
-              "isBonus": true
+              "notes": "Replaces optional slow leg press. Avoids extra quad fatigue before W11.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -4950,14 +4950,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Chest",
-              "exercise": "Light DB Squeeze Press",
-              "sets": "2×12",
-              "reps": "2×12",
-              "tempo": "2010",
+              "block": "ACCESSORY — Lat Balance",
+              "exercise": "Straight-Arm Cable Pulldown",
+              "sets": "3",
+              "reps": "12–15, RIR 3",
+              "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Inner-pec squeeze. Different from B1 incline fly and A1 pec deck.",
-              "isBonus": true
+              "notes": "Replaces optional chest. Light direct lat work to keep back coverage complete during peak week.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -5048,14 +5048,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Light BW Squat (slow 3s descent)",
-              "sets": "2×10",
-              "reps": "2×12",
-              "tempo": "3010",
-              "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. Bilateral BW. Different from A1 leg extension and B1 pistol assist.",
-              "isBonus": true
+              "block": "REMOVED — Peak Recovery",
+              "exercise": "—",
+              "sets": "",
+              "reps": "",
+              "tempo": "",
+              "rest": "",
+              "notes": "Optional quad removed. Peak squat week should not add extra quad fatigue.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -5200,7 +5200,7 @@ const PROGRAM = {
               "exercise": "BW Push-Up",
               "sets": "2",
               "reps": "12",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "90s",
               "notes": "PEAK WEEK. Easy.",
               "isBonus": false
@@ -5236,14 +5236,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Back",
-              "exercise": "Light Pulldown",
-              "sets": "",
-              "reps": "2×12",
+              "block": "ACCESSORY — Lat Balance",
+              "exercise": "Light Neutral-Grip Pulldown",
+              "sets": "3",
+              "reps": "12, RIR 3",
               "tempo": "2011",
               "rest": "60s",
-              "notes": "PEAK WK OPTIONAL.",
-              "isBonus": true
+              "notes": "Keeps lats covered in peak week without heavy systemic fatigue.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -5334,14 +5334,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Light BW Squat",
-              "sets": "2×10",
-              "reps": "2×12",
-              "tempo": "2010",
-              "rest": "60s",
-              "notes": "PEAK WK OPTIONAL. BW only. Different from B2 leg press.",
-              "isBonus": true
+              "block": "REMOVED — Peak Recovery",
+              "exercise": "—",
+              "sets": "",
+              "reps": "",
+              "tempo": "",
+              "rest": "",
+              "notes": "Optional posterior-chain work removed. Peak deadlift week should prioritize recovery.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -5535,14 +5535,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Quad",
-              "exercise": "Light BW Squat",
-              "sets": "",
-              "reps": "2×10",
-              "tempo": "2010",
+              "block": "ACCESSORY — Calf Balance",
+              "exercise": "Light Calf Raise",
+              "sets": "2",
+              "reps": "12–15",
+              "tempo": "2112",
               "rest": "60s",
-              "notes": "DELOAD OPTIONAL.",
-              "isBonus": true
+              "notes": "Deload. Easy movement; full stretch/hold.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
@@ -5687,7 +5687,7 @@ const PROGRAM = {
               "exercise": "Light Push-Up",
               "sets": "2",
               "reps": "15",
-              "tempo": "X010",
+              "tempo": "20X0",
               "rest": "60s",
               "notes": "DELOAD.",
               "isBonus": false
@@ -5821,14 +5821,14 @@ const PROGRAM = {
               "isBonus": false
             },
             {
-              "block": "BONUS (Optional) — Posterior Chain",
-              "exercise": "Light Split Squat",
-              "sets": "",
-              "reps": "2×10/leg",
-              "tempo": "2010",
+              "block": "ACCESSORY — Adductor Balance",
+              "exercise": "Light Copenhagen Plank",
+              "sets": "2",
+              "reps": "20s/side",
+              "tempo": "iso",
               "rest": "60s",
-              "notes": "DELOAD OPTIONAL.",
-              "isBonus": true
+              "notes": "Deload. Easy adductor stability.",
+              "isBonus": false
             },
             {
               "block": "FINISHER",
