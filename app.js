@@ -94,7 +94,7 @@ function calcPlates(totalWeight) {
 
 // Active context for log modal
 let logContext = null;
-let restTimer = { interval: null, remaining: 0, total: 0 };
+let restTimer = { interval: null, remaining: 0, total: 0, endTime: 0, warned: false };
 // When browsing a specific workout from schedule, store it here
 let pinnedWorkout = null; // { weekNum, dayIdx }
 let activeLoggedSet = null; // { weekNum, dayIdx, exIdx, setIdx }
@@ -1355,21 +1355,24 @@ function startRestTimer(durationSeconds) {
     ? durationSeconds
     : (state.restDuration || 90);
   clearInterval(restTimer.interval);
-  restTimer.remaining = dur;
   restTimer.total = dur;
+  restTimer.endTime = Date.now() + dur * 1000;
+  restTimer.warned = false;
+  restTimer.remaining = dur;
 
   document.body.classList.remove('chrome-hidden');
   document.getElementById('rest-timer').classList.remove('hidden');
   updateRestDisplay();
 
   restTimer.interval = setInterval(() => {
-    restTimer.remaining--;
-    if (restTimer.remaining === 10) {
-      // 10s warning - 3 short pulses
+    restTimer.remaining = Math.max(0, Math.round((restTimer.endTime - Date.now()) / 1000));
+    if (restTimer.remaining <= 10 && !restTimer.warned) {
+      restTimer.warned = true;
       vibrate([60, 60, 60, 60, 60]);
     }
     if (restTimer.remaining <= 0) {
       clearInterval(restTimer.interval);
+      restTimer.interval = null;
       document.getElementById('rest-timer').classList.add('hidden');
       vibrate([200, 80, 200]);
       try { new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAA==').play(); } catch(e) {}
@@ -1394,8 +1397,11 @@ document.getElementById('btn-skip-rest').addEventListener('click', () => {
 });
 
 document.getElementById('btn-add-rest').addEventListener('click', () => {
-  restTimer.remaining = Math.min(restTimer.remaining + 30, 600);
+  const added = Math.min(restTimer.remaining + 30, 600) - restTimer.remaining;
+  restTimer.endTime += added * 1000;
+  restTimer.remaining += added;
   restTimer.total = Math.max(restTimer.total, restTimer.remaining);
+  if (restTimer.remaining > 10) restTimer.warned = false;
   updateRestDisplay();
 });
 
@@ -1934,8 +1940,21 @@ async function releaseWakeLock() {
 
 // Re-acquire when page becomes visible (e.g. after device sleep)
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible' && activeView === 'today') {
-    requestWakeLock();
+  if (document.visibilityState === 'visible') {
+    if (activeView === 'today') requestWakeLock();
+
+    // Sync rest timer display immediately after returning to the tab
+    if (restTimer.interval) {
+      restTimer.remaining = Math.max(0, Math.round((restTimer.endTime - Date.now()) / 1000));
+      if (restTimer.remaining <= 0) {
+        clearInterval(restTimer.interval);
+        restTimer.interval = null;
+        document.getElementById('rest-timer').classList.add('hidden');
+        vibrate([200, 80, 200]);
+      } else {
+        updateRestDisplay();
+      }
+    }
   }
 });
 
