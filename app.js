@@ -1396,8 +1396,16 @@ document.getElementById('btn-skip-rest').addEventListener('click', () => {
   document.getElementById('rest-timer').classList.add('hidden');
 });
 
+document.getElementById('btn-sub-rest').addEventListener('click', () => {
+  const newRemaining = Math.max(1, restTimer.remaining - 15);
+  const delta = newRemaining - restTimer.remaining;
+  restTimer.endTime += delta * 1000;
+  restTimer.remaining = newRemaining;
+  updateRestDisplay();
+});
+
 document.getElementById('btn-add-rest').addEventListener('click', () => {
-  const added = Math.min(restTimer.remaining + 30, 600) - restTimer.remaining;
+  const added = Math.min(restTimer.remaining + 15, 600) - restTimer.remaining;
   restTimer.endTime += added * 1000;
   restTimer.remaining += added;
   restTimer.total = Math.max(restTimer.total, restTimer.remaining);
