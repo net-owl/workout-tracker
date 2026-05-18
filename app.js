@@ -1393,6 +1393,7 @@ function updateRestDisplay() {
 
 document.getElementById('btn-skip-rest').addEventListener('click', () => {
   clearInterval(restTimer.interval);
+  restTimer.interval = null;
   document.getElementById('rest-timer').classList.add('hidden');
 });
 
